@@ -36,6 +36,7 @@ public class GatewayDeviceApp
 	
 	// private var's
 	
+	@SuppressWarnings("unused")
 	private String configFile = ConfigConst.DEFAULT_CONFIG_FILE_NAME;
 
 	// constructors
