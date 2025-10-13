@@ -120,6 +120,13 @@ public class ConfigConst {
     public static final String TIMESTAMP_PROP = "timeStamp";
     public static final String VALUE_PROP = "value";
     
+    
+    public static final String ENABLE_MQTT_CLIENT_KEY = "enableMqttClient";
+    public static final String ENABLE_COAP_SERVER_KEY = "enableCoapServer";
+    public static final String ENABLE_CLOUD_CLIENT_KEY = "enableCloudClient";
+    public static final String ENABLE_PERSISTENCE_CLIENT_KEY = "enablePersistenceClient";
+    public static final String ENABLE_SYSTEM_PERF_KEY = "enableSystemPerformance";
+
     // ========================================
     // CONSTRUCTOR (private to prevent instantiation)
     // ========================================

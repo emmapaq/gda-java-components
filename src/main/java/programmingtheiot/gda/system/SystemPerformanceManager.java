@@ -8,12 +8,10 @@
  * provided within in order to meet the needs of your specific
  * Programming the Internet of Things project.
  */
-
 package programmingtheiot.gda.system;
 
 import java.util.logging.Logger;
 import java.util.logging.Level;
-
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -24,7 +22,6 @@ import programmingtheiot.common.ConfigUtil;
 import programmingtheiot.common.IDataMessageListener;
 import programmingtheiot.common.ResourceNameEnum;
 import programmingtheiot.data.SystemPerformanceData;
-
 
 /**
  * Shell representation of class for student implementation.
@@ -40,9 +37,14 @@ public class SystemPerformanceManager
 	private ScheduledExecutorService schedExecSvc = null;
 	private SystemCpuUtilTask sysCpuUtilTask = null;
 	private SystemMemUtilTask sysMemUtilTask = null;
-
 	private Runnable taskRunner = null;
+	// TODO: Uncomment when SystemDiskUtilTask is created
+	// private SystemDiskUtilTask sysDiskUtilTask = null;
 	private boolean isStarted = false;
+	
+	// NEW: Class-scoped variables for location ID and listener
+	private String locationID = ConfigConst.NOT_SET;
+	private IDataMessageListener dataMsgListener = null;
 	
 	// constructors
 	
@@ -60,9 +62,17 @@ public class SystemPerformanceManager
 			this.pollRate = ConfigConst.DEFAULT_POLL_CYCLES;
 		}
 		
+		// NEW: Retrieve location ID from configuration file
+		// NOTE: Check if LOCATION_ID_PROP exists in ConfigConst, otherwise use a default property name
+		this.locationID =
+			ConfigUtil.getInstance().getProperty(
+				ConfigConst.GATEWAY_DEVICE, "locationID", ConfigConst.NOT_SET);
+		
 		this.schedExecSvc   = Executors.newScheduledThreadPool(1);
 		this.sysCpuUtilTask = new SystemCpuUtilTask();
 		this.sysMemUtilTask = new SystemMemUtilTask();
+		// TODO: Uncomment when SystemDiskUtilTask is created
+		// this.sysDiskUtilTask = new SystemDiskUtilTask();
 		
 		this.taskRunner = () -> {
 			this.handleTelemetry();
@@ -76,13 +86,33 @@ public class SystemPerformanceManager
 	{
 		float cpuUtil = this.sysCpuUtilTask.getTelemetryValue();
 		float memUtil = this.sysMemUtilTask.getTelemetryValue();
+		// TODO: Uncomment when SystemDiskUtilTask is created
+		// float diskUtil = this.sysDiskUtilTask.getTelemetryValue();
 		
-		// NOTE: you may need to change the logging level to 'info' to see the message
+		// TODO: change the log level to 'info' for testing purposes
 		_Logger.fine("CPU utilization: " + cpuUtil + ", Mem utilization: " + memUtil);
+		
+		// NEW: Create SystemPerformanceData instance and populate it
+		SystemPerformanceData spd = new SystemPerformanceData();
+		spd.setLocationID(this.locationID);
+		spd.setCpuUtilization(cpuUtil);
+		spd.setMemoryUtilization(memUtil);
+		// TODO: Uncomment when SystemDiskUtilTask is created
+		// spd.setDiskUtilization(diskUtil);
+		
+		// NEW: If listener is set, invoke callback
+		if (this.dataMsgListener != null) {
+			this.dataMsgListener.handleSystemPerformanceMessage(
+				ResourceNameEnum.GDA_SYSTEM_PERF_MSG_RESOURCE, spd);
+		}
 	}
 	
 	public void setDataMessageListener(IDataMessageListener listener)
 	{
+		// NEW: Set the listener for callback support
+		if (listener != null) {
+			this.dataMsgListener = listener;
+		}
 	}
 	
 	public boolean startManager()
@@ -100,7 +130,7 @@ public class SystemPerformanceManager
 		
 		return this.isStarted;
 	}
-
+	
 	public boolean stopManager()
 	{
 		this.schedExecSvc.shutdown();

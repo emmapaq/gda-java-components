@@ -8,7 +8,6 @@
  * provided within in order to meet the needs of your specific
  * Programming the Internet of Things project.
  */
-
 package programmingtheiot.data;
 
 import java.nio.file.FileSystems;
@@ -27,7 +26,7 @@ public class DataUtil
 	// static
 	
 	private static final DataUtil _Instance = new DataUtil();
-
+	
 	/**
 	 * Returns the Singleton instance of this class.
 	 * 
@@ -58,52 +57,110 @@ public class DataUtil
 	
 	public String actuatorDataToJson(ActuatorData actuatorData)
 	{
-		return null;
+		String jsonData = null;
+		
+		if (actuatorData != null) {
+			Gson gson = new Gson();
+			jsonData = gson.toJson(actuatorData);
+		}
+		
+		return jsonData;
 	}
 	
 	public String actuatorDataToTimeAndValueJson(ActuatorData actuatorData)
 	{
+		// TODO: Implement time and value extraction if needed
 		return null;
 	}
 	
 	public String sensorDataToJson(SensorData sensorData)
 	{
-		return null;
+		String jsonData = null;
+		
+		if (sensorData != null) {
+			Gson gson = new Gson();
+			jsonData = gson.toJson(sensorData);
+		}
+		
+		return jsonData;
 	}
 	
 	public String sensorDataToTimeAndValueJson(SensorData sensorData)
 	{
+		// TODO: Implement time and value extraction if needed
 		return null;
 	}
 	
 	public String systemPerformanceDataToJson(SystemPerformanceData sysPerfData)
 	{
-		return null;
+		String jsonData = null;
+		
+		if (sysPerfData != null) {
+			Gson gson = new Gson();
+			jsonData = gson.toJson(sysPerfData);
+		}
+		
+		return jsonData;
 	}
 	
 	public String systemStateDataToJson(SystemStateData sysStateData)
 	{
-		return null;
+		String jsonData = null;
+		
+		if (sysStateData != null) {
+			Gson gson = new Gson();
+			jsonData = gson.toJson(sysStateData);
+		}
+		
+		return jsonData;
 	}
 	
 	public ActuatorData jsonToActuatorData(String jsonData)
 	{
-		return null;
+		ActuatorData data = null;
+		
+		if (jsonData != null && jsonData.trim().length() > 0) {
+			Gson gson = new Gson();
+			data = gson.fromJson(jsonData, ActuatorData.class);
+		}
+		
+		return data;
 	}
 	
 	public SensorData jsonToSensorData(String jsonData)
 	{
-		return null;
+		SensorData data = null;
+		
+		if (jsonData != null && jsonData.trim().length() > 0) {
+			Gson gson = new Gson();
+			data = gson.fromJson(jsonData, SensorData.class);
+		}
+		
+		return data;
 	}
 	
 	public SystemPerformanceData jsonToSystemPerformanceData(String jsonData)
 	{
-		return null;
+		SystemPerformanceData data = null;
+		
+		if (jsonData != null && jsonData.trim().length() > 0) {
+			Gson gson = new Gson();
+			data = gson.fromJson(jsonData, SystemPerformanceData.class);
+		}
+		
+		return data;
 	}
 	
 	public SystemStateData jsonToSystemStateData(String jsonData)
 	{
-		return null;
+		SystemStateData data = null;
+		
+		if (jsonData != null && jsonData.trim().length() > 0) {
+			Gson gson = new Gson();
+			data = gson.fromJson(jsonData, SystemStateData.class);
+		}
+		
+		return data;
 	}
 	
 }
