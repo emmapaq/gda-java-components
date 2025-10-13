@@ -5,17 +5,13 @@
  * 
  * Copyright (c) 2020 - 2025 by Andrew D. King
  */ 
-
 package programmingtheiot.unit.data;
 
 import static org.junit.Assert.*;
-
 import java.util.logging.Logger;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import programmingtheiot.common.ConfigConst;
 import programmingtheiot.data.ActuatorData;
 
@@ -37,7 +33,6 @@ public class ActuatorDataTest
 	public static final String DEFAULT_NAME = "ActuatorDataFooBar";
 	public static final int DEFAULT_CMD = 1;
 	public static final float DEFAULT_VAL = 10.0f;
-	
 	
 	// member var's
 	
@@ -62,7 +57,7 @@ public class ActuatorDataTest
 	{
 		ActuatorData ad = new ActuatorData();
 		
-		assertEquals(ad.getName(), ConfigConst.NOT_SET);
+		assertEquals(ad.getName(), ConfigConst.DEFAULT_ACTUATOR_NAME);
 		assertEquals(ad.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		assertTrue(ad.getCommand() == ConfigConst.DEFAULT_COMMAND);
 		assertTrue(ad.getValue() == ConfigConst.DEFAULT_VAL);
@@ -74,7 +69,7 @@ public class ActuatorDataTest
 		ActuatorData ad = createTestData();
 		
 		assertEquals(ad.getName(), DEFAULT_NAME);
-		assertEquals(ad.getStatusCode(), ActuatorData.DEFAULT_STATUS);
+		assertEquals(ad.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		assertTrue(ad.getCommand() == DEFAULT_CMD);
 		assertTrue(ad.getValue() == DEFAULT_VAL);
 	}
@@ -84,8 +79,7 @@ public class ActuatorDataTest
 	{
 		ActuatorData ad = new ActuatorData();
 		ActuatorData ad2 = createTestData();
-
-		assertEquals(ad.getName(), ConfigConst.NOT_SET);
+		assertEquals(ad.getName(), ConfigConst.DEFAULT_ACTUATOR_NAME);
 		assertEquals(ad.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		assertTrue(ad.getCommand() == ConfigConst.DEFAULT_COMMAND);
 		assertTrue(ad.getValue() == ConfigConst.DEFAULT_VAL);

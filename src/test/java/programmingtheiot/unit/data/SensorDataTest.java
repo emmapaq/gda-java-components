@@ -5,17 +5,13 @@
  * 
  * Copyright (c) 2020 - 2025 by Andrew D. King
  */ 
-
 package programmingtheiot.unit.data;
 
 import static org.junit.Assert.*;
-
 import java.util.logging.Logger;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import programmingtheiot.common.ConfigConst;
 import programmingtheiot.data.SensorData;
 import programmingtheiot.data.SystemPerformanceData;
@@ -36,7 +32,6 @@ public class SensorDataTest
 		Logger.getLogger(SensorDataTest.class.getName());
 	
 	public static final String DEFAULT_NAME = "SensorDataFooBar";
-	
 	
 	// member var's
 	
@@ -62,7 +57,7 @@ public class SensorDataTest
 		SensorData ssd = new SensorData();
 		
 		assertEquals(ssd.getName(), ConfigConst.NOT_SET);
-		assertEquals(ssd.getStatusCode(), SensorData.DEFAULT_STATUS);
+		assertEquals(ssd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		assertTrue(ssd.getValue() == ConfigConst.DEFAULT_VAL);
 	}
 	
@@ -72,7 +67,7 @@ public class SensorDataTest
 		SensorData ssd = createTestData();
 		
 		assertEquals(ssd.getName(), DEFAULT_NAME);
-		assertEquals(ssd.getStatusCode(), SensorData.DEFAULT_STATUS);
+		assertEquals(ssd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		assertTrue(ssd.getValue() == ConfigConst.DEFAULT_VAL);
 	}
 	
@@ -81,15 +76,14 @@ public class SensorDataTest
 	{
 		SensorData ssd = new SensorData();
 		SensorData ssd2 = createTestData();
-
 		assertEquals(ssd.getName(), ConfigConst.NOT_SET);
-		assertEquals(ssd.getStatusCode(), SensorData.DEFAULT_STATUS);
+		assertEquals(ssd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		assertTrue(ssd.getValue() == ConfigConst.DEFAULT_VAL);
 		
 		ssd.updateData(ssd2);
 		
 		assertEquals(ssd.getName(), DEFAULT_NAME);
-		assertEquals(ssd.getStatusCode(), SensorData.DEFAULT_STATUS);
+		assertEquals(ssd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		assertTrue(ssd.getValue() == ConfigConst.DEFAULT_VAL);
 	}
 	

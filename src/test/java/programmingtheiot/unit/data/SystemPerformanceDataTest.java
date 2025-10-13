@@ -5,17 +5,13 @@
  * 
  * Copyright (c) 2020 - 2025 by Andrew D. King
  */ 
-
 package programmingtheiot.unit.data;
 
 import static org.junit.Assert.*;
-
 import java.util.logging.Logger;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import programmingtheiot.common.ConfigConst;
 import programmingtheiot.data.SystemPerformanceData;
 
@@ -66,7 +62,7 @@ public class SystemPerformanceDataTest
 		_Logger.info("Created data obj: " + spd.toString());
 		
 		assertEquals(spd.getName(), ConfigConst.SYS_PERF_DATA);
-		assertEquals(spd.getStatusCode(), SystemPerformanceData.DEFAULT_STATUS);
+		assertEquals(spd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		
 		assertTrue(spd.getCpuUtilization() == ConfigConst.DEFAULT_VAL);
 		assertTrue(spd.getDiskUtilization() == ConfigConst.DEFAULT_VAL);
@@ -81,7 +77,7 @@ public class SystemPerformanceDataTest
 		_Logger.info("Created data obj: " + spd.toString());
 		
 		assertEquals(spd.getName(), DEFAULT_NAME);
-		assertEquals(spd.getStatusCode(), SystemPerformanceData.DEFAULT_STATUS);
+		assertEquals(spd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		
 		assertTrue(spd.getCpuUtilization() == DEFAULT_CPU_UTIL_DATA);
 		assertTrue(spd.getDiskUtilization() == DEFAULT_DISK_UTIL_DATA);
@@ -98,7 +94,7 @@ public class SystemPerformanceDataTest
 		_Logger.info("Created second data obj: " + spd2.toString());
 		
 		assertEquals(spd.getName(), ConfigConst.SYS_PERF_DATA);
-		assertEquals(spd.getStatusCode(), SystemPerformanceData.DEFAULT_STATUS);
+		assertEquals(spd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		
 		assertTrue(spd.getCpuUtilization() == ConfigConst.DEFAULT_VAL);
 		assertTrue(spd.getDiskUtilization() == ConfigConst.DEFAULT_VAL);
@@ -108,7 +104,7 @@ public class SystemPerformanceDataTest
 		_Logger.info("Updated second data obj: " + spd2.toString());
 		
 		assertEquals(spd.getName(), DEFAULT_NAME);
-		assertEquals(spd.getStatusCode(), SystemPerformanceData.DEFAULT_STATUS);
+		assertEquals(spd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		
 		assertTrue(spd.getCpuUtilization() == DEFAULT_CPU_UTIL_DATA);
 		assertTrue(spd.getDiskUtilization() == DEFAULT_DISK_UTIL_DATA);

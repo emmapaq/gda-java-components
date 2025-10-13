@@ -1,137 +1,158 @@
 package programmingtheiot.data;
 
 import java.io.Serializable;
+import programmingtheiot.common.ConfigConst;
 
 /**
- * Base class for all IoT data containers.
- * Provides common fields such as name, typeID, timestamp, and statusCode.
- * 
- * This class serves as the foundation for SensorData, ActuatorData, and
- * SystemPerformanceData, providing core attributes and helper methods
- * to update and synchronize IoT-related data.
- * 
- * @author 
+ * Base class for all IoT data objects in the system.
+ * Provides common properties and behaviors for sensors, actuators, and system data.
  */
-public class BaseIotData implements Serializable
-{
-	private static final long serialVersionUID = 1L;
+public abstract class BaseIotData implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-	// Default values
-	protected String name = "Not Set";
-	protected int typeID = 0;
-	protected long timeStamp = System.currentTimeMillis();
-	protected int statusCode = 0;
+    // Instance variables
+    protected String name = ConfigConst.NOT_SET;
+    protected int typeID = ConfigConst.DEFAULT_TYPE_ID;
+    protected String locationID = ConfigConst.NOT_SET;
+    protected long timeStamp = System.currentTimeMillis();
+    protected int statusCode = ConfigConst.DEFAULT_STATUS;
+    protected boolean hasError = false;
 
-	// Constructors
-	public BaseIotData()
-	{
-		super();
-	}
+    /**
+     * Default constructor.
+     */
+    public BaseIotData() {
+        super();
+    }
 
-	/**
-	 * Full constructor that initializes name and typeID.
-	 * Automatically updates timestamp.
-	 * 
-	 * @param name The name of the IoT data source
-	 * @param typeID The data type identifier
-	 */
-	public BaseIotData(String name, int typeID)
-	{
-		super();
-		this.name = name;
-		this.typeID = typeID;
-		this.updateTimeStamp();
-	}
+    /**
+     * Constructor with name and typeID.
+     * 
+     * @param name The name of this data instance
+     * @param typeID The type identifier
+     */
+    public BaseIotData(String name, int typeID) {
+        this.name = name;
+        this.typeID = typeID;
+        updateTimeStamp();
+    }
 
-	// ======== Getters and Setters ========
+    // ========================================
+    // GETTERS AND SETTERS
+    // ========================================
 
-	public String getName()
-	{
-		return this.name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name)
-	{
-		this.name = name;
-		this.updateTimeStamp();
-	}
+    public void setName(String name) {
+        this.name = name;
+        updateTimeStamp();
+    }
 
-	public int getTypeID()
-	{
-		return this.typeID;
-	}
+    public int getTypeID() {
+        return typeID;
+    }
 
-	public void setTypeID(int typeID)
-	{
-		this.typeID = typeID;
-		this.updateTimeStamp();
-	}
+    public void setTypeID(int typeID) {
+        this.typeID = typeID;
+        updateTimeStamp();
+    }
 
-	public long getTimeStamp()
-	{
-		return this.timeStamp;
-	}
+    public String getLocationID() {
+        return locationID;
+    }
 
-	/**
-	 * Returns the timestamp in milliseconds (alias for getTimeStamp()).
-	 * @return timeStamp value
-	 */
-	public long getTimeStampMillis()
-	{
-		return this.timeStamp;
-	}
+    public void setLocationID(String locationID) {
+        this.locationID = locationID;
+        updateTimeStamp();
+    }
 
-	public void updateTimeStamp()
-	{
-		this.timeStamp = System.currentTimeMillis();
-	}
+    public long getTimeStamp() {
+        return timeStamp;
+    }
 
-	public int getStatusCode()
-	{
-		return this.statusCode;
-	}
+    /**
+     * Returns the timestamp in milliseconds.
+     * This is an alias for getTimeStamp() to support different naming conventions.
+     * 
+     * @return The timestamp in milliseconds
+     */
+    public long getTimeStampMillis() {
+        return timeStamp;
+    }
 
-	public void setStatusCode(int statusCode)
-	{
-		this.statusCode = statusCode;
-		this.updateTimeStamp();
-	}
+    public void updateTimeStamp() {
+        this.timeStamp = System.currentTimeMillis();
+    }
 
-	// ======== Data Handling Methods ========
+    public int getStatusCode() {
+        return statusCode;
+    }
 
-	/**
-	 * Internal helper to copy data fields from another BaseIotData instance.
-	 * Subclasses should use updateData() instead of this directly.
-	 * 
-	 * @param data The BaseIotData instance to copy from
-	 */
-	protected void handleUpdateData(BaseIotData data)
-	{
-		if (data != null)
-		{
-			this.name = data.getName();
-			this.typeID = data.getTypeID();
-			this.statusCode = data.getStatusCode();
-			this.timeStamp = data.getTimeStampMillis();
-		}
-	}
+    public void setStatusCode(int statusCode) {
+        this.statusCode = statusCode;
+        updateTimeStamp();
+    }
 
-	/**
-	 * Public method for subclasses to update their state from another IoT data object.
-	 * 
-	 * @param data The data object to copy values from
-	 */
-	public void updateData(BaseIotData data)
-	{
-		handleUpdateData(data);
-	}
+    public boolean hasError() {
+        return hasError;
+    }
 
-	@Override
-	public String toString()
-	{
-		return "BaseIotData [name=" + name + 
-				", typeID=" + typeID + 
-				", timeStamp=" + timeStamp + 
-				", statusCode=" + statusCode + "]";
-	}
+    public void setHasError(boolean hasError) {
+        this.hasError = hasError;
+        updateTimeStamp();
+    }
+
+    // ========================================
+    // PUBLIC METHODS
+    // ========================================
+
+    /**
+     * Updates this data instance with values from another BaseIotData instance.
+     * Calls handleUpdateData() for subclass-specific update logic.
+     * 
+     * @param data The source data to copy from
+     */
+    public void updateData(BaseIotData data) {
+        if (data != null) {
+            this.name = data.getName();
+            this.typeID = data.getTypeID();
+            this.locationID = data.getLocationID();
+            this.statusCode = data.getStatusCode();
+            this.timeStamp = data.getTimeStamp();
+            this.hasError = data.hasError();
+            
+            // Call subclass-specific update logic
+            handleUpdateData(data);
+        }
+    }
+
+    // ========================================
+    // PROTECTED ABSTRACT METHODS
+    // ========================================
+
+    /**
+     * Template method for subclasses to implement specific update logic.
+     * This is called by updateData() after common fields are copied.
+     * 
+     * @param data The source data to copy subclass-specific fields from
+     */
+    protected abstract void handleUpdateData(BaseIotData data);
+
+    // ========================================
+    // OVERRIDDEN METHODS
+    // ========================================
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: ").append(this.name).append("\n");
+        sb.append("Type ID: ").append(this.typeID).append("\n");
+        sb.append("Location ID: ").append(this.locationID).append("\n");
+        sb.append("Time Stamp: ").append(this.timeStamp).append("\n");
+        sb.append("Status Code: ").append(this.statusCode).append("\n");
+        sb.append("Has Error: ").append(this.hasError).append("\n");
+        return sb.toString();
+    }
 }

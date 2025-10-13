@@ -1,54 +1,118 @@
 package programmingtheiot.data;
 
-import java.io.Serializable;
 import programmingtheiot.common.ConfigConst;
 
-public class SystemPerformanceData extends BaseIotData implements Serializable {
+/**
+ * Represents system performance metrics including CPU, memory, and disk usage.
+ */
+public class SystemPerformanceData extends BaseIotData {
     private static final long serialVersionUID = 1L;
 
-    private float cpuUtil = ConfigConst.DEFAULT_VAL;
-    private float memUtil = ConfigConst.DEFAULT_VAL;
-    private float diskUtil = ConfigConst.DEFAULT_VAL;
+    private float cpuUtilization = ConfigConst.DEFAULT_VAL;
+    private float memoryUtilization = ConfigConst.DEFAULT_VAL;
+    private float diskUtilization = ConfigConst.DEFAULT_VAL;
 
+    /**
+     * Default constructor.
+     */
     public SystemPerformanceData() {
-        super();
-        super.setName(ConfigConst.SYS_PERF_DATA);
+        super(ConfigConst.SYS_PERF_DATA, ConfigConst.DEFAULT_TYPE);
     }
 
+    /**
+     * Constructor with typeID.
+     * 
+     * @param typeID The type identifier
+     */
+    public SystemPerformanceData(int typeID) {
+        super(ConfigConst.SYS_PERF_DATA, typeID);
+    }
+
+    // ========================================
+    // GETTERS AND SETTERS
+    // ========================================
+
+    /**
+     * Gets the CPU utilization percentage.
+     * 
+     * @return CPU utilization (0.0 to 100.0)
+     */
     public float getCpuUtilization() {
-        return this.cpuUtil;
+        return cpuUtilization;
     }
 
-    public void setCpuUtilization(float cpuUtil) {
+    /**
+     * Sets the CPU utilization percentage.
+     * 
+     * @param cpuUtilization CPU utilization (0.0 to 100.0)
+     */
+    public void setCpuUtilization(float cpuUtilization) {
+        this.cpuUtilization = cpuUtilization;
         updateTimeStamp();
-        this.cpuUtil = cpuUtil;
     }
 
+    /**
+     * Gets the memory utilization percentage.
+     * 
+     * @return Memory utilization (0.0 to 100.0)
+     */
     public float getMemoryUtilization() {
-        return this.memUtil;
+        return memoryUtilization;
     }
 
-    public void setMemoryUtilization(float memUtil) {
+    /**
+     * Sets the memory utilization percentage.
+     * 
+     * @param memoryUtilization Memory utilization (0.0 to 100.0)
+     */
+    public void setMemoryUtilization(float memoryUtilization) {
+        this.memoryUtilization = memoryUtilization;
         updateTimeStamp();
-        this.memUtil = memUtil;
     }
 
+    /**
+     * Gets the disk utilization percentage.
+     * 
+     * @return Disk utilization (0.0 to 100.0)
+     */
     public float getDiskUtilization() {
-        return this.diskUtil;
+        return diskUtilization;
     }
 
-    public void setDiskUtilization(float diskUtil) {
+    /**
+     * Sets the disk utilization percentage.
+     * 
+     * @param diskUtilization Disk utilization (0.0 to 100.0)
+     */
+    public void setDiskUtilization(float diskUtilization) {
+        this.diskUtilization = diskUtilization;
         updateTimeStamp();
-        this.diskUtil = diskUtil;
     }
+
+    // ========================================
+    // PROTECTED METHODS
+    // ========================================
 
     @Override
     protected void handleUpdateData(BaseIotData data) {
         if (data instanceof SystemPerformanceData) {
-            SystemPerformanceData spData = (SystemPerformanceData) data;
-            this.setCpuUtilization(spData.getCpuUtilization());
-            this.setMemoryUtilization(spData.getMemoryUtilization());
-            this.setDiskUtilization(spData.getDiskUtilization());
+            SystemPerformanceData spd = (SystemPerformanceData) data;
+            this.cpuUtilization = spd.getCpuUtilization();
+            this.memoryUtilization = spd.getMemoryUtilization();
+            this.diskUtilization = spd.getDiskUtilization();
         }
+    }
+
+    // ========================================
+    // OVERRIDDEN METHODS
+    // ========================================
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        sb.append("CPU Utilization: ").append(this.cpuUtilization).append("%\n");
+        sb.append("Memory Utilization: ").append(this.memoryUtilization).append("%\n");
+        sb.append("Disk Utilization: ").append(this.diskUtilization).append("%\n");
+        return sb.toString();
     }
 }
