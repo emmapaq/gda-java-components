@@ -286,6 +286,13 @@ public class ConfigConst
 	public static final String ENV_DATA_BUCKET_KEY = "envDataBucket";
 	public static final String SYS_DATA_BUCKET_KEY = "sysDataBucket";
 	
+	
+	// BaseIotData defaults
+	public static final String DEFAULT_ACTUATOR_NAME = "defaultActuator";
+	public static final String DEFAULT_SENSOR_NAME = "defaultSensor";
+	public static final String DEFAULT_SYS_PERF_NAME = "defaultSystemPerformance";
+	public static final int DEFAULT_TYPE = 0;
+
 	// constructors
 	
 	/**
