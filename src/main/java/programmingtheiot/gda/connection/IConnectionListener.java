@@ -1,30 +1,41 @@
 /**
- * This class is part of the Programming the Internet of Things
- * project, and is available via the MIT License, which can be
- * found in the LICENSE file at the top level of this repository.
+ * This class is part of the Programming the Internet of Things project.
  * 
- * Copyright (c) 2020 - 2025 by Andrew D. King
- */
+ * It is provided as a simple shell to guide the student and assist with
+ * implementation for the Programming the Internet of Things exercises,
+ * and designed to be modified by the student as needed.
+ */ 
 
 package programmingtheiot.gda.connection;
 
-
 /**
- * Interface contract for handling generic connection state updates.
+ * Interface for connection event listeners.
+ * 
+ * This interface defines callback methods for handling connection-related
+ * events such as successful connections, disconnections, and connection failures.
  * 
  */
 public interface IConnectionListener
 {
 	/**
-	 * Callback to be invoked after successful connection.
+	 * Called when a connection to a remote service is successfully established.
 	 * 
+	 * @param isConnected True if connected, false if disconnected
 	 */
-	public void onConnect();
+	public void onConnect(boolean isConnected);
 	
 	/**
-	 * Callback to be invoked after successful disconnect.0
+	 * Called when a disconnection from a remote service occurs.
 	 * 
+	 * @param cause The cause of the disconnection (may be null for normal disconnect)
 	 */
-	public void onDisconnect();
+	public void onDisconnect(Throwable cause);
+	
+	/**
+	 * Called when a connection attempt fails.
+	 * 
+	 * @param cause The cause of the connection failure
+	 */
+	public void onConnectionFailure(Throwable cause);
 	
 }
