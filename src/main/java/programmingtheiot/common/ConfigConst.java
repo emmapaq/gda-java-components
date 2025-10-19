@@ -11,7 +11,7 @@ public class ConfigConst {
     // ========================================
     
     public static final String NOT_SET = "Not Set";
-    public static final String DEFAULT_CONFIG_FILE_NAME = "PiotConfig.props";
+    public static final String DEFAULT_CONFIG_FILE_NAME = "config/PiotConfig.props";
     public static final String CONFIG_FILE_KEY = "configFile";
     public static final String CRED_FILE_KEY = "credFile";
     
