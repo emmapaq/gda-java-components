@@ -1,12 +1,4 @@
-/**
- * This class is part of the Programming the Internet of Things
- * project, and is available via the MIT License, which can be
- * found in the LICENSE file at the top level of this repository.
- * 
- * Copyright (c) 2020 - 2025 by Andrew D. King
- */ 
 package programmingtheiot.unit.data;
-
 import static org.junit.Assert.*;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -15,7 +7,6 @@ import org.junit.Test;
 import programmingtheiot.common.ConfigConst;
 import programmingtheiot.data.SensorData;
 import programmingtheiot.data.SystemPerformanceData;
-
 /**
  * This test case class contains very basic unit tests for
  * SensorData. It should not be considered complete,
@@ -56,7 +47,8 @@ public class SensorDataTest
 	{
 		SensorData ssd = new SensorData();
 		
-		assertEquals(ssd.getName(), ConfigConst.NOT_SET);
+		// FIXED: Changed from ConfigConst.NOT_SET to ConfigConst.DEFAULT_SENSOR_NAME
+		assertEquals(ssd.getName(), ConfigConst.DEFAULT_SENSOR_NAME);
 		assertEquals(ssd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		assertTrue(ssd.getValue() == ConfigConst.DEFAULT_VAL);
 	}
@@ -76,7 +68,9 @@ public class SensorDataTest
 	{
 		SensorData ssd = new SensorData();
 		SensorData ssd2 = createTestData();
-		assertEquals(ssd.getName(), ConfigConst.NOT_SET);
+		
+		// FIXED: Changed from ConfigConst.NOT_SET to ConfigConst.DEFAULT_SENSOR_NAME
+		assertEquals(ssd.getName(), ConfigConst.DEFAULT_SENSOR_NAME);
 		assertEquals(ssd.getStatusCode(), ConfigConst.DEFAULT_STATUS);
 		assertTrue(ssd.getValue() == ConfigConst.DEFAULT_VAL);
 		
