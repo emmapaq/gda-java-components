@@ -6,10 +6,12 @@ package programmingtheiot.common;
  */
 public class ConfigConst {
     
+	
     // ========================================
     // GENERAL CONFIGURATION
     // ========================================
-    
+	public static final String TEST_EMPTY_APP_KEY = "testEmptyApp";
+	
     public static final String NOT_SET = "Not Set";
     public static final String DEFAULT_CONFIG_FILE_NAME = "config/PiotConfig.props";
     public static final String CONFIG_FILE_KEY = "configFile";
@@ -23,14 +25,16 @@ public class ConfigConst {
     public static final String GATEWAY_DEVICE = "GatewayDevice";
     public static final String CONSTRAINED_DEVICE = "ConstrainedDevice";
     public static final String DEVICE_LOCATION_ID_KEY = "deviceLocationID";
+    public static final String LOCATION_ID_PROP = "location.id";
     
     // ========================================
     // SERVICE IDENTIFIERS
     // ========================================
     
     public static final String CLOUD_GATEWAY_SERVICE = "CloudGatewayService";
-    public static final String MQTT_GATEWAY_SERVICE = "MqttGatewayService";
+    public static final String MQTT_GATEWAY_SERVICE = "Mqtt.GatewayService";
     public static final String SMTP_GATEWAY_SERVICE = "SmtpGatewayService";
+    public static final String DATA_GATEWAY_SERVICE = "Data.GatewayService";
     
     // ========================================
     // NETWORK CONFIGURATION KEYS
@@ -48,6 +52,7 @@ public class ConfigConst {
     public static final int DEFAULT_COAP_PORT = 5683;
     public static final String DEFAULT_COAP_PROTOCOL = "coap";
     public static final int DEFAULT_KEEP_ALIVE = 60;
+    public static final int DEFAULT_REDIS_PORT = 6379;
     
     // ========================================
     // SYSTEM CONFIGURATION KEYS
@@ -57,6 +62,12 @@ public class ConfigConst {
     public static final String ENABLE_LOGGING_KEY = "enableLogging";
     public static final String ENABLE_CRYPT_KEY = "enableCrypt";
     public static final String ENABLE_RUN_FOREVER_KEY = "enableRunForever";
+    public static final String ENABLE_MQTT_CLIENT_KEY = "enableMqttClient";
+    public static final String ENABLE_COAP_SERVER_KEY = "enableCoapServer";
+    public static final String ENABLE_CLOUD_CLIENT_KEY = "enableCloudClient";
+    public static final String ENABLE_PERSISTENCE_CLIENT_KEY = "enablePersistenceClient";
+    public static final String ENABLE_PERSISTENCE_KEY = "enablePersistence";
+    public static final String ENABLE_SYSTEM_PERF_KEY = "enableSystemPerformance";
     
     // ========================================
     // DEFAULT SYSTEM VALUES
@@ -65,10 +76,15 @@ public class ConfigConst {
     public static final int DEFAULT_POLL_CYCLES = 60;
     public static final int DEFAULT_STATUS = 0;
     public static final int DEFAULT_TYPE_ID = 0;
+    public static final int DEFAULT_TYPE = 0;
     public static final int DEFAULT_COMMAND = 0;
     public static final float DEFAULT_VAL = 0.0f;
     public static final int OFF_COMMAND = 0;
     
+    public static final int SENSOR_TYPE_DEFAULT = 1;
+    public static final int ACTUATOR_TYPE_DEFAULT = 2;
+    public static final int SYS_TYPE_DEFAULT = 3;
+
     // ========================================
     // AUTHENTICATION KEYS
     // ========================================
@@ -103,8 +119,7 @@ public class ConfigConst {
     
     public static final String TEMP_SENSOR_NAME = "TempSensor";
     public static final String DEFAULT_SENSOR_NAME = "DefaultSensor";
-    public static final String DEFAULT_ACTUATOR_NAME = "DefaultActuator";
-    public static final int DEFAULT_TYPE = 0;
+    public static final String DEFAULT_ACTUATOR_NAME = "Not Set";
     
     // ========================================
     // TEST CONFIGURATION
@@ -120,13 +135,6 @@ public class ConfigConst {
     public static final String TIMESTAMP_PROP = "timeStamp";
     public static final String VALUE_PROP = "value";
     
-    
-    public static final String ENABLE_MQTT_CLIENT_KEY = "enableMqttClient";
-    public static final String ENABLE_COAP_SERVER_KEY = "enableCoapServer";
-    public static final String ENABLE_CLOUD_CLIENT_KEY = "enableCloudClient";
-    public static final String ENABLE_PERSISTENCE_CLIENT_KEY = "enablePersistenceClient";
-    public static final String ENABLE_SYSTEM_PERF_KEY = "enableSystemPerformance";
-
     // ========================================
     // CONSTRUCTOR (private to prevent instantiation)
     // ========================================

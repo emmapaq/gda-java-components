@@ -1,76 +1,80 @@
 package programmingtheiot.data;
 
+import java.io.Serializable;
 import programmingtheiot.common.ConfigConst;
 
 /**
- * Represents sensor data including a measured value.
+ * Represents sensor data including a value reading.
  */
-public class SensorData extends BaseIotData {
+public class SensorData extends BaseIotData implements Serializable {
+    
+    // static
+    
     private static final long serialVersionUID = 1L;
-
+    
+    // private var's
+    
     private float value = ConfigConst.DEFAULT_VAL;
-
+    
+    // constructors
+    
     /**
-     * Default constructor.
+     * Default constructor using predefined sensor name and type.
      */
     public SensorData() {
-        super();
-        this.setName(ConfigConst.DEFAULT_SENSOR_NAME);
-        this.setTypeID(ConfigConst.DEFAULT_TYPE);
+        super(ConfigConst.DEFAULT_SENSOR_NAME, ConfigConst.DEFAULT_TYPE);
     }
-
+    
     /**
-     * Constructor with typeID.
+     * Constructor with specific type ID.
      * 
-     * @param typeID The sensor type identifier
+     * @param typeID The sensor type ID
      */
     public SensorData(int typeID) {
         super(ConfigConst.DEFAULT_SENSOR_NAME, typeID);
     }
-
+    
+    // public methods
+    
     /**
-     * Constructor with name and typeID.
+     * Returns the sensor value.
      * 
-     * @param name The sensor name
-     * @param typeID The sensor type identifier
+     * @return The current value.
      */
-    public SensorData(String name, int typeID) {
-        super(name, typeID);
-    }
-
-    // ========================================
-    // GETTERS AND SETTERS
-    // ========================================
-
     public float getValue() {
-        return value;
+        return this.value;
     }
-
-    public void setValue(float value) {
-        this.value = value;
+    
+    /**
+     * Sets the sensor value and updates the timestamp.
+     * 
+     * @param val The new value.
+     */
+    public void setValue(float val) {
         updateTimeStamp();
+        this.value = val;
     }
-
-    // ========================================
-    // PROTECTED METHODS
-    // ========================================
-
+    
+    // protected methods
+    
+    /**
+     * Updates this instance with data from another SensorData object.
+     * 
+     * @param data The incoming data to merge.
+     */
     @Override
     protected void handleUpdateData(BaseIotData data) {
         if (data instanceof SensorData) {
-            SensorData sd = (SensorData) data;
-            this.value = sd.getValue();
+            SensorData sData = (SensorData) data;
+            this.setValue(sData.getValue());
         }
     }
-
-    // ========================================
-    // OVERRIDDEN METHODS
-    // ========================================
-
+    
+    /**
+     * Returns a string representation of the sensor data.
+     */
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder(super.toString());
-        sb.append("Value: ").append(this.value).append("\n");
-        return sb.toString();
+        return super.toString() + "Value: " + this.value + "\n";
     }
 }

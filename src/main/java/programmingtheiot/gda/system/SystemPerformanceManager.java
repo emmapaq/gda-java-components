@@ -1,20 +1,8 @@
-/**
- * This class is part of the Programming the Internet of Things
- * project, and is available via the MIT License, which can be
- * found in the LICENSE file at the top level of this repository.
- * 
- * You may find it more helpful to your design to adjust the
- * functionality, constants and interfaces (if there are any)
- * provided within in order to meet the needs of your specific
- * Programming the Internet of Things project.
- */
 package programmingtheiot.gda.system;
 
 import java.util.logging.Logger;
-import java.util.logging.Level;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import programmingtheiot.common.ConfigConst;
@@ -24,121 +12,96 @@ import programmingtheiot.common.ResourceNameEnum;
 import programmingtheiot.data.SystemPerformanceData;
 
 /**
- * Shell representation of class for student implementation.
- * 
+ * Manager for collecting and forwarding system performance metrics.
  */
 public class SystemPerformanceManager
 {
-	// private var's
-	private static final Logger _Logger = Logger.getLogger(SystemPerformanceManager.class.getName());
-	
-	private int pollRate = ConfigConst.DEFAULT_POLL_CYCLES;
-	
-	private ScheduledExecutorService schedExecSvc = null;
-	private SystemCpuUtilTask sysCpuUtilTask = null;
-	private SystemMemUtilTask sysMemUtilTask = null;
-	private Runnable taskRunner = null;
-	// TODO: Uncomment when SystemDiskUtilTask is created
-	// private SystemDiskUtilTask sysDiskUtilTask = null;
-	private boolean isStarted = false;
-	
-	// NEW: Class-scoped variables for location ID and listener
-	private String locationID = ConfigConst.NOT_SET;
-	private IDataMessageListener dataMsgListener = null;
-	
-	// constructors
-	
-	/**
-	 * Default.
-	 * 
-	 */
-	public SystemPerformanceManager()
-	{
-		this.pollRate =
-			ConfigUtil.getInstance().getInteger(
-				ConfigConst.GATEWAY_DEVICE, ConfigConst.POLL_CYCLES_KEY, ConfigConst.DEFAULT_POLL_CYCLES);
-		
-		if (this.pollRate <= 0) {
-			this.pollRate = ConfigConst.DEFAULT_POLL_CYCLES;
-		}
-		
-		// NEW: Retrieve location ID from configuration file
-		// NOTE: Check if LOCATION_ID_PROP exists in ConfigConst, otherwise use a default property name
-		this.locationID =
-			ConfigUtil.getInstance().getProperty(
-				ConfigConst.GATEWAY_DEVICE, "locationID", ConfigConst.NOT_SET);
-		
-		this.schedExecSvc   = Executors.newScheduledThreadPool(1);
-		this.sysCpuUtilTask = new SystemCpuUtilTask();
-		this.sysMemUtilTask = new SystemMemUtilTask();
-		// TODO: Uncomment when SystemDiskUtilTask is created
-		// this.sysDiskUtilTask = new SystemDiskUtilTask();
-		
-		this.taskRunner = () -> {
-			this.handleTelemetry();
-		};
-	}
-	
-	
-	// public methods
-	
-	public void handleTelemetry()
-	{
-		float cpuUtil = this.sysCpuUtilTask.getTelemetryValue();
-		float memUtil = this.sysMemUtilTask.getTelemetryValue();
-		// TODO: Uncomment when SystemDiskUtilTask is created
-		// float diskUtil = this.sysDiskUtilTask.getTelemetryValue();
-		
-		// TODO: change the log level to 'info' for testing purposes
-		_Logger.fine("CPU utilization: " + cpuUtil + ", Mem utilization: " + memUtil);
-		
-		// NEW: Create SystemPerformanceData instance and populate it
-		SystemPerformanceData spd = new SystemPerformanceData();
-		spd.setLocationID(this.locationID);
-		spd.setCpuUtilization(cpuUtil);
-		spd.setMemoryUtilization(memUtil);
-		// TODO: Uncomment when SystemDiskUtilTask is created
-		// spd.setDiskUtilization(diskUtil);
-		
-		// NEW: If listener is set, invoke callback
-		if (this.dataMsgListener != null) {
-			this.dataMsgListener.handleSystemPerformanceMessage(
-				ResourceNameEnum.GDA_SYSTEM_PERF_MSG_RESOURCE, spd);
-		}
-	}
-	
-	public void setDataMessageListener(IDataMessageListener listener)
-	{
-		// NEW: Set the listener for callback support
-		if (listener != null) {
-			this.dataMsgListener = listener;
-		}
-	}
-	
-	public boolean startManager()
-	{
-		if (! this.isStarted) {
-			_Logger.info("SystemPerformanceManager is starting...");
-			
-			ScheduledFuture<?> futureTask =
-				this.schedExecSvc.scheduleAtFixedRate(this.taskRunner, 1L, this.pollRate, TimeUnit.SECONDS);
-			
-			this.isStarted = true;
-		} else {
-			_Logger.info("SystemPerformanceManager is already started.");
-		}
-		
-		return this.isStarted;
-	}
-	
-	public boolean stopManager()
-	{
-		this.schedExecSvc.shutdown();
-		this.isStarted = false;
-		
-		_Logger.info("SystemPerformanceManager is stopped.");
-		
-		return true;
-	}
-	
+    // private variables
+    private ScheduledExecutorService schedExecSvc = null;
+    private SystemCpuUtilTask sysCpuUtilTask = null;
+    private SystemMemUtilTask sysMemUtilTask = null;
+    private SystemDiskUtilTask sysDiskUtilTask = null;
+    private Runnable taskRunner = null;
+    private boolean isStarted = false;
+    private String locationID = ConfigConst.NOT_SET;
+    private IDataMessageListener dataMsgListener = null;
+
+    private static final Logger _Logger = Logger.getLogger(SystemPerformanceManager.class.getName());
+    private int pollRate = ConfigConst.DEFAULT_POLL_CYCLES;
+
+    // constructor
+    public SystemPerformanceManager()
+    {
+        this.locationID = ConfigUtil.getInstance().getProperty(
+            ConfigConst.GATEWAY_DEVICE, ConfigConst.LOCATION_ID_PROP, ConfigConst.NOT_SET);
+
+        this.sysCpuUtilTask = new SystemCpuUtilTask();
+        this.sysMemUtilTask = new SystemMemUtilTask();
+        this.sysDiskUtilTask = new SystemDiskUtilTask();
+
+        this.schedExecSvc = Executors.newSingleThreadScheduledExecutor();
+
+        this.taskRunner = new Runnable() {
+            @Override
+            public void run() {
+                handleTelemetry();
+            }
+        };
+    }
+
+    // telemetry handler
+    public void handleTelemetry()
+    {
+        float cpuUtil = this.sysCpuUtilTask.getTelemetryValue();
+        float memUtil = this.sysMemUtilTask.getTelemetryValue();
+        float diskUtil = this.sysDiskUtilTask.getTelemetryValue();
+
+        _Logger.info("CPU: " + cpuUtil + "%, Mem: " + memUtil + "%, Disk: " + diskUtil + "%");
+
+        SystemPerformanceData spd = new SystemPerformanceData();
+        spd.setLocationID(this.locationID);
+        spd.setCpuUtilization(cpuUtil);
+        spd.setMemoryUtilization(memUtil);
+        spd.setDiskUtilization(diskUtil);
+
+        if (this.dataMsgListener != null) {
+            this.dataMsgListener.handleSystemPerformanceMessage(
+                ResourceNameEnum.GDA_SYSTEM_PERF_MSG_RESOURCE, spd);
+        }
+    }
+
+    // listener setter
+    public void setDataMessageListener(IDataMessageListener listener)
+    {
+        if (listener != null) {
+            this.dataMsgListener = listener;
+        }
+    }
+
+    // start telemetry collection
+    public boolean startManager()
+    {
+        if (!this.isStarted) {
+            _Logger.info("SystemPerformanceManager is starting...");
+
+            this.schedExecSvc.scheduleAtFixedRate(this.taskRunner, 1L, this.pollRate, TimeUnit.SECONDS);
+            this.isStarted = true;
+        } else {
+            _Logger.info("SystemPerformanceManager is already started.");
+        }
+
+        return this.isStarted;
+    }
+
+    // stop telemetry collection
+    public boolean stopManager()
+    {
+        if (this.schedExecSvc != null && !this.schedExecSvc.isShutdown()) {
+            this.schedExecSvc.shutdown();
+            this.isStarted = false;
+            _Logger.info("SystemPerformanceManager is stopped.");
+        }
+
+        return true;
+    }
 }

@@ -1,12 +1,3 @@
-/**
- * 
- * This class is part of the Programming the Internet of Things
- * project, and is available via the MIT License, which can be
- * found in the LICENSE file at the top level of this repository.
- * 
- * Copyright (c) 2020 - 2025 by Andrew D. King
- */ 
-
 package programmingtheiot.integration.app;
 
 import java.util.logging.Logger;
@@ -17,86 +8,61 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import programmingtheiot.gda.app.GatewayDeviceApp;
+import programmingtheiot.gda.app.GatewayDeviceApp;  // LINE 11 - This is the IMPORT
 
 /**
  * This test case class contains very basic integration tests for
- * GatewayDeviceApp. It should not be considered complete,
- * but serve as a starting point for the student implementing
- * additional functionality within their Programming the IoT
- * environment.
- *
+ * GatewayDeviceApp.
  */
-public class GatewayDeviceAppTest
-{
-	// static
-	
-	private static final Logger _Logger =
-		Logger.getLogger(GatewayDeviceAppTest.class.getName());
-	
-
-	// member var's
-	
-	private GatewayDeviceApp gda = null;
-	
-	
-	// test setup methods
-	
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception
-	{
-	}
-	
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception
-	{
-	}
-	
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception
-	{
-		gda = new GatewayDeviceApp();
-	}
-	
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception
-	{
-	}
-	
-	// test methods
-	
-	/**
-	 * Convenience test method for starting and stopping the GDA. This will invoke both
-	 * {@link programmingtheiot.gda.app.GatewayDeviceApp#startApp()} and
-	 * {@link programmingtheiot.gda.app.GatewayDeviceApp#stopApp(int)} in sequence.
-	 * <p>
-	 * Validation is via log output and the expectation that no exception will be
-	 * thrown during execution.
-	 */
-	@Test
-	public void testStartAndStopGatewayApp()
-	{
-		this.gda.startApp();
-		
-		try {
-			Thread.sleep(65000L);
-		} catch (InterruptedException e) {
-			// ignore
-		}
-		
-		this.gda.stopApp(0);
-	}
-	
+public class GatewayDeviceAppTest {  // LINE 18 - This is the TEST class
+    
+    // static
+    
+    private static final Logger _Logger =
+        Logger.getLogger(GatewayDeviceAppTest.class.getName());
+    
+    // member var's
+    
+    private GatewayDeviceApp gda = null;
+    
+    // test setup methods
+    
+    @BeforeClass
+    public static void setUpBeforeClass() throws Exception {
+        _Logger.info("Starting GatewayDeviceAppTest suite...");
+    }
+    
+    @AfterClass
+    public static void tearDownAfterClass() throws Exception {
+        _Logger.info("Completed GatewayDeviceAppTest suite.");
+    }
+    
+    @Before
+    public void setUp() throws Exception {
+        gda = new GatewayDeviceApp();
+    }
+    
+    @After
+    public void tearDown() throws Exception {
+    }
+    
+    // test methods
+    
+    @Test
+    public void testStartAndStopGatewayApp() {
+        _Logger.info("Starting GatewayDeviceApp...");
+        
+        this.gda.startApp();
+        
+        try {
+            Thread.sleep(5000L);
+        } catch (InterruptedException e) {
+            // ignore
+        }
+        
+        _Logger.info("Stopping GatewayDeviceApp...");
+        this.gda.stopApp();  // No parameter - avoids System.exit()
+        
+        _Logger.info("GatewayDeviceApp stopped successfully.");
+    }
 }

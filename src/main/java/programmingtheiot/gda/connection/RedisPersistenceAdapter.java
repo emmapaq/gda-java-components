@@ -2,129 +2,114 @@ package programmingtheiot.gda.connection;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.exceptions.JedisException;
+
 import programmingtheiot.common.ConfigConst;
 import programmingtheiot.common.ConfigUtil;
-import programmingtheiot.common.IDataMessageListener;
 import programmingtheiot.common.ResourceNameEnum;
-
 import programmingtheiot.data.ActuatorData;
 import programmingtheiot.data.DataUtil;
 import programmingtheiot.data.SensorData;
 import programmingtheiot.data.SystemPerformanceData;
-
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.exceptions.JedisException;
+import programmingtheiot.gda.connection.IPersistenceClient;
+import programmingtheiot.gda.connection.IPersistenceListener;
 
 /**
  * Redis-based persistence adapter for storing and retrieving IoT data.
- * 
- * Provides persistence operations for ActuatorData, SensorData, and 
- * SystemPerformanceData using Redis as the backing store.
+ * Supports ActuatorData, SensorData, and SystemPerformanceData.
  */
 public class RedisPersistenceAdapter implements IPersistenceClient {
     
     private static final Logger _Logger = 
         Logger.getLogger(RedisPersistenceAdapter.class.getName());
     
-    // Redis client
-    private Jedis jedis = null;
+    // Default configuration values
+    private static final String DEFAULT_HOST = "localhost";
+    private static final int DEFAULT_PORT = 6379;
     
-    // Configuration
-    private String host = ConfigConst.DEFAULT_HOST;
-    private int port = 6379; // Default Redis port
-    
-    // Data utilities
-    private DataUtil dataUtil = DataUtil.getInstance();
-    
-    // Listener management
-    @SuppressWarnings("rawtypes")
-    private Map<Class, List<IPersistenceListener>> listenerMap = new HashMap<>();
-    private Map<IPersistenceListener, List<String>> topicMap = new HashMap<>();
+    private String host;
+    private int port;
+    private Jedis jedisClient;
+    private boolean isConnected = false;
+    private DataUtil dataUtil;
     
     /**
-     * Constructor.
-     * Initializes the Redis client with configuration from PiotConfig.props
+     * Constructor - initializes Redis client configuration from properties file.
      */
     public RedisPersistenceAdapter() {
-        super();
-        
         ConfigUtil configUtil = ConfigUtil.getInstance();
         
-        // Load host and port from configuration
-        // Using "gateway.GatewayDeviceApp" as the section name
+        // Read configuration from Data.GatewayService section
         this.host = configUtil.getProperty(
-            "gateway.GatewayDeviceApp", 
+            ConfigConst.DATA_GATEWAY_SERVICE, 
             ConfigConst.HOST_KEY, 
-            ConfigConst.DEFAULT_HOST);
+            DEFAULT_HOST);
         
         this.port = configUtil.getInteger(
-            "gateway.GatewayDeviceApp", 
+            ConfigConst.DATA_GATEWAY_SERVICE, 
             ConfigConst.PORT_KEY, 
-            6379);
+            DEFAULT_PORT);
         
-        _Logger.info("Redis Persistence Adapter initialized with host: " + 
-            this.host + ", port: " + this.port);
+        // Initialize DataUtil for JSON conversion
+        this.dataUtil = DataUtil.getInstance();
         
-        // Create Jedis instance
-        try {
-            this.jedis = new Jedis(this.host, this.port);
-            _Logger.info("Jedis client created successfully.");
-        } catch (Exception e) {
-            _Logger.log(Level.SEVERE, "Failed to create Jedis client.", e);
-        }
+        _Logger.info("Redis configuration loaded: " + this.host + ":" + this.port);
     }
-    
-    // ========================================================================
-    // IPersistenceClient implementation
-    // ========================================================================
     
     @Override
     public boolean connectClient() {
+        if (this.isConnected) {
+            _Logger.warning("Redis client already connected.");
+            return true;
+        }
+        
         try {
-            if (this.jedis != null && this.jedis.isConnected()) {
-                _Logger.warning("Redis client is already connected.");
-                return true;
-            }
+            this.jedisClient = new Jedis(this.host, this.port);
+            this.jedisClient.connect();
             
-            if (this.jedis == null) {
-                this.jedis = new Jedis(this.host, this.port);
-            }
-            
-            // Test connection with PING
-            String response = this.jedis.ping();
+            // Test connection with ping
+            String response = this.jedisClient.ping();
             
             if ("PONG".equalsIgnoreCase(response)) {
+                this.isConnected = true;
                 _Logger.info("Successfully connected to Redis at " + 
                     this.host + ":" + this.port);
                 return true;
             } else {
-                _Logger.warning("Redis connection test failed. Response: " + response);
+                _Logger.warning("Redis connection test failed. Unexpected response: " + response);
                 return false;
             }
+            
         } catch (JedisException e) {
-            _Logger.log(Level.SEVERE, "Failed to connect to Redis.", e);
+            _Logger.log(Level.SEVERE, "Failed to connect to Redis at " + 
+                this.host + ":" + this.port, e);
+            this.isConnected = false;
             return false;
         }
     }
     
     @Override
     public boolean disconnectClient() {
+        if (!this.isConnected) {
+            _Logger.warning("Redis client already disconnected.");
+            return true;
+        }
+        
         try {
-            if (this.jedis == null || !this.jedis.isConnected()) {
-                _Logger.warning("Redis client is already disconnected.");
+            if (this.jedisClient != null) {
+                this.jedisClient.close();
+                this.isConnected = false;
+                _Logger.info("Successfully disconnected from Redis.");
                 return true;
             }
-            
-            this.jedis.close();
-            _Logger.info("Successfully disconnected from Redis.");
             return true;
+            
         } catch (JedisException e) {
             _Logger.log(Level.SEVERE, "Failed to disconnect from Redis.", e);
             return false;
@@ -133,86 +118,80 @@ public class RedisPersistenceAdapter implements IPersistenceClient {
     
     @Override
     public ActuatorData[] getActuatorData(String topic, Date startDate, Date endDate) {
-        if (topic == null || topic.isEmpty()) {
-            _Logger.warning("Topic is null or empty. Cannot retrieve ActuatorData.");
+        if (!this.isConnected) {
+            _Logger.warning("Cannot retrieve data - Redis client not connected.");
             return new ActuatorData[0];
         }
         
+        List<ActuatorData> dataList = new ArrayList<>();
+        
         try {
-            if (this.jedis == null || !this.jedis.isConnected()) {
-                _Logger.warning("Redis client is not connected. Cannot retrieve data.");
-                return new ActuatorData[0];
-            }
-            
-            List<ActuatorData> dataList = new ArrayList<>();
-            
-            // Get all keys matching the topic pattern
-            String pattern = topic + ":*";
-            Set<String> keys = this.jedis.keys(pattern);
+            String pattern = generateTopicKey(topic) + ":actuator:*";
+            Set<String> keys = this.jedisClient.keys(pattern);
             
             for (String key : keys) {
-                String jsonData = this.jedis.get(key);
+                String jsonData = this.jedisClient.get(key);
                 if (jsonData != null && !jsonData.isEmpty()) {
                     ActuatorData data = this.dataUtil.jsonToActuatorData(jsonData);
                     
-                    // Filter by date range if provided
-                    if (data != null && isWithinDateRange(data.getTimeStamp(), startDate, endDate)) {
-                        dataList.add(data);
+                    if (data != null) {
+                        // Filter by date range if provided
+                        if (isWithinDateRange(data.getTimeStamp(), startDate, endDate)) {
+                            dataList.add(data);
+                        }
                     }
                 }
             }
             
-            _Logger.info("Retrieved " + dataList.size() + " ActuatorData entries for topic: " + topic);
-            return dataList.toArray(new ActuatorData[0]);
+            _Logger.info("Retrieved " + dataList.size() + " ActuatorData records for topic: " + topic);
+            
         } catch (Exception e) {
-            _Logger.log(Level.SEVERE, "Failed to retrieve ActuatorData for topic: " + topic, e);
-            return new ActuatorData[0];
+            _Logger.log(Level.SEVERE, "Failed to retrieve ActuatorData from Redis.", e);
         }
+        
+        return dataList.toArray(new ActuatorData[0]);
     }
     
     @Override
     public SensorData[] getSensorData(String topic, Date startDate, Date endDate) {
-        if (topic == null || topic.isEmpty()) {
-            _Logger.warning("Topic is null or empty. Cannot retrieve SensorData.");
+        if (!this.isConnected) {
+            _Logger.warning("Cannot retrieve data - Redis client not connected.");
             return new SensorData[0];
         }
         
+        List<SensorData> dataList = new ArrayList<>();
+        
         try {
-            if (this.jedis == null || !this.jedis.isConnected()) {
-                _Logger.warning("Redis client is not connected. Cannot retrieve data.");
-                return new SensorData[0];
-            }
-            
-            List<SensorData> dataList = new ArrayList<>();
-            
-            // Get all keys matching the topic pattern
-            String pattern = topic + ":*";
-            Set<String> keys = this.jedis.keys(pattern);
+            String pattern = generateTopicKey(topic) + ":sensor:*";
+            Set<String> keys = this.jedisClient.keys(pattern);
             
             for (String key : keys) {
-                String jsonData = this.jedis.get(key);
+                String jsonData = this.jedisClient.get(key);
                 if (jsonData != null && !jsonData.isEmpty()) {
                     SensorData data = this.dataUtil.jsonToSensorData(jsonData);
                     
-                    // Filter by date range if provided
-                    if (data != null && isWithinDateRange(data.getTimeStamp(), startDate, endDate)) {
-                        dataList.add(data);
+                    if (data != null) {
+                        // Filter by date range if provided
+                        if (isWithinDateRange(data.getTimeStamp(), startDate, endDate)) {
+                            dataList.add(data);
+                        }
                     }
                 }
             }
             
-            _Logger.info("Retrieved " + dataList.size() + " SensorData entries for topic: " + topic);
-            return dataList.toArray(new SensorData[0]);
+            _Logger.info("Retrieved " + dataList.size() + " SensorData records for topic: " + topic);
+            
         } catch (Exception e) {
-            _Logger.log(Level.SEVERE, "Failed to retrieve SensorData for topic: " + topic, e);
-            return new SensorData[0];
+            _Logger.log(Level.SEVERE, "Failed to retrieve SensorData from Redis.", e);
         }
+        
+        return dataList.toArray(new SensorData[0]);
     }
     
     @Override
     public boolean storeData(String topic, int qos, ActuatorData... data) {
-        if (topic == null || topic.isEmpty()) {
-            _Logger.warning("Topic is null or empty. Cannot store ActuatorData.");
+        if (!this.isConnected) {
+            _Logger.warning("Cannot store data - Redis client not connected.");
             return false;
         }
         
@@ -222,42 +201,26 @@ public class RedisPersistenceAdapter implements IPersistenceClient {
         }
         
         try {
-            if (this.jedis == null || !this.jedis.isConnected()) {
-                _Logger.warning("Redis client is not connected. Cannot store data.");
-                return false;
-            }
-            
-            int successCount = 0;
-            
             for (ActuatorData actuatorData : data) {
-                if (actuatorData != null) {
-                    String jsonData = this.dataUtil.actuatorDataToJson(actuatorData);
-                    String key = topic + ":" + System.currentTimeMillis() + ":" + actuatorData.getName();
-                    
-                    String result = this.jedis.set(key, jsonData);
-                    
-                    if ("OK".equalsIgnoreCase(result)) {
-                        successCount++;
-                        // Notify listeners after successful storage
-                        notifyListeners(ActuatorData.class, topic, actuatorData);
-                    }
-                }
+                String key = generateDataKey(topic, "actuator", actuatorData.getTimeStamp());
+                String jsonData = this.dataUtil.actuatorDataToJson(actuatorData);
+                
+                this.jedisClient.set(key, jsonData);
             }
             
-            _Logger.info("Stored " + successCount + " of " + data.length + 
-                " ActuatorData entries for topic: " + topic);
+            _Logger.info("Stored " + data.length + " ActuatorData records for topic: " + topic);
+            return true;
             
-            return successCount == data.length;
         } catch (Exception e) {
-            _Logger.log(Level.SEVERE, "Failed to store ActuatorData for topic: " + topic, e);
+            _Logger.log(Level.SEVERE, "Failed to store ActuatorData to Redis.", e);
             return false;
         }
     }
     
     @Override
     public boolean storeData(String topic, int qos, SensorData... data) {
-        if (topic == null || topic.isEmpty()) {
-            _Logger.warning("Topic is null or empty. Cannot store SensorData.");
+        if (!this.isConnected) {
+            _Logger.warning("Cannot store data - Redis client not connected.");
             return false;
         }
         
@@ -267,42 +230,26 @@ public class RedisPersistenceAdapter implements IPersistenceClient {
         }
         
         try {
-            if (this.jedis == null || !this.jedis.isConnected()) {
-                _Logger.warning("Redis client is not connected. Cannot store data.");
-                return false;
-            }
-            
-            int successCount = 0;
-            
             for (SensorData sensorData : data) {
-                if (sensorData != null) {
-                    String jsonData = this.dataUtil.sensorDataToJson(sensorData);
-                    String key = topic + ":" + System.currentTimeMillis() + ":" + sensorData.getName();
-                    
-                    String result = this.jedis.set(key, jsonData);
-                    
-                    if ("OK".equalsIgnoreCase(result)) {
-                        successCount++;
-                        // Notify listeners after successful storage
-                        notifyListeners(SensorData.class, topic, sensorData);
-                    }
-                }
+                String key = generateDataKey(topic, "sensor", sensorData.getTimeStamp());
+                String jsonData = this.dataUtil.sensorDataToJson(sensorData);
+                
+                this.jedisClient.set(key, jsonData);
             }
             
-            _Logger.info("Stored " + successCount + " of " + data.length + 
-                " SensorData entries for topic: " + topic);
+            _Logger.info("Stored " + data.length + " SensorData records for topic: " + topic);
+            return true;
             
-            return successCount == data.length;
         } catch (Exception e) {
-            _Logger.log(Level.SEVERE, "Failed to store SensorData for topic: " + topic, e);
+            _Logger.log(Level.SEVERE, "Failed to store SensorData to Redis.", e);
             return false;
         }
     }
     
     @Override
     public boolean storeData(String topic, int qos, SystemPerformanceData... data) {
-        if (topic == null || topic.isEmpty()) {
-            _Logger.warning("Topic is null or empty. Cannot store SystemPerformanceData.");
+        if (!this.isConnected) {
+            _Logger.warning("Cannot store data - Redis client not connected.");
             return false;
         }
         
@@ -312,165 +259,61 @@ public class RedisPersistenceAdapter implements IPersistenceClient {
         }
         
         try {
-            if (this.jedis == null || !this.jedis.isConnected()) {
-                _Logger.warning("Redis client is not connected. Cannot store data.");
-                return false;
+            for (SystemPerformanceData perfData : data) {
+                String key = generateDataKey(topic, "sysperf", perfData.getTimeStamp());
+                String jsonData = this.dataUtil.systemPerformanceDataToJson(perfData);
+                
+                this.jedisClient.set(key, jsonData);
             }
             
-            int successCount = 0;
+            _Logger.info("Stored " + data.length + " SystemPerformanceData records for topic: " + topic);
+            return true;
             
-            for (SystemPerformanceData sysPerfData : data) {
-                if (sysPerfData != null) {
-                    String jsonData = this.dataUtil.systemPerformanceDataToJson(sysPerfData);
-                    String key = topic + ":" + System.currentTimeMillis() + ":" + sysPerfData.getName();
-                    
-                    String result = this.jedis.set(key, jsonData);
-                    
-                    if ("OK".equalsIgnoreCase(result)) {
-                        successCount++;
-                    }
-                }
-            }
-            
-            _Logger.info("Stored " + successCount + " of " + data.length + 
-                " SystemPerformanceData entries for topic: " + topic);
-            
-            return successCount == data.length;
         } catch (Exception e) {
-            _Logger.log(Level.SEVERE, "Failed to store SystemPerformanceData for topic: " + topic, e);
+            _Logger.log(Level.SEVERE, "Failed to store SystemPerformanceData to Redis.", e);
             return false;
         }
     }
     
     @Override
-    @SuppressWarnings("rawtypes")
     public void registerDataStorageListener(
-        Class dataType, 
-        IPersistenceListener listener, 
-        String... topics) {
-        
-        if (listener == null) {
-            _Logger.warning("Listener is null. Cannot register.");
-            return;
-        }
-        
-        if (dataType == null) {
-            _Logger.warning("DataType is null. Cannot register listener.");
-            return;
-        }
-        
-        try {
-            // Add listener to the map by data type
-            if (!this.listenerMap.containsKey(dataType)) {
-                this.listenerMap.put(dataType, new ArrayList<>());
-            }
-            
-            List<IPersistenceListener> listeners = this.listenerMap.get(dataType);
-            if (!listeners.contains(listener)) {
-                listeners.add(listener);
-            }
-            
-            // Store topics for this listener
-            if (topics != null && topics.length > 0) {
-                List<String> topicList = new ArrayList<>();
-                for (String topic : topics) {
-                    if (topic != null && !topic.isEmpty()) {
-                        topicList.add(topic);
-                    }
-                }
-                this.topicMap.put(listener, topicList);
-            }
-            
-            _Logger.info("Successfully registered listener for data type: " + 
-                dataType.getSimpleName() + 
-                (topics != null && topics.length > 0 ? 
-                    " with " + topics.length + " topic(s)" : ""));
-            
-        } catch (Exception e) {
-            _Logger.log(Level.SEVERE, "Failed to register listener for data type: " + 
-                dataType.getSimpleName(), e);
-        }
+            Class dataType, 
+            IPersistenceListener listener, 
+            String... topics) {
+        // Not implemented for Redis persistence adapter
+        _Logger.warning("registerDataStorageListener not implemented for Redis adapter.");
     }
     
-    /**
-     * Unregisters a persistence listener.
-     * 
-     * @param listener The listener to unregister
-     */
-    public void unregisterDataStorageListener(IPersistenceListener listener) {
-        if (listener == null) {
-            _Logger.warning("Listener is null. Cannot unregister.");
-            return;
-        }
-        
-        boolean removed = false;
-        
-        // Remove from all data type lists
-        for (List<IPersistenceListener> listeners : this.listenerMap.values()) {
-            if (listeners.remove(listener)) {
-                removed = true;
-            }
-        }
-        
-        // Remove topic mappings
-        this.topicMap.remove(listener);
-        
-        if (removed) {
-            _Logger.info("Successfully unregistered listener.");
-        } else {
-            _Logger.warning("Listener was not registered.");
-        }
-    }
-    
-    /**
-     * Notifies registered listeners when data is stored.
-     * 
-     * @param dataType The class type of the data
-     * @param topic The topic associated with the data
-     * @param data The data that was stored
-     */
-    @SuppressWarnings("rawtypes")
-    private void notifyListeners(Class dataType, String topic, Object data) {
-        if (!this.listenerMap.containsKey(dataType)) {
-            return;
-        }
-        
-        List<IPersistenceListener> listeners = this.listenerMap.get(dataType);
-        
-        for (IPersistenceListener listener : listeners) {
-            // Check if listener is registered for this topic
-            List<String> registeredTopics = this.topicMap.get(listener);
-            
-            if (registeredTopics == null || registeredTopics.isEmpty() || 
-                registeredTopics.contains(topic)) {
-                
-                try {
-                    // Call the listener's callback method if it exists
-                    // Since IPersistenceListener may not have onDataStored method,
-                    // we just log the notification
-                    _Logger.fine("Notifying listener of data storage for type: " + 
-                        dataType.getSimpleName() + " on topic: " + topic);
-                } catch (Exception e) {
-                    _Logger.log(Level.WARNING, 
-                        "Listener threw exception during notification", e);
-                }
-            }
-        }
-    }
-    
-    // ========================================================================
     // Private helper methods
-    // ========================================================================
     
     /**
-     * Checks if a timestamp falls within the specified date range.
-     * 
-     * @param timestamp The timestamp to check (in milliseconds since epoch)
-     * @param startDate The start date (inclusive), or null for no lower bound
-     * @param endDate The end date (inclusive), or null for no upper bound
-     * @return true if the timestamp is within range, false otherwise
+     * Generates a Redis key prefix from a topic string.
+     * Replaces forward slashes with colons for Redis key hierarchy.
+     */
+    private String generateTopicKey(String topic) {
+        if (topic == null || topic.isEmpty()) {
+            return "gda:data";
+        }
+        return "gda:data:" + topic.replace("/", ":");
+    }
+    
+    /**
+     * Generates a unique Redis key for storing data.
+     * Format: gda:data:{topic}:{dataType}:{timestamp}
+     */
+    private String generateDataKey(String topic, String dataType, long timestamp) {
+        return generateTopicKey(topic) + ":" + dataType + ":" + timestamp;
+    }
+    
+    /**
+     * Checks if a timestamp falls within a date range.
+     * Null dates are treated as unbounded (no filter applied).
      */
     private boolean isWithinDateRange(long timestamp, Date startDate, Date endDate) {
+        if (startDate == null && endDate == null) {
+            return true;
+        }
+        
         if (startDate != null && timestamp < startDate.getTime()) {
             return false;
         }

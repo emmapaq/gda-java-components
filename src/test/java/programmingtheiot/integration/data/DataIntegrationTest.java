@@ -1,10 +1,4 @@
-/**
- * This class is part of the Programming the Internet of Things
- * project, and is available via the MIT License, which can be
- * found in the LICENSE file at the top level of this repository.
- * 
- * Copyright (c) 2020 - 2025 by Andrew D. King
- */
+
 
 package programmingtheiot.integration.data;
 
@@ -32,15 +26,7 @@ import programmingtheiot.data.ActuatorData;
 import programmingtheiot.data.SensorData;
 import programmingtheiot.data.SystemPerformanceData;
 
-/**
- * This test case class contains very basic integration tests for
- * DataUtil and data container classes for use between the CDA and
- * GDA to verify JSON compatibility. It should not be considered complete,
- * but serve as a starting point for the student implementing
- * additional functionality within their Programming the IoT
- * environment.
- *
- */
+
 public class DataIntegrationTest
 {
 	// static

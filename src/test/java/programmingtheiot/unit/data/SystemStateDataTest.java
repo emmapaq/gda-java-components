@@ -22,14 +22,7 @@ import programmingtheiot.data.SensorData;
 import programmingtheiot.data.SystemPerformanceData;
 import programmingtheiot.data.SystemStateData;
 
-/**
- * This test case class contains very basic unit tests for
- * SystemStateData. It should not be considered complete,
- * but serve as a starting point for the student implementing
- * additional functionality within their Programming the IoT
- * environment.
- *
- */
+
 public class SystemStateDataTest
 {
 	// static
@@ -61,14 +54,14 @@ public class SystemStateDataTest
 	}
 	
 	
-	// test methods
-	
-	/**
-	 * NOTE: SystemStateData is not required for the exercises in Programming the IoT.
-	 * The test cases below are disabled by default, but can easily be re-enabled by
-	 * uncommenting the @Test attribute if SystemStateData is optionally implemented.
-	 * 
-	 */
+	@Test
+	public void testDiskUtilizationSetAndGet()
+	{
+	    SystemPerformanceData spd = new SystemPerformanceData();
+	    spd.setDiskUtilization(42.5f);
+	    assertEquals(42.5f, spd.getDiskUtilization(), 0.01f);
+	}
+
 	
 //	@Test
 	public void testDefaultValues()

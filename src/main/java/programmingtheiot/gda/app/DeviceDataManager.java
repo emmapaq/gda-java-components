@@ -50,18 +50,21 @@ public class DeviceDataManager implements IDataMessageListener {
     public DeviceDataManager() {
         super();
         
-        // Initialize Redis persistence client
-        this.redisClient = new RedisPersistenceAdapter();
-        
         // Check if persistence is enabled
         this.enablePersistence = configUtil.getBoolean(
-            "gateway.GatewayDeviceApp",
-            "enablePersistence");
+            ConfigConst.GATEWAY_DEVICE,
+            ConfigConst.ENABLE_PERSISTENCE_KEY);
+        
+        // Initialize Redis persistence client if enabled
+        if (this.enablePersistence) {
+            this.redisClient = new RedisPersistenceAdapter();
+            _Logger.info("Redis persistence client created.");
+        }
         
         // Check if MQTT client is enabled
         this.enableMqttClient = configUtil.getBoolean(
-            "gateway.GatewayDeviceApp",
-            "enableMqttClient");
+            ConfigConst.GATEWAY_DEVICE,
+            ConfigConst.ENABLE_MQTT_CLIENT_KEY);
         
         if (this.enableMqttClient) {
             this.mqttClient = new MqttClientConnector();
@@ -70,8 +73,8 @@ public class DeviceDataManager implements IDataMessageListener {
         
         // Check if CoAP server is enabled
         this.enableCoapServer = configUtil.getBoolean(
-            "gateway.GatewayDeviceApp",
-            "enableCoapServer");
+            ConfigConst.GATEWAY_DEVICE,
+            ConfigConst.ENABLE_COAP_SERVER_KEY);
         
         if (this.enableCoapServer) {
             this.coapServer = new CoapServerGateway(this);

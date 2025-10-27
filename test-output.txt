@@ -1,0 +1,848 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36mprogrammingtheiot.gda:gateway-device-app[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding Gateway Device App 0.0.1[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/emmapaq/piot/gda-java-components/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;33mWARNING[m] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[[1;34mINFO[m] Compiling 38 source files to /home/emmapaq/piot/gda-java-components/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;33mWARNING[m] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[[1;34mINFO[m] Compiling 29 source files to /home/emmapaq/piot/gda-java-components/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running programmingtheiot.unit.system.[1mSystemCpuUtilTaskTest[m
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemCpuUtilTaskTest testGetTelemetryValue
+INFO: Test 1: CPU Util: 0.0
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemCpuUtilTaskTest testGetTelemetryValue
+INFO: Test 2: CPU Util: 0.0
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemCpuUtilTaskTest testGetTelemetryValue
+INFO: Test 3: CPU Util: 0.0
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemCpuUtilTaskTest testGetTelemetryValue
+INFO: Test 4: CPU Util: 0.0
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemCpuUtilTaskTest testGetTelemetryValue
+INFO: Test 5: CPU Util: 0.0
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 s - in programmingtheiot.unit.system.[1mSystemCpuUtilTaskTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.system.[1mSystemMemUtilTaskTest[m
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemMemUtilTaskTest testGetTelemetryValue
+INFO: Test 1: Memory Util: 0.32885575
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemMemUtilTaskTest testGetTelemetryValue
+INFO: Test 2: Memory Util: 0.32885575
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemMemUtilTaskTest testGetTelemetryValue
+INFO: Test 3: Memory Util: 0.32885575
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemMemUtilTaskTest testGetTelemetryValue
+INFO: Test 4: Memory Util: 0.32885575
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.system.SystemMemUtilTaskTest testGetTelemetryValue
+INFO: Test 5: Memory Util: 0.32885575
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in programmingtheiot.unit.system.[1mSystemMemUtilTaskTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.data.[1mDataUtilTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 s - in programmingtheiot.unit.data.[1mDataUtilTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.data.[1mSystemPerformanceDataTest[m
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.data.SystemPerformanceDataTest testFullUpdate
+INFO: Created first data obj: Name: SystemPerformanceData
+Type ID: 0
+Location ID: gatewaydevice001
+Time Stamp: 1761488428652
+Status Code: 0
+Has Error: false
+CPU Utilization: 0.0
+Disk Utilization: 0.0
+Memory Utilization: 0.0
+
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.data.SystemPerformanceDataTest testFullUpdate
+INFO: Created second data obj: Name: SystemPerformanceDataFooBar
+Type ID: 0
+Location ID: gatewaydevice001
+Time Stamp: 1761488428665
+Status Code: 0
+Has Error: false
+CPU Utilization: 10.0
+Disk Utilization: 10.0
+Memory Utilization: 10.0
+
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.data.SystemPerformanceDataTest testFullUpdate
+INFO: Updated second data obj: Name: SystemPerformanceDataFooBar
+Type ID: 0
+Location ID: gatewaydevice001
+Time Stamp: 1761488428665
+Status Code: 0
+Has Error: false
+CPU Utilization: 10.0
+Disk Utilization: 10.0
+Memory Utilization: 10.0
+
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.data.SystemPerformanceDataTest testDefaultValues
+INFO: Created data obj: Name: SystemPerformanceData
+Type ID: 0
+Location ID: gatewaydevice001
+Time Stamp: 1761488428668
+Status Code: 0
+Has Error: false
+CPU Utilization: 0.0
+Disk Utilization: 0.0
+Memory Utilization: 0.0
+
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.data.SystemPerformanceDataTest testParameterUpdates
+INFO: Created data obj: Name: SystemPerformanceDataFooBar
+Type ID: 0
+Location ID: gatewaydevice001
+Time Stamp: 1761488428671
+Status Code: 0
+Has Error: false
+CPU Utilization: 10.0
+Disk Utilization: 10.0
+Memory Utilization: 10.0
+
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in programmingtheiot.unit.data.[1mSystemPerformanceDataTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.data.[1mSystemStateDataTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in programmingtheiot.unit.data.[1mSystemStateDataTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.data.[1mTimeAndValuePayloadDataTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in programmingtheiot.unit.data.[1mTimeAndValuePayloadDataTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.data.[1mActuatorDataTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in programmingtheiot.unit.data.[1mActuatorDataTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.data.[1mBaseIotDataTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in programmingtheiot.unit.data.[1mBaseIotDataTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.data.[1mSensorDataTest[m
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.data.SensorDataTest testDifferentDataInstanceUpdate
+INFO: Name: Foobar
+Type ID: 0
+Location ID: gatewaydevice001
+Time Stamp: 1761488428707
+Status Code: 0
+Has Error: false
+Value: 0.0
+
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.data.SensorDataTest testDifferentDataInstanceUpdate
+INFO: Name: Foobar
+Type ID: 0
+Location ID: gatewaydevice001
+Time Stamp: 1761488428707
+Status Code: 0
+Has Error: false
+CPU Utilization: 52.5
+Disk Utilization: 0.0
+Memory Utilization: 21.4
+
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m4[m, [1;31mFailures: [0;1;31m2[m, Errors: 0, Skipped: 0, Time elapsed: 0.011 s[1;31m <<< FAILURE![m - in programmingtheiot.unit.data.[1mSensorDataTest[m
+[[1;31mERROR[m] programmingtheiot.unit.data.SensorDataTest.testFullUpdate  Time elapsed: 0 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[DefaultSensor]> but was:<[Not Set]>
+	at programmingtheiot.unit.data.SensorDataTest.testFullUpdate(SensorDataTest.java:79)
+
+[[1;31mERROR[m] programmingtheiot.unit.data.SensorDataTest.testDefaultValues  Time elapsed: 0.002 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[DefaultSensor]> but was:<[Not Set]>
+	at programmingtheiot.unit.data.SensorDataTest.testDefaultValues(SensorDataTest.java:59)
+
+[[1;34mINFO[m] Running programmingtheiot.unit.common.[1mConfigUtilDefaultTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m6[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in programmingtheiot.unit.common.[1mConfigUtilDefaultTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.common.[1mConfigUtilCustomTest[m
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.common.ConfigUtilCustomTest setUpBeforeClass
+INFO: Test file path: /home/emmapaq/piot/gda-java-components/src/test/java/programmingtheiot/unit/common/ValidTestConfig.props
+Oct 26, 2025 10:20:28 AM programmingtheiot.common.ConfigUtil getCredentials
+INFO: 
+
+==========
+
+Attempting to load cred file: /home/emmapaq/piot/gda-java-components/src/test/java/programmingtheiot/unit/common/DummyCredFile.props
+
+==========
+
+
+Oct 26, 2025 10:20:28 AM programmingtheiot.common.ConfigUtil getCredentials
+INFO: Successfully loaded credentials from file: src/test/java/programmingtheiot/unit/common/DummyCredFile.props
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m7[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in programmingtheiot.unit.common.[1mConfigUtilCustomTest[m
+[[1;34mINFO[m] Running programmingtheiot.unit.common.[1mResourceNameTest[m
+Oct 26, 2025 10:20:28 AM programmingtheiot.unit.common.ResourceNameTest testListAllResourceNames
+INFO: Resource name listing:
+PIOT/ConstrainedDevice/UpdateMsg
+PIOT/ConstrainedDevice/MediaMsg
+PIOT/ConstrainedDevice/SensorMsg
+PIOT/ConstrainedDevice/ActuatorCmd
+PIOT/ConstrainedDevice/ActuatorResponse
+PIOT/ConstrainedDevice/MgmtStatusMsg
+PIOT/ConstrainedDevice/MgmtStatusCmd
+PIOT/ConstrainedDevice/ResourceReg
+PIOT/ConstrainedDevice/SystemPerfMsg
+PIOT/GatewayDevice/UpdateMsg
+PIOT/GatewayDevice/MediaMsg
+PIOT/GatewayDevice/MgmtStatusMsg
+PIOT/GatewayDevice/MgmtStatusCmd
+PIOT/GatewayDevice/ResourceReg
+PIOT/GatewayDevice/SystemPerfMsg
+
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m2[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in programmingtheiot.unit.common.[1mResourceNameTest[m
+[[1;34mINFO[m] Running programmingtheiot.integration.app.[1mGatewayDeviceAppTest[m
+Oct 26, 2025 10:20:28 AM programmingtheiot.integration.app.GatewayDeviceAppTest setUpBeforeClass
+INFO: Starting GatewayDeviceAppTest suite...
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.app.GatewayDeviceApp <init>
+INFO: Initializing GDA...
+Oct 26, 2025 10:20:28 AM programmingtheiot.integration.app.GatewayDeviceAppTest testStartAndStopGatewayApp
+INFO: Starting GatewayDeviceApp...
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.app.GatewayDeviceApp startApp
+INFO: Starting GDA...
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.connection.RedisPersistenceAdapter <init>
+INFO: Redis Persistence Adapter initialized with host: localhost, port: 6379
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.connection.RedisPersistenceAdapter <init>
+INFO: Jedis client created successfully.
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: DeviceDataManager initialized.
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: Persistence enabled: false
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: MQTT client enabled: false
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: CoAP server enabled: false
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.app.DeviceDataManager startManager
+INFO: Starting DeviceDataManager...
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.app.DeviceDataManager startManager
+INFO: DeviceDataManager started.
+Oct 26, 2025 10:20:28 AM programmingtheiot.gda.app.GatewayDeviceApp startApp
+INFO: GDA started successfully.
+Oct 26, 2025 10:20:33 AM programmingtheiot.integration.app.GatewayDeviceAppTest testStartAndStopGatewayApp
+INFO: Stopping GatewayDeviceApp...
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.GatewayDeviceApp stopApp
+INFO: Stopping GDA...
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.DeviceDataManager stopManager
+INFO: Stopping DeviceDataManager...
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.DeviceDataManager stopManager
+INFO: DeviceDataManager stopped.
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.GatewayDeviceApp stopApp
+INFO: GDA stopped successfully.
+Oct 26, 2025 10:20:33 AM programmingtheiot.integration.app.GatewayDeviceAppTest testStartAndStopGatewayApp
+INFO: GatewayDeviceApp stopped successfully.
+Oct 26, 2025 10:20:33 AM programmingtheiot.integration.app.GatewayDeviceAppTest tearDownAfterClass
+INFO: Completed GatewayDeviceAppTest suite.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.061 s - in programmingtheiot.integration.app.[1mGatewayDeviceAppTest[m
+[[1;34mINFO[m] Running programmingtheiot.integration.app.[1mDeviceDataManagerWithCommsTest[m
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.connection.RedisPersistenceAdapter <init>
+INFO: Redis Persistence Adapter initialized with host: localhost, port: 6379
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.connection.RedisPersistenceAdapter <init>
+INFO: Jedis client created successfully.
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: DeviceDataManager initialized.
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: Persistence enabled: false
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: MQTT client enabled: false
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: CoAP server enabled: false
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.DeviceDataManager startManager
+INFO: Starting DeviceDataManager...
+Oct 26, 2025 10:20:33 AM programmingtheiot.gda.app.DeviceDataManager startManager
+INFO: DeviceDataManager started.
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.app.DeviceDataManager stopManager
+INFO: Stopping DeviceDataManager...
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.app.DeviceDataManager stopManager
+INFO: DeviceDataManager stopped.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 60.082 s - in programmingtheiot.integration.app.[1mDeviceDataManagerWithCommsTest[m
+[[1;34mINFO[m] Running programmingtheiot.integration.app.[1mDeviceDataManagerNoCommsTest[m
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.connection.RedisPersistenceAdapter <init>
+INFO: Redis Persistence Adapter initialized with host: localhost, port: 6379
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.connection.RedisPersistenceAdapter <init>
+INFO: Jedis client created successfully.
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: DeviceDataManager initialized.
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: Persistence enabled: false
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: MQTT client enabled: false
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: CoAP server enabled: false
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.app.DeviceDataManager startManager
+INFO: Starting DeviceDataManager...
+Oct 26, 2025 10:21:33 AM programmingtheiot.gda.app.DeviceDataManager startManager
+INFO: DeviceDataManager started.
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.app.DeviceDataManager stopManager
+INFO: Stopping DeviceDataManager...
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.app.DeviceDataManager stopManager
+INFO: DeviceDataManager stopped.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 60.012 s - in programmingtheiot.integration.app.[1mDeviceDataManagerNoCommsTest[m
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mCoapClientConnectorTest[m
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m9[m, [1;31mFailures: [0;1;31m9[m, Errors: 0, Skipped: 0, Time elapsed: 0.014 s[1;31m <<< FAILURE![m - in programmingtheiot.integration.connection.[1mCoapClientConnectorTest[m
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover(CoapClientConnectorTest.java:100)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testPutRequestCon  Time elapsed: 0.006 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testPutRequestCon(CoapClientConnectorTest.java:176)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testPutRequestNon  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testPutRequestNon(CoapClientConnectorTest.java:194)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testPostRequestCon  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testPostRequestCon(CoapClientConnectorTest.java:140)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testPostRequestNon  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testPostRequestNon(CoapClientConnectorTest.java:158)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testGetRequestCon  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testGetRequestCon(CoapClientConnectorTest.java:111)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testGetRequestNon  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testGetRequestNon(CoapClientConnectorTest.java:122)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testDeleteRequestCon  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testDeleteRequestCon(CoapClientConnectorTest.java:205)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testDeleteRequestNon  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testDeleteRequestNon(CoapClientConnectorTest.java:216)
+
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mMqttClientControlPacketTest[m
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m3[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in programmingtheiot.integration.connection.[1mMqttClientControlPacketTest[m
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mPersistenceClientAdapterTest[m
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m7[m, [1;31mFailures: [0;1;31m7[m, Errors: 0, Skipped: 0, Time elapsed: 0.004 s[1;31m <<< FAILURE![m - in programmingtheiot.integration.connection.[1mPersistenceClientAdapterTest[m
+[[1;31mERROR[m] programmingtheiot.integration.connection.PersistenceClientAdapterTest.testGetSensorData  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testGetSensorData(PersistenceClientAdapterTest.java:114)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.PersistenceClientAdapterTest.testDisconnectClient  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testDisconnectClient(PersistenceClientAdapterTest.java:96)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntActuatorDataArray  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntActuatorDataArray(PersistenceClientAdapterTest.java:123)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntSensorDataArray  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntSensorDataArray(PersistenceClientAdapterTest.java:132)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.PersistenceClientAdapterTest.testConnectClient  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testConnectClient(PersistenceClientAdapterTest.java:87)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.PersistenceClientAdapterTest.testGetActuatorData  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testGetActuatorData(PersistenceClientAdapterTest.java:105)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntSystemPerformanceDataArray  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: Not yet implemented
+	at programmingtheiot.integration.connection.PersistenceClientAdapterTest.testStoreDataStringIntSystemPerformanceDataArray(PersistenceClientAdapterTest.java:141)
+
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mMqttClientConnectorTest[m
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m1[m, [1;31mFailures: [0;1;31m1[m, Errors: 0, Skipped: 0, Time elapsed: 0.001 s[1;31m <<< FAILURE![m - in programmingtheiot.integration.connection.[1mMqttClientConnectorTest[m
+[[1;31mERROR[m] programmingtheiot.integration.connection.MqttClientConnectorTest.testPublishAndSubscribe  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.MqttClientConnectorTest.testPublishAndSubscribe(MqttClientConnectorTest.java:103)
+
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mCloudClientConnectorTest[m
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.connection.RedisPersistenceAdapter <init>
+INFO: Redis Persistence Adapter initialized with host: localhost, port: 6379
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.connection.RedisPersistenceAdapter <init>
+INFO: Jedis client created successfully.
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: DeviceDataManager initialized.
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: Persistence enabled: false
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: MQTT client enabled: false
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.app.DeviceDataManager <init>
+INFO: CoAP server enabled: false
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.app.DeviceDataManager startManager
+INFO: Starting DeviceDataManager...
+Oct 26, 2025 10:22:33 AM programmingtheiot.gda.app.DeviceDataManager startManager
+INFO: DeviceDataManager started.
+Oct 26, 2025 10:23:33 AM programmingtheiot.gda.app.DeviceDataManager stopManager
+INFO: Stopping DeviceDataManager...
+Oct 26, 2025 10:23:33 AM programmingtheiot.gda.app.DeviceDataManager stopManager
+INFO: DeviceDataManager stopped.
+Oct 26, 2025 10:23:33 AM programmingtheiot.integration.connection.CloudClientConnectorTest testIntegratedCloudClientConnectAndDisconnect
+INFO: Test complete.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 60.008 s - in programmingtheiot.integration.connection.[1mCloudClientConnectorTest[m
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mCoapServerGatewayTest[m
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s - in programmingtheiot.integration.connection.[1mCoapServerGatewayTest[m
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mSmtpClientConnectorTest[m
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m1[m, [1;31mFailures: [0;1;31m1[m, Errors: 0, Skipped: 0, Time elapsed: 0.002 s[1;31m <<< FAILURE![m - in programmingtheiot.integration.connection.[1mSmtpClientConnectorTest[m
+[[1;31mERROR[m] programmingtheiot.integration.connection.SmtpClientConnectorTest.testSendMessage  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.SmtpClientConnectorTest.testSendMessage(SmtpClientConnectorTest.java:108)
+
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mCoapClientToServerConnectorTest[m
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m2[m, Failures: 0, [1;31mErrors: [0;1;31m2[m, Skipped: 0, Time elapsed: 0.008 s[1;31m <<< FAILURE![m - in programmingtheiot.integration.connection.[1mCoapClientToServerConnectorTest[m
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientToServerConnectorTest  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Configuration contains no definitions!
+	at programmingtheiot.integration.connection.CoapClientToServerConnectorTest.setUpBeforeClass(CoapClientToServerConnectorTest.java:60)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientToServerConnectorTest  Time elapsed: 0.001 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "programmingtheiot.gda.connection.CoapServerGateway.stopServer()" because "programmingtheiot.integration.connection.CoapClientToServerConnectorTest._ServerGateway" is null
+	at programmingtheiot.integration.connection.CoapClientToServerConnectorTest.tearDownAfterClass(CoapClientToServerConnectorTest.java:71)
+
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mCoapClientPerformanceTest[m
+Oct 26, 2025 10:23:34 AM programmingtheiot.integration.connection.CoapClientPerformanceTest testPutRequestCon
+INFO: Testing PUT - CON
+Oct 26, 2025 10:23:34 AM programmingtheiot.integration.connection.CoapClientPerformanceTest execTestPut
+INFO: PUT message - useCON = true [10000]: 1 ms
+Oct 26, 2025 10:23:34 AM programmingtheiot.integration.connection.CoapClientPerformanceTest testPutRequestNon
+INFO: Testing PUT - NON
+Oct 26, 2025 10:23:34 AM programmingtheiot.integration.connection.CoapClientPerformanceTest execTestPut
+INFO: PUT message - useCON = false [10000]: 1 ms
+Oct 26, 2025 10:23:34 AM programmingtheiot.integration.connection.CoapClientPerformanceTest testPostRequestCon
+INFO: Testing POST - CON
+Oct 26, 2025 10:23:34 AM programmingtheiot.integration.connection.CoapClientPerformanceTest execTestPost
+INFO: POST message - useCON = true [10000]: 1 ms
+Oct 26, 2025 10:23:34 AM programmingtheiot.integration.connection.CoapClientPerformanceTest testPostRequestNon
+INFO: Testing POST - NON
+Oct 26, 2025 10:23:34 AM programmingtheiot.integration.connection.CoapClientPerformanceTest execTestPost
+INFO: POST message - useCON = false [10000]: 1 ms
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m4[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in programmingtheiot.integration.connection.[1mCoapClientPerformanceTest[m
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mMqttClientPerformanceTest[m
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m4[m, [1;31mFailures: [0;1;31m4[m, Errors: 0, Skipped: 0, Time elapsed: 0.003 s[1;31m <<< FAILURE![m - in programmingtheiot.integration.connection.[1mMqttClientPerformanceTest[m
+[[1;31mERROR[m] programmingtheiot.integration.connection.MqttClientPerformanceTest.testPublishQoS0  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.MqttClientPerformanceTest.execTestPublish(MqttClientPerformanceTest.java:127)
+	at programmingtheiot.integration.connection.MqttClientPerformanceTest.testPublishQoS0(MqttClientPerformanceTest.java:98)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.MqttClientPerformanceTest.testPublishQoS1  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.MqttClientPerformanceTest.execTestPublish(MqttClientPerformanceTest.java:127)
+	at programmingtheiot.integration.connection.MqttClientPerformanceTest.testPublishQoS1(MqttClientPerformanceTest.java:107)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.MqttClientPerformanceTest.testPublishQoS2  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.MqttClientPerformanceTest.execTestPublish(MqttClientPerformanceTest.java:127)
+	at programmingtheiot.integration.connection.MqttClientPerformanceTest.testPublishQoS2(MqttClientPerformanceTest.java:116)
+
+[[1;31mERROR[m] programmingtheiot.integration.connection.MqttClientPerformanceTest.testConnectAndDisconnect  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.MqttClientPerformanceTest.testConnectAndDisconnect(MqttClientPerformanceTest.java:83)
+
+[[1;34mINFO[m] Running programmingtheiot.integration.system.[1mSystemPerformanceManagerTest[m
+Oct 26, 2025 10:23:34 AM programmingtheiot.gda.system.SystemPerformanceManager startManager
+INFO: SystemPerformanceManager is starting...
+Oct 26, 2025 10:23:35 AM programmingtheiot.gda.system.SystemPerformanceManager handleTelemetry
+INFO: CPU: 0.0%, Mem: 1.0863637%, Disk: 27.600597%
+Oct 26, 2025 10:24:34 AM programmingtheiot.gda.system.SystemPerformanceManager stopManager
+INFO: SystemPerformanceManager is stopped.
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m1[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 60.008 s - in programmingtheiot.integration.system.[1mSystemPerformanceManagerTest[m
+[[1;34mINFO[m] Running programmingtheiot.integration.data.[1mDataIntegrationTest[m
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest setUpBeforeClass
+WARNING: Failed to create GDA path hierarchy: null
+java.lang.NullPointerException
+	at java.base/java.io.File.<init>(File.java:278)
+	at programmingtheiot.integration.data.DataIntegrationTest.setUpBeforeClass(DataIntegrationTest.java:62)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testReadActuatorDataFromCdaDataPath
+INFO: 
+
+----- [ActuatorData JSON from file to object] -----
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testReadActuatorDataFromCdaDataPath
+WARNING: Failed to read file: null/ActuatorData.dat
+java.nio.file.NoSuchFileException: null/ActuatorData.dat
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3281)
+	at java.base/java.nio.file.Files.readString(Files.java:3359)
+	at programmingtheiot.integration.data.DataIntegrationTest.testReadActuatorDataFromCdaDataPath(DataIntegrationTest.java:188)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteSystemPerformanceDataToGdaDataPath
+INFO: 
+
+----- [SystemPerformanceData to JSON to file] -----
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteSystemPerformanceDataToGdaDataPath
+INFO: Sample SystemPerformanceData JSON (validated): {"cpuUtil":0.0,"diskUtil":0.0,"memUtil":0.0,"name":"SystemPerformanceData","typeID":0,"locationID":"Not Set","timeStamp":1761488674097,"statusCode":0,"hasError":false}
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteSystemPerformanceDataToGdaDataPath
+INFO: Writing SystemPerformanceData JSON to GDA data path: null/SystemPerformanceData.dat
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteSystemPerformanceDataToGdaDataPath
+WARNING: Failed to write file: null/SystemPerformanceData.dat
+java.nio.file.NoSuchFileException: null/SystemPerformanceData.dat
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.write(Files.java:3505)
+	at java.base/java.nio.file.Files.writeString(Files.java:3727)
+	at programmingtheiot.integration.data.DataIntegrationTest.testWriteSystemPerformanceDataToGdaDataPath(DataIntegrationTest.java:167)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testReadSystemPerformanceDataFromCdaDataPath
+INFO: 
+
+----- [SystemPerformanceData JSON from file to object] -----
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testReadSystemPerformanceDataFromCdaDataPath
+WARNING: Failed to read file: null/SystemPerformanceData.dat
+java.nio.file.NoSuchFileException: null/SystemPerformanceData.dat
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3281)
+	at java.base/java.nio.file.Files.readString(Files.java:3359)
+	at programmingtheiot.integration.data.DataIntegrationTest.testReadSystemPerformanceDataFromCdaDataPath(DataIntegrationTest.java:240)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteActuatorDataToGdaDataPath
+INFO: 
+
+----- [ActuatorData to JSON to file] -----
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteActuatorDataToGdaDataPath
+INFO: Sample ActuatorData JSON (validated): {"command":0,"value":0.0,"isResponse":false,"stateData":"","name":"Not Set","typeID":0,"locationID":"Not Set","timeStamp":1761488674105,"statusCode":0,"hasError":false}
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteActuatorDataToGdaDataPath
+INFO: Writing ActuatorData JSON to GDA data path: null/ActuatorData.dat
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteActuatorDataToGdaDataPath
+WARNING: Failed to write file: null/ActuatorData.dat
+java.nio.file.NoSuchFileException: null/ActuatorData.dat
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.write(Files.java:3505)
+	at java.base/java.nio.file.Files.writeString(Files.java:3727)
+	at programmingtheiot.integration.data.DataIntegrationTest.testWriteActuatorDataToGdaDataPath(DataIntegrationTest.java:115)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteSensorDataToGdaDataPath
+INFO: 
+
+----- [SensorData to JSON to file] -----
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteSensorDataToGdaDataPath
+INFO: Sample SensorData JSON (validated): {"value":0.0,"name":"DefaultSensor","typeID":0,"locationID":"Not Set","timeStamp":1761488674110,"statusCode":0,"hasError":false}
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteSensorDataToGdaDataPath
+INFO: Writing SensorData JSON to GDA data path: null/SensorData.dat
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testWriteSensorDataToGdaDataPath
+WARNING: Failed to write file: null/SensorData.dat
+java.nio.file.NoSuchFileException: null/SensorData.dat
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.write(Files.java:3505)
+	at java.base/java.nio.file.Files.writeString(Files.java:3727)
+	at programmingtheiot.integration.data.DataIntegrationTest.testWriteSensorDataToGdaDataPath(DataIntegrationTest.java:141)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testReadSensorDataFromCdaDataPath
+INFO: 
+
+----- [SensorData JSON from file to object] -----
+Oct 26, 2025 10:24:34 AM programmingtheiot.integration.data.DataIntegrationTest testReadSensorDataFromCdaDataPath
+WARNING: Failed to read file: null/SensorData.dat
+java.nio.file.NoSuchFileException: null/SensorData.dat
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:261)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3281)
+	at java.base/java.nio.file.Files.readString(Files.java:3359)
+	at programmingtheiot.integration.data.DataIntegrationTest.testReadSensorDataFromCdaDataPath(DataIntegrationTest.java:214)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m6[m, [1;31mFailures: [0;1;31m6[m, Errors: 0, Skipped: 0, Time elapsed: 0.022 s[1;31m <<< FAILURE![m - in programmingtheiot.integration.data.[1mDataIntegrationTest[m
+[[1;31mERROR[m] programmingtheiot.integration.data.DataIntegrationTest.testReadActuatorDataFromCdaDataPath  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: null/ActuatorData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testReadActuatorDataFromCdaDataPath(DataIntegrationTest.java:197)
+
+[[1;31mERROR[m] programmingtheiot.integration.data.DataIntegrationTest.testWriteSystemPerformanceDataToGdaDataPath  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: null/SystemPerformanceData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testWriteSystemPerformanceDataToGdaDataPath(DataIntegrationTest.java:171)
+
+[[1;31mERROR[m] programmingtheiot.integration.data.DataIntegrationTest.testReadSystemPerformanceDataFromCdaDataPath  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: null/SystemPerformanceData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testReadSystemPerformanceDataFromCdaDataPath(DataIntegrationTest.java:249)
+
+[[1;31mERROR[m] programmingtheiot.integration.data.DataIntegrationTest.testWriteActuatorDataToGdaDataPath  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: null/ActuatorData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testWriteActuatorDataToGdaDataPath(DataIntegrationTest.java:119)
+
+[[1;31mERROR[m] programmingtheiot.integration.data.DataIntegrationTest.testWriteSensorDataToGdaDataPath  Time elapsed: 0.003 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: null/SensorData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testWriteSensorDataToGdaDataPath(DataIntegrationTest.java:145)
+
+[[1;31mERROR[m] programmingtheiot.integration.data.DataIntegrationTest.testReadSensorDataFromCdaDataPath  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: Failed to read file: null/SensorData.dat
+	at programmingtheiot.integration.data.DataIntegrationTest.testReadSensorDataFromCdaDataPath(DataIntegrationTest.java:223)
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mFailures: [m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testConnectAndDiscover:100[m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testDeleteRequestCon:205[m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testDeleteRequestNon:216[m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testGetRequestCon:111[m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testGetRequestNon:122[m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testPostRequestCon:140[m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testPostRequestNon:158[m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testPutRequestCon:176[m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testPutRequestNon:194[m
+[[1;31mERROR[m] [1;31m  MqttClientConnectorTest.testPublishAndSubscribe:103[m
+[[1;31mERROR[m] [1;31m  MqttClientPerformanceTest.testConnectAndDisconnect:83[m
+[[1;31mERROR[m] [1;31m  MqttClientPerformanceTest.testPublishQoS0:98->execTestPublish:127[m
+[[1;31mERROR[m] [1;31m  MqttClientPerformanceTest.testPublishQoS1:107->execTestPublish:127[m
+[[1;31mERROR[m] [1;31m  MqttClientPerformanceTest.testPublishQoS2:116->execTestPublish:127[m
+[[1;31mERROR[m] [1;31m  PersistenceClientAdapterTest.testConnectClient:87 Not yet implemented[m
+[[1;31mERROR[m] [1;31m  PersistenceClientAdapterTest.testDisconnectClient:96 Not yet implemented[m
+[[1;31mERROR[m] [1;31m  PersistenceClientAdapterTest.testGetActuatorData:105 Not yet implemented[m
+[[1;31mERROR[m] [1;31m  PersistenceClientAdapterTest.testGetSensorData:114 Not yet implemented[m
+[[1;31mERROR[m] [1;31m  PersistenceClientAdapterTest.testStoreDataStringIntActuatorDataArray:123 Not yet implemented[m
+[[1;31mERROR[m] [1;31m  PersistenceClientAdapterTest.testStoreDataStringIntSensorDataArray:132 Not yet implemented[m
+[[1;31mERROR[m] [1;31m  PersistenceClientAdapterTest.testStoreDataStringIntSystemPerformanceDataArray:141 Not yet implemented[m
+[[1;31mERROR[m] [1;31m  SmtpClientConnectorTest.testSendMessage:108[m
+[[1;31mERROR[m] [1;31m  DataIntegrationTest.testReadActuatorDataFromCdaDataPath:197 Failed to read file: null/ActuatorData.dat[m
+[[1;31mERROR[m] [1;31m  DataIntegrationTest.testReadSensorDataFromCdaDataPath:223 Failed to read file: null/SensorData.dat[m
+[[1;31mERROR[m] [1;31m  DataIntegrationTest.testReadSystemPerformanceDataFromCdaDataPath:249 Failed to read file: null/SystemPerformanceData.dat[m
+[[1;31mERROR[m] [1;31m  DataIntegrationTest.testWriteActuatorDataToGdaDataPath:119 Failed to read file: null/ActuatorData.dat[m
+[[1;31mERROR[m] [1;31m  DataIntegrationTest.testWriteSensorDataToGdaDataPath:145 Failed to read file: null/SensorData.dat[m
+[[1;31mERROR[m] [1;31m  DataIntegrationTest.testWriteSystemPerformanceDataToGdaDataPath:171 Failed to read file: null/SystemPerformanceData.dat[m
+[[1;31mERROR[m] [1;31m  SensorDataTest.testDefaultValues:59 expected:<[DefaultSensor]> but was:<[Not Set]>[m
+[[1;31mERROR[m] [1;31m  SensorDataTest.testFullUpdate:79 expected:<[DefaultSensor]> but was:<[Not Set]>[m
+[[1;31mERROR[m] [1;31mErrors: [m
+[[1;31mERROR[m] [1;31mprogrammingtheiot.integration.connection.CoapClientToServerConnectorTest.null[m
+[[1;31mERROR[m] [1;31m  Run 1: CoapClientToServerConnectorTest.setUpBeforeClass:60 » IllegalState Configurati...[m
+[[1;31mERROR[m] [1;31m  Run 2: CoapClientToServerConnectorTest.tearDownAfterClass:71 NullPointer Cannot invok...[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mTests run: 79, Failures: 30, Errors: 1, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  04:08 min
+[[1;34mINFO[m] Finished at: 2025-10-26T10:24:34-04:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m on project [36mgateway-device-app[m: [1;31mThere are test failures.[m
+[[1;31mERROR[m] [1;31m[m
+[[1;31mERROR[m] [1;31mPlease refer to /home/emmapaq/piot/gda-java-components/target/surefire-reports for the individual test results.[m
+[[1;31mERROR[m] [1;31mPlease refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

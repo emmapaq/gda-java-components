@@ -116,6 +116,3 @@ testEmptyApp = False
 defaultLocationID = Not Set
 sensorDefaultName = DefaultSensor
 keepAlive = 60
-
-[Gateway.DeviceDataManager]
-enablePersistence = True

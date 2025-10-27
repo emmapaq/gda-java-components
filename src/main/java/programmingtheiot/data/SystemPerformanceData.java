@@ -1,118 +1,80 @@
 package programmingtheiot.data;
 
+import java.io.Serializable;
 import programmingtheiot.common.ConfigConst;
 
 /**
- * Represents system performance metrics including CPU, memory, and disk usage.
+ * Data container for system performance metrics.
  */
-public class SystemPerformanceData extends BaseIotData {
+public class SystemPerformanceData extends BaseIotData implements Serializable {
+    
+    // static
+    
     private static final long serialVersionUID = 1L;
-
-    private float cpuUtilization = ConfigConst.DEFAULT_VAL;
-    private float memoryUtilization = ConfigConst.DEFAULT_VAL;
-    private float diskUtilization = ConfigConst.DEFAULT_VAL;
-
+    
+    // private var's
+    
+    private float cpuUtil  = ConfigConst.DEFAULT_VAL;
+    private float diskUtil = ConfigConst.DEFAULT_VAL;
+    private float memUtil  = ConfigConst.DEFAULT_VAL;
+    
+    // constructors
+    
     /**
      * Default constructor.
      */
     public SystemPerformanceData() {
-        super(ConfigConst.SYS_PERF_DATA, ConfigConst.DEFAULT_TYPE);
+        super();
+        super.setName(ConfigConst.SYS_PERF_DATA);
     }
-
-    /**
-     * Constructor with typeID.
-     * 
-     * @param typeID The type identifier
-     */
-    public SystemPerformanceData(int typeID) {
-        super(ConfigConst.SYS_PERF_DATA, typeID);
-    }
-
-    // ========================================
-    // GETTERS AND SETTERS
-    // ========================================
-
-    /**
-     * Gets the CPU utilization percentage.
-     * 
-     * @return CPU utilization (0.0 to 100.0)
-     */
+    
+    // public methods
+    
     public float getCpuUtilization() {
-        return cpuUtilization;
+        return this.cpuUtil;
     }
-
-    /**
-     * Sets the CPU utilization percentage.
-     * 
-     * @param cpuUtilization CPU utilization (0.0 to 100.0)
-     */
-    public void setCpuUtilization(float cpuUtilization) {
-        this.cpuUtilization = cpuUtilization;
-        updateTimeStamp();
-    }
-
-    /**
-     * Gets the memory utilization percentage.
-     * 
-     * @return Memory utilization (0.0 to 100.0)
-     */
-    public float getMemoryUtilization() {
-        return memoryUtilization;
-    }
-
-    /**
-     * Sets the memory utilization percentage.
-     * 
-     * @param memoryUtilization Memory utilization (0.0 to 100.0)
-     */
-    public void setMemoryUtilization(float memoryUtilization) {
-        this.memoryUtilization = memoryUtilization;
-        updateTimeStamp();
-    }
-
-    /**
-     * Gets the disk utilization percentage.
-     * 
-     * @return Disk utilization (0.0 to 100.0)
-     */
+    
     public float getDiskUtilization() {
-        return diskUtilization;
+        return this.diskUtil;
     }
-
-    /**
-     * Sets the disk utilization percentage.
-     * 
-     * @param diskUtilization Disk utilization (0.0 to 100.0)
-     */
-    public void setDiskUtilization(float diskUtilization) {
-        this.diskUtilization = diskUtilization;
+    
+    public float getMemoryUtilization() {
+        return this.memUtil;
+    }
+    
+    public void setCpuUtilization(float val) {
         updateTimeStamp();
+        this.cpuUtil = val;
     }
-
-    // ========================================
-    // PROTECTED METHODS
-    // ========================================
-
+    
+    public void setDiskUtilization(float val) {
+        updateTimeStamp();
+        this.diskUtil = val;
+    }
+    
+    public void setMemoryUtilization(float val) {
+        updateTimeStamp();
+        this.memUtil = val;
+    }
+    
+    // protected methods
+    
     @Override
     protected void handleUpdateData(BaseIotData data) {
         if (data instanceof SystemPerformanceData) {
-            SystemPerformanceData spd = (SystemPerformanceData) data;
-            this.cpuUtilization = spd.getCpuUtilization();
-            this.memoryUtilization = spd.getMemoryUtilization();
-            this.diskUtilization = spd.getDiskUtilization();
+            SystemPerformanceData spdData = (SystemPerformanceData) data;
+            this.setCpuUtilization(spdData.getCpuUtilization());
+            this.setDiskUtilization(spdData.getDiskUtilization());
+            this.setMemoryUtilization(spdData.getMemoryUtilization());
         }
     }
-
-    // ========================================
-    // OVERRIDDEN METHODS
-    // ========================================
-
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder(super.toString());
-        sb.append("CPU Utilization: ").append(this.cpuUtilization).append("%\n");
-        sb.append("Memory Utilization: ").append(this.memoryUtilization).append("%\n");
-        sb.append("Disk Utilization: ").append(this.diskUtilization).append("%\n");
+        sb.append("CPU Utilization: ").append(this.cpuUtil).append("\n");
+        sb.append("Disk Utilization: ").append(this.diskUtil).append("\n");
+        sb.append("Memory Utilization: ").append(this.memUtil).append("\n");
         return sb.toString();
     }
 }

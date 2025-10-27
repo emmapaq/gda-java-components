@@ -12,8 +12,8 @@ import programmingtheiot.common.ConfigUtil;
  * This is the main entry point for the GDA and manages the lifecycle
  * of the DeviceDataManager.
  */
-public class GatewayDeviceApp
-{
+public class GatewayDeviceApp {
+    
     // static
     
     private static final Logger _Logger =
@@ -25,14 +25,12 @@ public class GatewayDeviceApp
     
     private DeviceDataManager dataMgr = null;
     
-    
     // constructors
     
     /**
      * Default constructor.
      */
-    public GatewayDeviceApp()
-    {
+    public GatewayDeviceApp() {
         this(null);
     }
     
@@ -41,13 +39,10 @@ public class GatewayDeviceApp
      * 
      * @param args Command line arguments (currently unused).
      */
-    public GatewayDeviceApp(String[] args)
-    {
+    public GatewayDeviceApp(String[] args) {
         super();
-        
         _Logger.info("Initializing GDA...");
     }
-    
     
     // static
     
@@ -56,8 +51,7 @@ public class GatewayDeviceApp
      * 
      * @param args Command line arguments.
      */
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         GatewayDeviceApp gwApp = new GatewayDeviceApp(args);
         
         gwApp.startApp();
@@ -91,15 +85,13 @@ public class GatewayDeviceApp
         }
     }
     
-    
     // public methods
     
     /**
      * Starts the Gateway Device Application.
      * Initializes and starts the DeviceDataManager.
      */
-    public void startApp()
-    {
+    public void startApp() {
         _Logger.info("Starting GDA...");
         
         try {
@@ -114,8 +106,27 @@ public class GatewayDeviceApp
             _Logger.info("GDA started successfully.");
         } catch (Exception e) {
             _Logger.log(Level.SEVERE, "Failed to start GDA. Exiting.", e);
-            
             stopApp(-1);
+        }
+    }
+    
+    /**
+     * Stops the Gateway Device Application.
+     * Cleanly shuts down the DeviceDataManager without exiting the JVM.
+     * This version is suitable for testing.
+     */
+    public void stopApp() {
+        _Logger.info("Stopping GDA...");
+        
+        try {
+            // Stop the DeviceDataManager if it exists
+            if (this.dataMgr != null) {
+                this.dataMgr.stopManager();
+            }
+            
+            _Logger.info("GDA stopped successfully.");
+        } catch (Exception e) {
+            _Logger.log(Level.SEVERE, "Failed to cleanly stop GDA.", e);
         }
     }
     
@@ -125,22 +136,10 @@ public class GatewayDeviceApp
      * 
      * @param code Exit code to return to the operating system.
      */
-    public void stopApp(int code)
-    {
-        _Logger.info("Stopping GDA...");
+    public void stopApp(int code) {
+        stopApp(); // Call the non-exiting version first
         
-        try {
-            // Stop the DeviceDataManager if it exists
-            if (this.dataMgr != null) {
-                this.dataMgr.stopManager();
-            }
-            
-            _Logger.log(Level.INFO, "GDA stopped successfully with exit code {0}.", code);
-        } catch (Exception e) {
-            _Logger.log(Level.SEVERE, "Failed to cleanly stop GDA. Exiting.", e);
-        }
-        
+        _Logger.log(Level.INFO, "Exiting GDA with code {0}.", code);
         System.exit(code);
     }
-    
 }

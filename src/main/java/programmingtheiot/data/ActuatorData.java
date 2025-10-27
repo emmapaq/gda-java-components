@@ -1,90 +1,87 @@
 package programmingtheiot.data;
 
+import java.io.Serializable;
 import programmingtheiot.common.ConfigConst;
 
 /**
- * Represents actuator data including command and value.
+ * Data container for actuator commands and responses.
  */
-public class ActuatorData extends BaseIotData {
+public class ActuatorData extends BaseIotData implements Serializable {
+    
+    // static
+    
     private static final long serialVersionUID = 1L;
-
-    private int command = ConfigConst.DEFAULT_COMMAND;
-    private float value = ConfigConst.DEFAULT_VAL;
+    
+    // private var's
+    
+    private int     command    = ConfigConst.DEFAULT_COMMAND;
+    private float   value      = ConfigConst.DEFAULT_VAL;
     private boolean isResponse = false;
-
+    private String  stateData  = "";
+    
+    // constructors
+    
     /**
      * Default constructor.
      */
     public ActuatorData() {
         super();
-        this.setName(ConfigConst.DEFAULT_ACTUATOR_NAME);
-        this.setTypeID(ConfigConst.DEFAULT_TYPE);
     }
-
-    /**
-     * Constructor with typeID.
-     * 
-     * @param typeID The actuator type identifier
-     */
-    public ActuatorData(int typeID) {
-        super(ConfigConst.DEFAULT_ACTUATOR_NAME, typeID);
-    }
-
-    // ========================================
-    // GETTERS AND SETTERS
-    // ========================================
-
+    
+    // public methods
+    
     public int getCommand() {
-        return command;
+        return this.command;
     }
-
-    public void setCommand(int command) {
-        this.command = command;
-        updateTimeStamp();
+    
+    public String getStateData() {
+        return this.stateData;
     }
-
+    
     public float getValue() {
-        return value;
+        return this.value;
     }
-
-    public void setValue(float value) {
-        this.value = value;
+    
+    public boolean isResponseFlagEnabled() {
+        return this.isResponse;
+    }
+    
+    public void setAsResponse() {
         updateTimeStamp();
+        this.isResponse = true;
     }
-
-    public boolean isResponse() {
-        return isResponse;
-    }
-
-    public void setAsResponse(boolean isResponse) {
-        this.isResponse = isResponse;
+    
+    public void setCommand(int command) {
         updateTimeStamp();
+        this.command = command;
     }
-
-    // ========================================
-    // PROTECTED METHODS
-    // ========================================
-
+    
+    public void setStateData(String stateData) {
+        updateTimeStamp();
+        
+        if (stateData != null) {
+            this.stateData = stateData;
+        }
+    }
+    
+    public void setValue(float val) {
+        updateTimeStamp();
+        this.value = val;
+    }
+    
+    // protected methods
+    
     @Override
     protected void handleUpdateData(BaseIotData data) {
         if (data instanceof ActuatorData) {
-            ActuatorData ad = (ActuatorData) data;
-            this.command = ad.getCommand();
-            this.value = ad.getValue();
-            this.isResponse = ad.isResponse();
+            ActuatorData aData = (ActuatorData) data;
+            this.setCommand(aData.getCommand());
+            this.setValue(aData.getValue());
+            this.setStateData(aData.getStateData());
+            
+            if (aData.isResponseFlagEnabled()) {
+                this.isResponse = true;
+            }
         }
-    }
-
-    // ========================================
-    // OVERRIDDEN METHODS
-    // ========================================
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder(super.toString());
-        sb.append("Command: ").append(this.command).append("\n");
-        sb.append("Value: ").append(this.value).append("\n");
-        sb.append("Is Response: ").append(this.isResponse).append("\n");
-        return sb.toString();
     }
 }
