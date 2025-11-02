@@ -6,7 +6,7 @@ package programmingtheiot.common;
  */
 public class ConfigConst {
     
-	
+    
     // ========================================
     // GENERAL CONFIGURATION
     // ========================================
@@ -69,6 +69,7 @@ public class ConfigConst {
     public static final String ENABLE_PERSISTENCE_KEY = "enablePersistence";
     public static final String ENABLE_SYSTEM_PERF_KEY = "enableSystemPerformance";
     
+     
     // ========================================
     // DEFAULT SYSTEM VALUES
     // ========================================
