@@ -206,17 +206,40 @@ public class CoapServerGateway
 	 */
 	private void initServer(ResourceNameEnum ...resources)
 	{
-		try {
-			// Create the CoAP server instance
-			this.coapServer = new CoapServer();
-			
-			_Logger.info("CoAP server instance created. CoAP server has no resources yet.");
-			
-			// TODO: In PIOT-GDA-08-002, add resource handlers here
-			// Resource handlers will implement GET, PUT, POST, DELETE for various endpoints
-			
-		} catch (Exception e) {
-			_Logger.log(Level.SEVERE, "Failed to initialize CoAP server.", e);
-		}
+	    try {
+	        _Logger.info("Initializing CoAP server...");
+	        
+	        // Create the CoAP server instance
+	        this.coapServer = new CoapServer();
+	        
+	        _Logger.info("Creating CoAP server resources...");
+	        
+	        // Create resource tree structure: PIOT/GatewayDevice/
+	        CoapResource piotResource = new CoapResource("PIOT");
+	        CoapResource gdResource = new CoapResource("GatewayDevice");
+	        
+	        // Create resource handlers - use only the final segment name
+	        GenericCoapResourceHandler mgmtStatusResource = 
+	            new GenericCoapResourceHandler("MgmtStatusMsg", this.dataMsgListener);  // Changed!
+	        
+	        GenericCoapResourceHandler mgmtStatusCmdResource = 
+	            new GenericCoapResourceHandler("MgmtStatusCmd", this.dataMsgListener);  // Changed!
+	        
+	        // Build resource tree
+	        piotResource.add(gdResource);
+	        gdResource.add(mgmtStatusResource);
+	        gdResource.add(mgmtStatusCmdResource);
+	        
+	        // Add root to server
+	        this.coapServer.add(piotResource);
+	        
+	        _Logger.info("CoAP server resources created successfully:");
+	        _Logger.info("  - /PIOT/GatewayDevice/MgmtStatusMsg");
+	        _Logger.info("  - /PIOT/GatewayDevice/MgmtStatusCmd");
+	        
+	    } catch (Exception e) {
+	        _Logger.log(Level.SEVERE, "Failed to initialize CoAP server.", e);
+	        e.printStackTrace();
+	    }
 	}
 }

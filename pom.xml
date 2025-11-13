@@ -1,16 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	                    http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>programmingtheiot.gda</groupId>
 	<artifactId>gateway-device-app</artifactId>
 	<version>0.0.1</version>
 	<name>Gateway Device App</name>
 	<description>Programming the IoT - Gateway Device App</description>
+
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
+
 	<repositories>
 		<repository>
 			<id>project.local</id>
@@ -18,19 +22,24 @@
 			<url>file:${project.basedir}/lib/</url>
 		</repository>
 	</repositories>
+
 	<dependencies>
+		<!-- Gson -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>2.13.1</version>
-			<scope>compile</scope>
 		</dependency>
+
+		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- Commons -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-configuration2</artifactId>
@@ -41,6 +50,8 @@
 			<artifactId>commons-cli</artifactId>
 			<version>1.10.0</version>
 		</dependency>
+
+		<!-- MQTT -->
 		<dependency>
 			<groupId>org.eclipse.paho</groupId>
 			<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
@@ -51,6 +62,8 @@
 			<artifactId>org.eclipse.paho.mqttv5.client</artifactId>
 			<version>1.2.5</version>
 		</dependency>
+
+		<!-- Californium (CoAP) -->
 		<dependency>
 			<groupId>org.eclipse.californium</groupId>
 			<artifactId>californium-core</artifactId>
@@ -61,28 +74,29 @@
 			<artifactId>scandium</artifactId>
 			<version>3.14.0</version>
 		</dependency>
-		
-		<!--
-			NOTE: These dependencies are optional for use
-			with Lab Module's 05 and 12.
-		-->
+
+		<!-- SLF4J Logger -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>2.0.9</version>
+		</dependency>
+
+		<!-- Redis (optional) -->
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
 			<version>6.0.0</version>
-			<type>jar</type>
-			<scope>compile</scope>
 		</dependency>
+
+		<!-- InfluxDB (optional) -->
 		<dependency>
 			<groupId>com.influxdb</groupId>
 			<artifactId>influxdb-client-java</artifactId>
 			<version>7.3.0</version>
 		</dependency>
 
-		<!--
-			NOTE: These dependencies are optional for use
-			with Lab Module's 11 and 12.
-		-->
+		<!-- Mail & Cloud SDKs (optional) -->
 		<dependency>
 			<groupId>jakarta.mail</groupId>
 			<artifactId>jakarta.mail-api</artifactId>
@@ -104,13 +118,17 @@
 			<version>2.5.0</version>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
+			<!-- Surefire -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
 			</plugin>
+
+			<!-- Dependency Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -130,6 +148,8 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<!-- Assembly Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>

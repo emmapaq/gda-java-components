@@ -1,8 +1,6 @@
 package programmingtheiot.data;
-
 import java.io.Serializable;
 import programmingtheiot.common.ConfigConst;
-
 /**
  * Represents sensor data including a value reading.
  */
@@ -19,10 +17,11 @@ public class SensorData extends BaseIotData implements Serializable {
     // constructors
     
     /**
-     * Default constructor using predefined sensor name and type.
+     * Default constructor.
+     * Name will be initialized to NOT_SET by BaseIotData.
      */
     public SensorData() {
-        super(ConfigConst.DEFAULT_SENSOR_NAME, ConfigConst.DEFAULT_TYPE);
+        super();
     }
     
     /**
@@ -31,7 +30,8 @@ public class SensorData extends BaseIotData implements Serializable {
      * @param typeID The sensor type ID
      */
     public SensorData(int typeID) {
-        super(ConfigConst.DEFAULT_SENSOR_NAME, typeID);
+        super();
+        this.setTypeID(typeID);
     }
     
     // public methods

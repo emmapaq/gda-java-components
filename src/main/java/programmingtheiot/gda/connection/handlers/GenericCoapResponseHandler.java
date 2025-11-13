@@ -1,13 +1,3 @@
-/**
- * This class is part of the Programming the Internet of Things
- * project, and is available via the MIT License, which can be
- * found in the LICENSE file at the top level of this repository.
- * 
- * You may find it more helpful to your design to adjust the
- * functionality, constants and interfaces (if there are any)
- * provided within in order to meet the needs of your specific
- * Programming the Internet of Things project.
- */
 
 package programmingtheiot.gda.connection.handlers;
 
@@ -19,10 +9,9 @@ import org.eclipse.californium.core.coap.OptionSet;
 
 import programmingtheiot.common.IDataMessageListener;
 
-
 /**
- * Generic CoAP resource handler implementation.
- * 
+ * Generic CoAP response handler for processing CoAP responses.
+ * Implements the CoapHandler interface from Californium.
  */
 public class GenericCoapResponseHandler implements CoapHandler
 {
@@ -33,52 +22,32 @@ public class GenericCoapResponseHandler implements CoapHandler
 	
 	// params
 	
-	private IDataMessageListener dataMsgListener = null;
-	
+	private IDataMessageListener dataMsgListener;
 	
 	// constructors
 	
 	/**
-	 * Default.
-	 * 
-	 */
-	public GenericCoapResponseHandler()
-	{
-		this((IDataMessageListener) null);
-	}
-	
-	/**
 	 * Constructor.
 	 * 
+	 * @param dataMsgListener The data message listener to notify of responses
 	 */
-	public GenericCoapResponseHandler(IDataMessageListener listener)
+	public GenericCoapResponseHandler(IDataMessageListener dataMsgListener)
 	{
-		super();
-		
-		dataMsgListener = listener;
-		
-		_Logger.fine("Response handler created. IDataMessageListener is " + (listener != null ? "set" : "not set"));
+		this.dataMsgListener = dataMsgListener;
 	}
-	
 	
 	// public methods
 	
-	
-	/**
-	 *
-	 */
 	@Override
 	public void onLoad(CoapResponse response)
 	{
 		if (response != null) {
 			OptionSet options = response.getOptions();
 			
-			// for debugging only
-//			_Logger.finest("Processing CoAP response. Options: " + options);
-//			_Logger.finest("Processing CoAP response. MID: " + response.advanced().getMID());
-//			_Logger.finest("Processing CoAP response. Token: " + response.advanced().getTokenString());
-//			_Logger.finest("Processing CoAP response. Code: " + response.getCode());
-			
+			_Logger.info("Processing CoAP response. Options: " + options);
+			_Logger.info("Processing CoAP response. MID: " + response.advanced().getMID());
+			_Logger.info("Processing CoAP response. Token: " + response.advanced().getTokenString());
+			_Logger.info("Processing CoAP response. Code: " + response.getCode());
 			
 			// TODO: parse payload and notify listener
 			_Logger.info(" --> Payload: " + response.getResponseText());
@@ -90,16 +59,10 @@ public class GenericCoapResponseHandler implements CoapHandler
 			_Logger.warning("No CoAP response to process. Response is null.");
 		}
 	}
-
-
-	/**
-	 *
-	 */
+	
 	@Override
 	public void onError()
 	{
-		// TODO: handle this
 		_Logger.warning("Error processing CoAP response. Ignoring.");
 	}
-	
 }

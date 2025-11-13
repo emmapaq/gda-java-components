@@ -33,6 +33,7 @@ public class ConfigConst {
     
     public static final String CLOUD_GATEWAY_SERVICE = "CloudGatewayService";
     public static final String MQTT_GATEWAY_SERVICE = "Mqtt.GatewayService";
+    public static final String COAP_GATEWAY_SERVICE = "Coap.GatewayService";
     public static final String SMTP_GATEWAY_SERVICE = "SmtpGatewayService";
     public static final String DATA_GATEWAY_SERVICE = "Data.GatewayService";
     
@@ -42,6 +43,7 @@ public class ConfigConst {
     
     public static final String HOST_KEY = "host";
     public static final String PORT_KEY = "port";
+    public static final String SECURE_PORT_KEY = "securePort";
     public static final String KEEP_ALIVE_KEY = "keepAlive";
     
     // ========================================
@@ -51,6 +53,8 @@ public class ConfigConst {
     public static final String DEFAULT_HOST = "localhost";
     public static final int DEFAULT_COAP_PORT = 5683;
     public static final String DEFAULT_COAP_PROTOCOL = "coap";
+    public static final String DEFAULT_COAP_SECURE_PROTOCOL = "coaps";
+    public static final int DEFAULT_COAP_SECURE_PORT = 5684;
     public static final int DEFAULT_KEEP_ALIVE = 60;
     public static final int DEFAULT_REDIS_PORT = 6379;
     
@@ -64,6 +68,7 @@ public class ConfigConst {
     public static final String ENABLE_RUN_FOREVER_KEY = "enableRunForever";
     public static final String ENABLE_MQTT_CLIENT_KEY = "enableMqttClient";
     public static final String ENABLE_COAP_SERVER_KEY = "enableCoapServer";
+    public static final String ENABLE_COAP_CLIENT_KEY = "enableCoapClient";
     public static final String ENABLE_CLOUD_CLIENT_KEY = "enableCloudClient";
     public static final String ENABLE_PERSISTENCE_CLIENT_KEY = "enablePersistenceClient";
     public static final String ENABLE_PERSISTENCE_KEY = "enablePersistence";

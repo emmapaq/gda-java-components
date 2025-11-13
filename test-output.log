@@ -1,0 +1,1155 @@
+[1mApache Maven 3.8.7[m
+Maven home: /usr/share/maven
+Java version: 17.0.16, vendor: Ubuntu, runtime: /usr/lib/jvm/java-17-openjdk-amd64
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "6.14.0-34-generic", arch: "amd64", family: "unix"
+[[1;36mDEBUG[m] Created new class realm maven.api
+[[1;36mDEBUG[m] Importing foreign packages into class realm maven.api
+[[1;36mDEBUG[m]   Imported: javax.annotation.* < plexus.core
+[[1;36mDEBUG[m]   Imported: javax.annotation.security.* < plexus.core
+[[1;36mDEBUG[m]   Imported: javax.inject.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.artifact < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.classrealm < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.cli < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.configuration < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.exception < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.execution < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.execution.scope < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.lifecycle < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.model < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.monitor < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.plugin < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.profiles < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.project < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.reporting < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.repository < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.rtinfo < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.settings < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.toolchain < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.usability < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.events < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.observers < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.repository < plexus.core
+[[1;36mDEBUG[m]   Imported: org.apache.maven.wagon.resource < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.classworlds < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.component < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.configuration < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.container < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.context < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.logging < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.personality < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[[1;36mDEBUG[m]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.artifact < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.collection < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.deployment < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.graph < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.impl < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.installation < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.metadata < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.repository < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.resolution < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.spi < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.transfer < plexus.core
+[[1;36mDEBUG[m]   Imported: org.eclipse.aether.version < plexus.core
+[[1;36mDEBUG[m]   Imported: org.fusesource.jansi.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.slf4j.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.slf4j.event.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.slf4j.helpers.* < plexus.core
+[[1;36mDEBUG[m]   Imported: org.slf4j.spi.* < plexus.core
+[[1;36mDEBUG[m] Populating class realm maven.api
+[[1;34mINFO[m] Error stacktraces are turned on.
+[[1;36mDEBUG[m] Message scheme: color
+[[1;36mDEBUG[m] Message styles: [1;36mdebug[m [1;34minfo[m [1;33mwarning[m [1;31merror[m [1;32msuccess[m [1;31mfailure[m [1mstrong[m [32mmojo[m [36mproject[m
+[[1;36mDEBUG[m] Reading global settings from /usr/share/maven/conf/settings.xml
+[[1;36mDEBUG[m] Reading user settings from /home/emmapaq/.m2/settings.xml
+[[1;36mDEBUG[m] Reading global toolchains from /usr/share/maven/conf/toolchains.xml
+[[1;36mDEBUG[m] Reading user toolchains from /home/emmapaq/.m2/toolchains.xml
+[[1;36mDEBUG[m] Using local repository at /home/emmapaq/.m2/repository
+[[1;36mDEBUG[m] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /home/emmapaq/.m2/repository
+[[1;34mINFO[m] Scanning for projects...
+[[1;36mDEBUG[m] Extension realms for project programmingtheiot.gda:gateway-device-app:jar:0.0.1: (none)
+[[1;36mDEBUG[m] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[[1;36mDEBUG[m] === REACTOR BUILD PLAN ================================================
+[[1;36mDEBUG[m] Project: programmingtheiot.gda:gateway-device-app:jar:0.0.1
+[[1;36mDEBUG[m] Tasks:   [test]
+[[1;36mDEBUG[m] Style:   Regular
+[[1;36mDEBUG[m] =======================================================================
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36mprogrammingtheiot.gda:gateway-device-app[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding Gateway Device App 0.0.1[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;36mDEBUG[m] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[[1;36mDEBUG[m] Lifecycle clean -> [pre-clean, clean, post-clean]
+[[1;36mDEBUG[m] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[[1;36mDEBUG[m] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache.snapshots (http://repository.apache.org/snapshots).
+[[1;36mDEBUG[m] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[[1;36mDEBUG[m] Lifecycle clean -> [pre-clean, clean, post-clean]
+[[1;36mDEBUG[m] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[[1;36mDEBUG[m] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[[1;36mDEBUG[m] Lifecycle clean -> [pre-clean, clean, post-clean]
+[[1;36mDEBUG[m] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[[1;36mDEBUG[m] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[[1;36mDEBUG[m] Lifecycle clean -> [pre-clean, clean, post-clean]
+[[1;36mDEBUG[m] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[[1;36mDEBUG[m] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[[1;36mDEBUG[m] Lifecycle clean -> [pre-clean, clean, post-clean]
+[[1;36mDEBUG[m] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[[1;36mDEBUG[m] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[[1;36mDEBUG[m] Lifecycle clean -> [pre-clean, clean, post-clean]
+[[1;36mDEBUG[m] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[[1;36mDEBUG[m] === PROJECT BUILD PLAN ================================================
+[[1;36mDEBUG[m] Project:       programmingtheiot.gda:gateway-device-app:0.0.1
+[[1;36mDEBUG[m] Dependencies (collect): []
+[[1;36mDEBUG[m] Dependencies (resolve): [compile, test]
+[[1;36mDEBUG[m] Repositories (dependencies): [project.local (file:/home/emmapaq/piot/gda-java-components/lib/, default, releases+snapshots), central (https://repo.maven.apache.org/maven2, default, releases)]
+[[1;36mDEBUG[m] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.apache.maven.plugins:maven-resources-plugin:2.6:resources (default-resources)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <escapeString>${maven.resources.escapeString}</escapeString>
+  <escapeWindowsPaths default-value="true">${maven.resources.escapeWindowsPaths}</escapeWindowsPaths>
+  <includeEmptyDirs default-value="false">${maven.resources.includeEmptyDirs}</includeEmptyDirs>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false">${maven.resources.overwrite}</overwrite>
+  <project default-value="${project}"/>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <supportMultiLineFiltering default-value="false">${maven.resources.supportMultiLineFiltering}</supportMultiLineFiltering>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <classpathElements default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution>${mojoExecution}</mojoExecution>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <projectArtifact default-value="${project.artifact}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <skipMain>${maven.main.skip}</skipMain>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.5">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.5">${maven.compiler.target}</target>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+  <mavenSession default-value="${session}"/>
+  <session default-value="${session}"/>
+</configuration>
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.apache.maven.plugins:maven-resources-plugin:2.6:testResources (default-testResources)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <escapeString>${maven.resources.escapeString}</escapeString>
+  <escapeWindowsPaths default-value="true">${maven.resources.escapeWindowsPaths}</escapeWindowsPaths>
+  <includeEmptyDirs default-value="false">${maven.resources.includeEmptyDirs}</includeEmptyDirs>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <overwrite default-value="false">${maven.resources.overwrite}</overwrite>
+  <project default-value="${project}"/>
+  <resources default-value="${project.testResources}"/>
+  <session default-value="${session}"/>
+  <skip>${maven.test.skip}</skip>
+  <supportMultiLineFiltering default-value="false">${maven.resources.supportMultiLineFiltering}</supportMultiLineFiltering>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile (default-testCompile)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <classpathElements default-value="${project.testClasspathElements}"/>
+  <compileSourceRoots default-value="${project.testCompileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedTestSourcesDirectory default-value="${project.build.directory}/generated-test-sources/test-annotations"/>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution>${mojoExecution}</mojoExecution>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <skip>${maven.test.skip}</skip>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.5">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.5">${maven.compiler.target}</target>
+  <testSource>${maven.compiler.testSource}</testSource>
+  <testTarget>${maven.compiler.testTarget}</testTarget>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+  <mavenSession default-value="${session}"/>
+  <session default-value="${session}"/>
+</configuration>
+[[1;36mDEBUG[m] -----------------------------------------------------------------------
+[[1;36mDEBUG[m] Goal:          org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test (default-test)
+[[1;36mDEBUG[m] Style:         Regular
+[[1;36mDEBUG[m] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathElements>${maven.test.additionalClasspath}</additionalClasspathElements>
+  <argLine>${argLine}</argLine>
+  <basedir default-value="${basedir}"/>
+  <childDelegation default-value="false">${childDelegation}</childDelegation>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <classpathDependencyExcludes>${maven.test.dependency.excludes}</classpathDependencyExcludes>
+  <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
+  <dependenciesToScan>${dependenciesToScan}</dependenciesToScan>
+  <disableXmlReport default-value="false">${disableXmlReport}</disableXmlReport>
+  <enableAssertions default-value="true">${enableAssertions}</enableAssertions>
+  <enableProcessChecker>${surefire.enableProcessChecker}</enableProcessChecker>
+  <encoding default-value="${project.reporting.outputEncoding}">${surefire.encoding}</encoding>
+  <excludedEnvironmentVariables>${surefire.excludedEnvironmentVariables}</excludedEnvironmentVariables>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludesFile>${surefire.excludesFile}</excludesFile>
+  <failIfNoSpecifiedTests>${surefire.failIfNoSpecifiedTests}</failIfNoSpecifiedTests>
+  <failIfNoTests>${failIfNoTests}</failIfNoTests>
+  <forkCount default-value="1">${forkCount}</forkCount>
+  <forkMode default-value="once">${forkMode}</forkMode>
+  <forkNode>${surefire.forkNode}</forkNode>
+  <forkedProcessExitTimeoutInSeconds default-value="30">${surefire.exitTimeout}</forkedProcessExitTimeoutInSeconds>
+  <forkedProcessTimeoutInSeconds>${surefire.timeout}</forkedProcessTimeoutInSeconds>
+  <groups>${groups}</groups>
+  <includesFile>${surefire.includesFile}</includesFile>
+  <junitArtifactName default-value="junit:junit">${junitArtifactName}</junitArtifactName>
+  <jvm>${jvm}</jvm>
+  <localRepository default-value="${localRepository}"/>
+  <objectFactory>${objectFactory}</objectFactory>
+  <parallel>${parallel}</parallel>
+  <parallelMavenExecution default-value="${session.parallel}"/>
+  <parallelOptimized default-value="true">${parallelOptimized}</parallelOptimized>
+  <parallelTestsTimeoutForcedInSeconds>${surefire.parallel.forcedTimeout}</parallelTestsTimeoutForcedInSeconds>
+  <parallelTestsTimeoutInSeconds>${surefire.parallel.timeout}</parallelTestsTimeoutInSeconds>
+  <perCoreThreadCount default-value="true">${perCoreThreadCount}</perCoreThreadCount>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <pluginDescriptor default-value="${plugin}"/>
+  <printSummary default-value="true">${surefire.printSummary}</printSummary>
+  <project default-value="${project}"/>
+  <projectArtifactMap>${project.artifactMap}</projectArtifactMap>
+  <projectBuildDirectory default-value="${project.build.directory}"/>
+  <projectRemoteRepositories default-value="${project.remoteArtifactRepositories}"/>
+  <redirectTestOutputToFile default-value="false">${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
+  <remoteRepositories default-value="${project.pluginArtifactRepositories}"/>
+  <reportFormat default-value="brief">${surefire.reportFormat}</reportFormat>
+  <reportNameSuffix default-value="">${surefire.reportNameSuffix}</reportNameSuffix>
+  <reportsDirectory default-value="${project.build.directory}/surefire-reports"/>
+  <rerunFailingTestsCount default-value="0">${surefire.rerunFailingTestsCount}</rerunFailingTestsCount>
+  <reuseForks default-value="true">${reuseForks}</reuseForks>
+  <runOrder default-value="filesystem">${surefire.runOrder}</runOrder>
+  <session default-value="${session}"/>
+  <shutdown default-value="exit">${surefire.shutdown}</shutdown>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <skipAfterFailureCount default-value="0">${surefire.skipAfterFailureCount}</skipAfterFailureCount>
+  <skipExec>${maven.test.skip.exec}</skipExec>
+  <skipTests default-value="false">${skipTests}</skipTests>
+  <suiteXmlFiles>${surefire.suiteXmlFiles}</suiteXmlFiles>
+  <systemPropertiesFile>${surefire.systemPropertiesFile}</systemPropertiesFile>
+  <tempDir default-value="surefire">${tempDir}</tempDir>
+  <test>${test}</test>
+  <testClassesDirectory default-value="${project.build.testOutputDirectory}"/>
+  <testFailureIgnore default-value="false">${maven.test.failure.ignore}</testFailureIgnore>
+  <testNGArtifactName default-value="org.testng:testng">${testNGArtifactName}</testNGArtifactName>
+  <testSourceDirectory default-value="${project.build.testSourceDirectory}"/>
+  <threadCount>${threadCount}</threadCount>
+  <threadCountClasses default-value="0">${threadCountClasses}</threadCountClasses>
+  <threadCountMethods default-value="0">${threadCountMethods}</threadCountMethods>
+  <threadCountSuites default-value="0">${threadCountSuites}</threadCountSuites>
+  <trimStackTrace default-value="true">${trimStackTrace}</trimStackTrace>
+  <useFile default-value="true">${surefire.useFile}</useFile>
+  <useManifestOnlyJar default-value="true">${surefire.useManifestOnlyJar}</useManifestOnlyJar>
+  <useModulePath default-value="true">${surefire.useModulePath}</useModulePath>
+  <useSystemClassLoader default-value="true">${surefire.useSystemClassLoader}</useSystemClassLoader>
+  <useUnlimitedThreads default-value="false">${useUnlimitedThreads}</useUnlimitedThreads>
+  <workingDirectory>${basedir}</workingDirectory>
+</configuration>
+[[1;36mDEBUG[m] =======================================================================
+[[1;36mDEBUG[m] Could not find metadata org.eclipse.paho:org.eclipse.paho.client.mqttv3/maven-metadata.xml in local (/home/emmapaq/.m2/repository)
+[[1;36mDEBUG[m] org.eclipse.paho:org.eclipse.paho.client.mqttv3/maven-metadata.xml was not found in file:/home/emmapaq/piot/gda-java-components/lib/ during a previous attempt. This failure was cached in the local repository and resolution is not be reattempted until the update interval of project.local has elapsed or updates are forced
+[[1;36mDEBUG[m] Skipped remote request for org.eclipse.paho:org.eclipse.paho.client.mqttv3/maven-metadata.xml, locally cached metadata up-to-date
+[[1;36mDEBUG[m] Dependency collection stats {ConflictMarker.analyzeTime=683515, ConflictMarker.markTime=187203, ConflictMarker.nodeCount=108, ConflictIdSorter.graphTime=334453, ConflictIdSorter.topsortTime=232284, ConflictIdSorter.conflictIdCount=61, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=5650204, ConflictResolver.conflictItemCount=95, DefaultDependencyCollector.collectTime=264238103, DefaultDependencyCollector.transformTime=8588598}
+[[1;36mDEBUG[m] programmingtheiot.gda:gateway-device-app:jar:0.0.1
+[[1;36mDEBUG[m]    com.google.code.gson:gson:jar:2.13.1:compile
+[[1;36mDEBUG[m]       com.google.errorprone:error_prone_annotations:jar:2.38.0:compile
+[[1;36mDEBUG[m]    junit:junit:jar:4.13.2:test
+[[1;36mDEBUG[m]       org.hamcrest:hamcrest-core:jar:1.3:test
+[[1;36mDEBUG[m]    org.apache.commons:commons-configuration2:jar:2.12.0:compile
+[[1;36mDEBUG[m]       org.apache.commons:commons-lang3:jar:3.17.0:compile
+[[1;36mDEBUG[m]       org.apache.commons:commons-text:jar:1.13.1:compile
+[[1;36mDEBUG[m]       commons-logging:commons-logging:jar:1.3.5:compile
+[[1;36mDEBUG[m]    commons-cli:commons-cli:jar:1.10.0:compile
+[[1;36mDEBUG[m]    org.eclipse.paho:org.eclipse.paho.mqttv5.client:jar:1.2.5:compile
+[[1;36mDEBUG[m]    org.eclipse.californium:californium-core:jar:3.14.0:compile
+[[1;36mDEBUG[m]       org.eclipse.californium:californium-legal:jar:3.14.0:runtime
+[[1;36mDEBUG[m]       org.eclipse.californium:element-connector:jar:3.14.0:compile
+[[1;36mDEBUG[m]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[[1;36mDEBUG[m]    org.eclipse.californium:scandium:jar:3.14.0:compile
+[[1;36mDEBUG[m]    redis.clients:jedis:jar:6.0.0:compile
+[[1;36mDEBUG[m]       org.apache.commons:commons-pool2:jar:2.12.1:compile
+[[1;36mDEBUG[m]       org.json:json:jar:20250107:compile
+[[1;36mDEBUG[m]       redis.clients.authentication:redis-authx-core:jar:0.1.1-beta2:compile
+[[1;36mDEBUG[m]    com.influxdb:influxdb-client-java:jar:7.3.0:compile
+[[1;36mDEBUG[m]       com.influxdb:influxdb-client-core:jar:7.3.0:compile
+[[1;36mDEBUG[m]          com.influxdb:influxdb-client-utils:jar:7.3.0:compile
+[[1;36mDEBUG[m]          com.squareup.okio:okio:jar:3.9.0:compile
+[[1;36mDEBUG[m]             com.squareup.okio:okio-jvm:jar:3.9.0:compile
+[[1;36mDEBUG[m]                org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.21:compile
+[[1;36mDEBUG[m]                   org.jetbrains:annotations:jar:13.0:compile
+[[1;36mDEBUG[m]          com.squareup.okhttp3:okhttp:jar:4.12.0:compile
+[[1;36mDEBUG[m]             org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.8.21:compile
+[[1;36mDEBUG[m]                org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.8.21:compile
+[[1;36mDEBUG[m]          com.squareup.retrofit2:retrofit:jar:2.11.0:compile
+[[1;36mDEBUG[m]          com.squareup.okhttp3:logging-interceptor:jar:4.12.0:compile
+[[1;36mDEBUG[m]          org.apache.commons:commons-csv:jar:1.11.0:compile
+[[1;36mDEBUG[m]             commons-io:commons-io:jar:2.16.1:compile
+[[1;36mDEBUG[m]       io.reactivex.rxjava3:rxjava:jar:3.1.10:compile
+[[1;36mDEBUG[m]          org.reactivestreams:reactive-streams:jar:1.0.4:compile
+[[1;36mDEBUG[m]       com.squareup.retrofit2:adapter-rxjava3:jar:2.11.0:compile
+[[1;36mDEBUG[m]       com.squareup.retrofit2:converter-scalars:jar:2.11.0:compile
+[[1;36mDEBUG[m]       com.squareup.retrofit2:converter-gson:jar:2.11.0:compile
+[[1;36mDEBUG[m]       com.google.code.findbugs:jsr305:jar:3.0.2:compile
+[[1;36mDEBUG[m]    jakarta.mail:jakarta.mail-api:jar:2.1.3:compile
+[[1;36mDEBUG[m]       jakarta.activation:jakarta.activation-api:jar:2.1.3:compile
+[[1;36mDEBUG[m]    com.amazonaws:aws-iot-device-sdk-java:jar:1.3.13:compile
+[[1;36mDEBUG[m]       com.fasterxml.jackson.core:jackson-core:jar:2.13.4:compile
+[[1;36mDEBUG[m]       com.fasterxml.jackson.core:jackson-databind:jar:2.13.4.2:compile
+[[1;36mDEBUG[m]          com.fasterxml.jackson.core:jackson-annotations:jar:2.13.4:compile
+[[1;36mDEBUG[m]       org.eclipse.paho:org.eclipse.paho.client.mqttv3:jar:1.2.4:compile
+[[1;36mDEBUG[m]       com.amazonaws:aws-java-sdk-secretsmanager:jar:1.12.315:compile
+[[1;36mDEBUG[m]          com.amazonaws:aws-java-sdk-core:jar:1.12.315:compile
+[[1;36mDEBUG[m]             org.apache.httpcomponents:httpclient:jar:4.5.13:compile
+[[1;36mDEBUG[m]                org.apache.httpcomponents:httpcore:jar:4.4.13:compile
+[[1;36mDEBUG[m]             software.amazon.ion:ion-java:jar:1.0.2:compile
+[[1;36mDEBUG[m]             com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:jar:2.12.6:compile
+[[1;36mDEBUG[m]             joda-time:joda-time:jar:2.8.1:compile
+[[1;36mDEBUG[m]          com.amazonaws:jmespath-java:jar:1.12.315:compile
+[[1;36mDEBUG[m]    com.amazonaws:aws-iot-device-sdk-java-samples:jar:1.3.13:compile
+[[1;36mDEBUG[m]       commons-codec:commons-codec:jar:1.12:compile
+[[1;36mDEBUG[m]    com.microsoft.azure.sdk.iot:iot-device-client:jar:2.5.0:compile
+[[1;36mDEBUG[m]       org.apache.qpid:proton-j:jar:0.34.1:compile
+[[1;36mDEBUG[m]       com.microsoft.azure:qpid-proton-j-extensions:jar:1.2.4:compile
+[[1;36mDEBUG[m]       com.microsoft.azure.sdk.iot.provisioning.security:security-provider:jar:2.0.1:compile
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;36mDEBUG[m] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache.snapshots (http://people.apache.org/repo/m2-snapshot-repository).
+[[1;36mDEBUG[m] Using mirror maven-default-http-blocker (http://0.0.0.0/) for codehaus.snapshots (http://snapshots.repository.codehaus.org).
+[[1;36mDEBUG[m] Using mirror maven-default-http-blocker (http://0.0.0.0/) for snapshots (http://snapshots.maven.codehaus.org/maven2).
+[[1;36mDEBUG[m] Using mirror maven-default-http-blocker (http://0.0.0.0/) for central (http://repo1.maven.org/maven2).
+[[1;36mDEBUG[m] Dependency collection stats {ConflictMarker.analyzeTime=334778, ConflictMarker.markTime=197272, ConflictMarker.nodeCount=77, ConflictIdSorter.graphTime=201892, ConflictIdSorter.topsortTime=40630, ConflictIdSorter.conflictIdCount=26, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1302397, ConflictResolver.conflictItemCount=74, DefaultDependencyCollector.collectTime=81992237, DefaultDependencyCollector.transformTime=2167992}
+[[1;36mDEBUG[m] org.apache.maven.plugins:maven-resources-plugin:jar:2.6
+[[1;36mDEBUG[m]    org.apache.maven:maven-plugin-api:jar:2.0.6:compile
+[[1;36mDEBUG[m]    org.apache.maven:maven-project:jar:2.0.6:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-profile:jar:2.0.6:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-artifact-manager:jar:2.0.6:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-plugin-registry:jar:2.0.6:compile
+[[1;36mDEBUG[m]    org.apache.maven:maven-core:jar:2.0.6:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6:compile
+[[1;36mDEBUG[m]       org.apache.maven.reporting:maven-reporting-api:jar:2.0.6:compile
+[[1;36mDEBUG[m]          org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-repository-metadata:jar:2.0.6:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-error-diagnostics:jar:2.0.6:compile
+[[1;36mDEBUG[m]       commons-cli:commons-cli:jar:1.0:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-plugin-descriptor:jar:2.0.6:compile
+[[1;36mDEBUG[m]       org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile
+[[1;36mDEBUG[m]       classworlds:classworlds:jar:1.1:compile
+[[1;36mDEBUG[m]    org.apache.maven:maven-artifact:jar:2.0.6:compile
+[[1;36mDEBUG[m]    org.apache.maven:maven-settings:jar:2.0.6:compile
+[[1;36mDEBUG[m]    org.apache.maven:maven-model:jar:2.0.6:compile
+[[1;36mDEBUG[m]    org.apache.maven:maven-monitor:jar:2.0.6:compile
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[[1;36mDEBUG[m]       junit:junit:jar:3.8.1:compile
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-utils:jar:2.0.5:compile
+[[1;36mDEBUG[m]    org.apache.maven.shared:maven-filtering:jar:1.1:compile
+[[1;36mDEBUG[m]       org.sonatype.plexus:plexus-build-api:jar:0.0.4:compile
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-interpolation:jar:1.13:compile
+[[1;36mDEBUG[m] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:2.6
+[[1;36mDEBUG[m] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:2.6
+[[1;36mDEBUG[m]   Imported:  < maven.api
+[[1;36mDEBUG[m] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:2.6
+[[1;36mDEBUG[m]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:2.6
+[[1;36mDEBUG[m]   Included: org.apache.maven.reporting:maven-reporting-api:jar:2.0.6
+[[1;36mDEBUG[m]   Included: org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7
+[[1;36mDEBUG[m]   Included: commons-cli:commons-cli:jar:1.0
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4
+[[1;36mDEBUG[m]   Included: junit:junit:jar:3.8.1
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-utils:jar:2.0.5
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-filtering:jar:1.1
+[[1;36mDEBUG[m]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.4
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.13
+[[1;36mDEBUG[m] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:2.6:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:2.6, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09]
+[[1;36mDEBUG[m] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:2.6:resources' with basic configurator -->
+[[1;36mDEBUG[m]   (f) buildFilters = []
+[[1;36mDEBUG[m]   (f) escapeWindowsPaths = true
+[[1;36mDEBUG[m]   (s) includeEmptyDirs = false
+[[1;36mDEBUG[m]   (s) outputDirectory = /home/emmapaq/piot/gda-java-components/target/classes
+[[1;36mDEBUG[m]   (s) overwrite = false
+[[1;36mDEBUG[m]   (f) project = MavenProject: programmingtheiot.gda:gateway-device-app:0.0.1 @ /home/emmapaq/piot/gda-java-components/pom.xml
+[[1;36mDEBUG[m]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: /home/emmapaq/piot/gda-java-components/src/main/resources, PatternSet [includes: {}, excludes: {}]}}]
+[[1;36mDEBUG[m]   (f) session = org.apache.maven.execution.MavenSession@1ba05e38
+[[1;36mDEBUG[m]   (f) supportMultiLineFiltering = false
+[[1;36mDEBUG[m]   (f) useBuildFilters = true
+[[1;36mDEBUG[m]   (s) useDefaultDelimiters = true
+[[1;36mDEBUG[m] -- end configuration --
+[[1;36mDEBUG[m] properties used {env.TERM=xterm-256color, java.specification.version=17, sun.arch.data.model=64, java.vendor.url=https://ubuntu.com/, env.CLUTTER_DISABLE_MIPMAPPED_TEXT=1, env.DEBUGINFOD_URLS=https://debuginfod.ubuntu.com , sun.boot.library.path=/usr/lib/jvm/java-17-openjdk-amd64/lib, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher test -Dtest=CoapClientConnectorTest#testConnectAndDiscover -X, jdk.debug=release, maven.version=3.8.7, jansi.mode=force, java.specification.vendor=Oracle Corporation, java.version.date=2025-07-15, java.home=/usr/lib/jvm/java-17-openjdk-amd64, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=17.0.16+8-Ubuntu-0ubuntu124.04.1, env.PATH=/home/emmapaq/piot/cda-python-components/piot-venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin, env.LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:, file.encoding=UTF-8, env._=/usr/bin/mvn, env.XDG_SESSION_DESKTOP=ubuntu, env.SHLVL=1, java.io.tmpdir=/tmp, env.GSM_SKIP_SSH_AGENT_WORKAROUND=true, java.version=17.0.16, java.vm.specification.name=Java Virtual Machine Specification, env.GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/57b69153_db7a_4cf4_8458_3d83a386f8c5, native.encoding=UTF-8, java.library.path=/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, java.vendor=Ubuntu, env.IM_CONFIG_PHASE=1, classworlds.conf=/usr/share/maven/bin/m2.conf, java.specification.maintenance.version=1, sun.io.unicode.encoding=UnicodeLittle, env.XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.74GGF3, env.SESSION_MANAGER=local/emmapaq-Latitude-7390:@/tmp/.ICE-unix/7926,unix/emmapaq-Latitude-7390:/tmp/.ICE-unix/7926, env.LANG=en_US.UTF-8, env.XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop, java.vm.specification.version=17, os.name=Linux, env.DISPLAY=:0, test=CoapClientConnectorTest#testConnectAndDiscover, maven.compiler.source=11, user.home=/home/emmapaq, env.COLORTERM=truecolor, env.DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus, env.PYTHONPATH=, path.separator=:, env.GNOME_TERMINAL_SERVICE=:1.121, os.version=6.14.0-34-generic, java.vm.name=OpenJDK 64-Bit Server VM, env.SHELL=/bin/bash, env.LESSCLOSE=/usr/bin/lesspipe %s %s, env.GTK_MODULES=gail:atk-bridge, env.VTE_VERSION=7600, env.USERNAME=emmapaq, os.arch=amd64, maven.multiModuleProjectDirectory=/home/emmapaq/piot/gda-java-components, env.DESKTOP_SESSION=ubuntu, env.MAVEN_PROJECTBASEDIR=/home/emmapaq/piot/gda-java-components, java.vm.info=mixed mode, sharing, env.SYSTEMD_EXEC_PID=7973, env.USER=emmapaq, java.class.version=61.0, sun.jnu.encoding=UTF-8, env.PS1=(piot-venv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ , env.GNOME_SETUP_DISPLAY=:1, maven.build.version=Apache Maven 3.8.7, env.MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=, maven.home=/usr/share/maven, env.GDMSESSION=ubuntu, file.separator=/, java.vm.compressedOopsMode=Zero based, line.separator=
+, env.GNOME_DESKTOP_SESSION_ID=this-is-deprecated, user.name=emmapaq, env.LOGNAME=emmapaq, env.SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, env.XDG_RUNTIME_DIR=/run/user/1000, env.XMODIFIERS=@im=ibus, maven.compiler.target=11, env.XDG_SESSION_TYPE=wayland, library.jansi.path=/usr/share/maven/lib/jansi-native, env.XDG_SESSION_CLASS=user, env.OLDPWD=/home/emmapaq/piot/gda-java-components, env.VIRTUAL_ENV=/home/emmapaq/piot/cda-python-components/piot-venv, env.PWD=/home/emmapaq/piot/gda-java-components, env.LESSOPEN=| /usr/bin/lesspipe %s, java.class.path=/usr/share/maven/boot/plexus-classworlds-2.x.jar, env.HOME=/home/emmapaq, env.QT_IM_MODULE=ibus, java.vm.vendor=Ubuntu, maven.conf=/usr/share/maven/conf, sun.java.launcher=SUN_STANDARD, user.country=US, env.QT_ACCESSIBILITY=1, sun.cpu.endian=little, user.language=en, env.WAYLAND_DISPLAY=wayland-0, env.XDG_MENU_PREFIX=gnome-, env.VIRTUAL_ENV_PROMPT=(piot-venv) , java.runtime.name=OpenJDK Runtime Environment, env.MAVEN_CMD_LINE_ARGS= test -Dtest=CoapClientConnectorTest#testConnectAndDiscover -X, java.vendor.url.bug=https://bugs.launchpad.net/ubuntu/+source/openjdk-17, env.XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, user.dir=/home/emmapaq/piot/gda-java-components, env.MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure, env.XDG_CURRENT_DESKTOP=ubuntu:GNOME, java.vm.version=17.0.16+8-Ubuntu-0ubuntu124.04.1, env.GNOME_SHELL_SESSION_MODE=ubuntu}
+[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[[1;36mDEBUG[m] resource with targetPath null
+directory /home/emmapaq/piot/gda-java-components/src/main/resources
+excludes []
+includes []
+[[1;36mDEBUG[m] ignoreDelta true
+[[1;34mINFO[m] Copying 1 resource
+[[1;36mDEBUG[m] file PiotConfig.props has a filtered file extension
+[[1;36mDEBUG[m] copy /home/emmapaq/piot/gda-java-components/src/main/resources/PiotConfig.props to /home/emmapaq/piot/gda-java-components/target/classes/PiotConfig.props
+[[1;36mDEBUG[m] no use filter components
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;36mDEBUG[m] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache-snapshots (http://people.apache.org/repo/m2-snapshot-repository).
+[[1;36mDEBUG[m] Dependency collection stats {ConflictMarker.analyzeTime=596196, ConflictMarker.markTime=209071, ConflictMarker.nodeCount=160, ConflictIdSorter.graphTime=251782, ConflictIdSorter.topsortTime=64629, ConflictIdSorter.conflictIdCount=43, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1681093, ConflictResolver.conflictItemCount=63, DefaultDependencyCollector.collectTime=155425010, DefaultDependencyCollector.transformTime=2837519}
+[[1;36mDEBUG[m] org.apache.maven.plugins:maven-compiler-plugin:jar:3.1
+[[1;36mDEBUG[m]    org.apache.maven:maven-plugin-api:jar:2.0.9:compile
+[[1;36mDEBUG[m]    org.apache.maven:maven-artifact:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.codehaus.plexus:plexus-utils:jar:1.5.1:compile
+[[1;36mDEBUG[m]    org.apache.maven:maven-core:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-settings:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-profile:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-model:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-repository-metadata:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-project:jar:2.0.9:compile
+[[1;36mDEBUG[m]          org.apache.maven:maven-plugin-registry:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-artifact-manager:jar:2.0.9:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-monitor:jar:2.0.9:compile
+[[1;36mDEBUG[m]    org.apache.maven:maven-toolchain:jar:1.0:compile
+[[1;36mDEBUG[m]    org.apache.maven.shared:maven-shared-utils:jar:0.1:compile
+[[1;36mDEBUG[m]       com.google.code.findbugs:jsr305:jar:2.0.1:compile
+[[1;36mDEBUG[m]    org.apache.maven.shared:maven-shared-incremental:jar:1.1:compile
+[[1;36mDEBUG[m]       org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile (version managed from default)
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-compiler-api:jar:2.2:compile
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-compiler-manager:jar:2.2:compile
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-compiler-javac:jar:2.2:runtime
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-container-default:jar:1.5.5:compile
+[[1;36mDEBUG[m]       org.codehaus.plexus:plexus-classworlds:jar:2.2.2:compile
+[[1;36mDEBUG[m]       org.apache.xbean:xbean-reflect:jar:3.4:compile
+[[1;36mDEBUG[m]          log4j:log4j:jar:1.2.12:compile
+[[1;36mDEBUG[m]          commons-logging:commons-logging-api:jar:1.1:compile
+[[1;36mDEBUG[m]       com.google.collections:google-collections:jar:1.0:compile
+[[1;36mDEBUG[m]       junit:junit:jar:3.8.2:compile
+[[1;36mDEBUG[m] Created new class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.1
+[[1;36mDEBUG[m] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.1
+[[1;36mDEBUG[m]   Imported:  < maven.api
+[[1;36mDEBUG[m] Populating class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.1
+[[1;36mDEBUG[m]   Included: org.apache.maven.plugins:maven-compiler-plugin:jar:3.1
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-utils:jar:1.5.1
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-shared-utils:jar:0.1
+[[1;36mDEBUG[m]   Included: com.google.code.findbugs:jsr305:jar:2.0.1
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-shared-incremental:jar:1.1
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.5.5
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-compiler-api:jar:2.2
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:2.2
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:2.2
+[[1;36mDEBUG[m]   Included: org.apache.xbean:xbean-reflect:jar:3.4
+[[1;36mDEBUG[m]   Included: log4j:log4j:jar:1.2.12
+[[1;36mDEBUG[m]   Included: commons-logging:commons-logging-api:jar:1.1
+[[1;36mDEBUG[m]   Included: com.google.collections:google-collections:jar:1.0
+[[1;36mDEBUG[m]   Included: junit:junit:jar:3.8.2
+[[1;36mDEBUG[m] Configuring mojo org.apache.maven.plugins:maven-compiler-plugin:3.1:compile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09]
+[[1;36mDEBUG[m] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:3.1:compile' with basic configurator -->
+[[1;36mDEBUG[m]   (f) basedir = /home/emmapaq/piot/gda-java-components
+[[1;36mDEBUG[m]   (f) buildDirectory = /home/emmapaq/piot/gda-java-components/target
+[[1;36mDEBUG[m]   (f) classpathElements = [/home/emmapaq/piot/gda-java-components/target/classes, /home/emmapaq/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar, /home/emmapaq/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-configuration2/2.12.0/commons-configuration2-2.12.0.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar, /home/emmapaq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar, /home/emmapaq/.m2/repository/commons-cli/commons-cli/1.10.0/commons-cli-1.10.0.jar, /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.mqttv5.client/1.2.5/org.eclipse.paho.mqttv5.client-1.2.5.jar, /home/emmapaq/.m2/repository/org/eclipse/californium/californium-core/3.14.0/californium-core-3.14.0.jar, /home/emmapaq/.m2/repository/org/eclipse/californium/element-connector/3.14.0/element-connector-3.14.0.jar, /home/emmapaq/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar, /home/emmapaq/.m2/repository/org/eclipse/californium/scandium/3.14.0/scandium-3.14.0.jar, /home/emmapaq/.m2/repository/redis/clients/jedis/6.0.0/jedis-6.0.0.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-pool2/2.12.1/commons-pool2-2.12.1.jar, /home/emmapaq/.m2/repository/org/json/json/20250107/json-20250107.jar, /home/emmapaq/.m2/repository/redis/clients/authentication/redis-authx-core/0.1.1-beta2/redis-authx-core-0.1.1-beta2.jar, /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-java/7.3.0/influxdb-client-java-7.3.0.jar, /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-core/7.3.0/influxdb-client-core-7.3.0.jar, /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-utils/7.3.0/influxdb-client-utils-7.3.0.jar, /home/emmapaq/.m2/repository/com/squareup/okio/okio/3.9.0/okio-3.9.0.jar, /home/emmapaq/.m2/repository/com/squareup/okio/okio-jvm/3.9.0/okio-jvm-3.9.0.jar, /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.21/kotlin-stdlib-1.9.21.jar, /home/emmapaq/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar, /home/emmapaq/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar, /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar, /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar, /home/emmapaq/.m2/repository/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.jar, /home/emmapaq/.m2/repository/com/squareup/okhttp3/logging-interceptor/4.12.0/logging-interceptor-4.12.0.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-csv/1.11.0/commons-csv-1.11.0.jar, /home/emmapaq/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar, /home/emmapaq/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.10/rxjava-3.1.10.jar, /home/emmapaq/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar, /home/emmapaq/.m2/repository/com/squareup/retrofit2/adapter-rxjava3/2.11.0/adapter-rxjava3-2.11.0.jar, /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-scalars/2.11.0/converter-scalars-2.11.0.jar, /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.jar, /home/emmapaq/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar, /home/emmapaq/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar, /home/emmapaq/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar, /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java/1.3.13/aws-iot-device-sdk-java-1.3.13.jar, /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.4/jackson-core-2.13.4.jar, /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar, /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar, /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.4/org.eclipse.paho.client.mqttv3-1.2.4.jar, /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-secretsmanager/1.12.315/aws-java-sdk-secretsmanager-1.12.315.jar, /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-core/1.12.315/aws-java-sdk-core-1.12.315.jar, /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar, /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar, /home/emmapaq/.m2/repository/software/amazon/ion/ion-java/1.0.2/ion-java-1.0.2.jar, /home/emmapaq/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.12.6/jackson-dataformat-cbor-2.12.6.jar, /home/emmapaq/.m2/repository/joda-time/joda-time/2.8.1/joda-time-2.8.1.jar, /home/emmapaq/.m2/repository/com/amazonaws/jmespath-java/1.12.315/jmespath-java-1.12.315.jar, /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java-samples/1.3.13/aws-iot-device-sdk-java-samples-1.3.13.jar, /home/emmapaq/.m2/repository/commons-codec/commons-codec/1.12/commons-codec-1.12.jar, /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/iot-device-client/2.5.0/iot-device-client-2.5.0.jar, /home/emmapaq/.m2/repository/org/apache/qpid/proton-j/0.34.1/proton-j-0.34.1.jar, /home/emmapaq/.m2/repository/com/microsoft/azure/qpid-proton-j-extensions/1.2.4/qpid-proton-j-extensions-1.2.4.jar, /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/provisioning/security/security-provider/2.0.1/security-provider-2.0.1.jar]
+[[1;36mDEBUG[m]   (f) compileSourceRoots = [/home/emmapaq/piot/gda-java-components/src/main/java]
+[[1;36mDEBUG[m]   (f) compilerId = javac
+[[1;36mDEBUG[m]   (f) debug = true
+[[1;36mDEBUG[m]   (f) failOnError = true
+[[1;36mDEBUG[m]   (f) forceJavacCompilerUse = false
+[[1;36mDEBUG[m]   (f) fork = false
+[[1;36mDEBUG[m]   (f) generatedSourcesDirectory = /home/emmapaq/piot/gda-java-components/target/generated-sources/annotations
+[[1;36mDEBUG[m]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.1:compile {execution: default-compile}
+[[1;36mDEBUG[m]   (f) optimize = false
+[[1;36mDEBUG[m]   (f) outputDirectory = /home/emmapaq/piot/gda-java-components/target/classes
+[[1;36mDEBUG[m]   (f) projectArtifact = programmingtheiot.gda:gateway-device-app:jar:0.0.1
+[[1;36mDEBUG[m]   (f) showDeprecation = false
+[[1;36mDEBUG[m]   (f) showWarnings = false
+[[1;36mDEBUG[m]   (f) skipMultiThreadWarning = false
+[[1;36mDEBUG[m]   (f) source = 11
+[[1;36mDEBUG[m]   (f) staleMillis = 0
+[[1;36mDEBUG[m]   (f) target = 11
+[[1;36mDEBUG[m]   (f) useIncrementalCompilation = true
+[[1;36mDEBUG[m]   (f) verbose = false
+[[1;36mDEBUG[m]   (f) mavenSession = org.apache.maven.execution.MavenSession@1ba05e38
+[[1;36mDEBUG[m]   (f) session = org.apache.maven.execution.MavenSession@1ba05e38
+[[1;36mDEBUG[m] -- end configuration --
+[[1;36mDEBUG[m] Using compiler 'javac'.
+[[1;36mDEBUG[m] Source directories: [/home/emmapaq/piot/gda-java-components/src/main/java]
+[[1;36mDEBUG[m] Classpath: [/home/emmapaq/piot/gda-java-components/target/classes
+ /home/emmapaq/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar
+ /home/emmapaq/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-configuration2/2.12.0/commons-configuration2-2.12.0.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar
+ /home/emmapaq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar
+ /home/emmapaq/.m2/repository/commons-cli/commons-cli/1.10.0/commons-cli-1.10.0.jar
+ /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.mqttv5.client/1.2.5/org.eclipse.paho.mqttv5.client-1.2.5.jar
+ /home/emmapaq/.m2/repository/org/eclipse/californium/californium-core/3.14.0/californium-core-3.14.0.jar
+ /home/emmapaq/.m2/repository/org/eclipse/californium/element-connector/3.14.0/element-connector-3.14.0.jar
+ /home/emmapaq/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar
+ /home/emmapaq/.m2/repository/org/eclipse/californium/scandium/3.14.0/scandium-3.14.0.jar
+ /home/emmapaq/.m2/repository/redis/clients/jedis/6.0.0/jedis-6.0.0.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-pool2/2.12.1/commons-pool2-2.12.1.jar
+ /home/emmapaq/.m2/repository/org/json/json/20250107/json-20250107.jar
+ /home/emmapaq/.m2/repository/redis/clients/authentication/redis-authx-core/0.1.1-beta2/redis-authx-core-0.1.1-beta2.jar
+ /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-java/7.3.0/influxdb-client-java-7.3.0.jar
+ /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-core/7.3.0/influxdb-client-core-7.3.0.jar
+ /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-utils/7.3.0/influxdb-client-utils-7.3.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/okio/okio/3.9.0/okio-3.9.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/okio/okio-jvm/3.9.0/okio-jvm-3.9.0.jar
+ /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.21/kotlin-stdlib-1.9.21.jar
+ /home/emmapaq/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar
+ /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar
+ /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar
+ /home/emmapaq/.m2/repository/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/okhttp3/logging-interceptor/4.12.0/logging-interceptor-4.12.0.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-csv/1.11.0/commons-csv-1.11.0.jar
+ /home/emmapaq/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar
+ /home/emmapaq/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.10/rxjava-3.1.10.jar
+ /home/emmapaq/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar
+ /home/emmapaq/.m2/repository/com/squareup/retrofit2/adapter-rxjava3/2.11.0/adapter-rxjava3-2.11.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-scalars/2.11.0/converter-scalars-2.11.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.jar
+ /home/emmapaq/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+ /home/emmapaq/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar
+ /home/emmapaq/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java/1.3.13/aws-iot-device-sdk-java-1.3.13.jar
+ /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.4/jackson-core-2.13.4.jar
+ /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar
+ /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar
+ /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.4/org.eclipse.paho.client.mqttv3-1.2.4.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-secretsmanager/1.12.315/aws-java-sdk-secretsmanager-1.12.315.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-core/1.12.315/aws-java-sdk-core-1.12.315.jar
+ /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+ /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+ /home/emmapaq/.m2/repository/software/amazon/ion/ion-java/1.0.2/ion-java-1.0.2.jar
+ /home/emmapaq/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.12.6/jackson-dataformat-cbor-2.12.6.jar
+ /home/emmapaq/.m2/repository/joda-time/joda-time/2.8.1/joda-time-2.8.1.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/jmespath-java/1.12.315/jmespath-java-1.12.315.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java-samples/1.3.13/aws-iot-device-sdk-java-samples-1.3.13.jar
+ /home/emmapaq/.m2/repository/commons-codec/commons-codec/1.12/commons-codec-1.12.jar
+ /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/iot-device-client/2.5.0/iot-device-client-2.5.0.jar
+ /home/emmapaq/.m2/repository/org/apache/qpid/proton-j/0.34.1/proton-j-0.34.1.jar
+ /home/emmapaq/.m2/repository/com/microsoft/azure/qpid-proton-j-extensions/1.2.4/qpid-proton-j-extensions-1.2.4.jar
+ /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/provisioning/security/security-provider/2.0.1/security-provider-2.0.1.jar]
+[[1;36mDEBUG[m] Output directory: /home/emmapaq/piot/gda-java-components/target/classes
+[[1;36mDEBUG[m] CompilerReuseStrategy: reuseCreated
+[[1;36mDEBUG[m] useIncrementalCompilation enabled
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;36mDEBUG[m] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:2.6:testResources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:2.6, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09]
+[[1;36mDEBUG[m] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:2.6:testResources' with basic configurator -->
+[[1;36mDEBUG[m]   (f) buildFilters = []
+[[1;36mDEBUG[m]   (f) escapeWindowsPaths = true
+[[1;36mDEBUG[m]   (s) includeEmptyDirs = false
+[[1;36mDEBUG[m]   (s) outputDirectory = /home/emmapaq/piot/gda-java-components/target/test-classes
+[[1;36mDEBUG[m]   (s) overwrite = false
+[[1;36mDEBUG[m]   (f) project = MavenProject: programmingtheiot.gda:gateway-device-app:0.0.1 @ /home/emmapaq/piot/gda-java-components/pom.xml
+[[1;36mDEBUG[m]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: /home/emmapaq/piot/gda-java-components/src/test/resources, PatternSet [includes: {}, excludes: {}]}}]
+[[1;36mDEBUG[m]   (f) session = org.apache.maven.execution.MavenSession@1ba05e38
+[[1;36mDEBUG[m]   (f) supportMultiLineFiltering = false
+[[1;36mDEBUG[m]   (f) useBuildFilters = true
+[[1;36mDEBUG[m]   (s) useDefaultDelimiters = true
+[[1;36mDEBUG[m] -- end configuration --
+[[1;36mDEBUG[m] properties used {env.TERM=xterm-256color, java.specification.version=17, sun.arch.data.model=64, java.vendor.url=https://ubuntu.com/, env.CLUTTER_DISABLE_MIPMAPPED_TEXT=1, env.DEBUGINFOD_URLS=https://debuginfod.ubuntu.com , sun.boot.library.path=/usr/lib/jvm/java-17-openjdk-amd64/lib, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher test -Dtest=CoapClientConnectorTest#testConnectAndDiscover -X, jdk.debug=release, maven.version=3.8.7, jansi.mode=force, java.specification.vendor=Oracle Corporation, java.version.date=2025-07-15, java.home=/usr/lib/jvm/java-17-openjdk-amd64, java.vm.specification.vendor=Oracle Corporation, java.specification.name=Java Platform API Specification, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.runtime.version=17.0.16+8-Ubuntu-0ubuntu124.04.1, env.PATH=/home/emmapaq/piot/cda-python-components/piot-venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin, env.LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:, file.encoding=UTF-8, env._=/usr/bin/mvn, env.XDG_SESSION_DESKTOP=ubuntu, env.SHLVL=1, java.io.tmpdir=/tmp, env.GSM_SKIP_SSH_AGENT_WORKAROUND=true, java.version=17.0.16, java.vm.specification.name=Java Virtual Machine Specification, env.GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/57b69153_db7a_4cf4_8458_3d83a386f8c5, native.encoding=UTF-8, java.library.path=/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, java.vendor=Ubuntu, env.IM_CONFIG_PHASE=1, classworlds.conf=/usr/share/maven/bin/m2.conf, java.specification.maintenance.version=1, sun.io.unicode.encoding=UnicodeLittle, env.XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.74GGF3, env.SESSION_MANAGER=local/emmapaq-Latitude-7390:@/tmp/.ICE-unix/7926,unix/emmapaq-Latitude-7390:/tmp/.ICE-unix/7926, env.LANG=en_US.UTF-8, env.XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop, java.vm.specification.version=17, os.name=Linux, env.DISPLAY=:0, test=CoapClientConnectorTest#testConnectAndDiscover, maven.compiler.source=11, user.home=/home/emmapaq, env.COLORTERM=truecolor, env.DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus, env.PYTHONPATH=, path.separator=:, env.GNOME_TERMINAL_SERVICE=:1.121, os.version=6.14.0-34-generic, java.vm.name=OpenJDK 64-Bit Server VM, env.SHELL=/bin/bash, env.LESSCLOSE=/usr/bin/lesspipe %s %s, env.GTK_MODULES=gail:atk-bridge, env.VTE_VERSION=7600, env.USERNAME=emmapaq, os.arch=amd64, maven.multiModuleProjectDirectory=/home/emmapaq/piot/gda-java-components, env.DESKTOP_SESSION=ubuntu, env.MAVEN_PROJECTBASEDIR=/home/emmapaq/piot/gda-java-components, java.vm.info=mixed mode, sharing, env.SYSTEMD_EXEC_PID=7973, env.USER=emmapaq, java.class.version=61.0, sun.jnu.encoding=UTF-8, env.PS1=(piot-venv) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ , env.GNOME_SETUP_DISPLAY=:1, maven.build.version=Apache Maven 3.8.7, env.MEMORY_PRESSURE_WRITE=c29tZSAyMDAwMDAgMjAwMDAwMAA=, maven.home=/usr/share/maven, env.GDMSESSION=ubuntu, file.separator=/, java.vm.compressedOopsMode=Zero based, line.separator=
+, env.GNOME_DESKTOP_SESSION_ID=this-is-deprecated, user.name=emmapaq, env.LOGNAME=emmapaq, env.SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, env.XDG_RUNTIME_DIR=/run/user/1000, env.XMODIFIERS=@im=ibus, maven.compiler.target=11, env.XDG_SESSION_TYPE=wayland, library.jansi.path=/usr/share/maven/lib/jansi-native, env.XDG_SESSION_CLASS=user, env.OLDPWD=/home/emmapaq/piot/gda-java-components, env.VIRTUAL_ENV=/home/emmapaq/piot/cda-python-components/piot-venv, env.PWD=/home/emmapaq/piot/gda-java-components, env.LESSOPEN=| /usr/bin/lesspipe %s, java.class.path=/usr/share/maven/boot/plexus-classworlds-2.x.jar, env.HOME=/home/emmapaq, env.QT_IM_MODULE=ibus, java.vm.vendor=Ubuntu, maven.conf=/usr/share/maven/conf, sun.java.launcher=SUN_STANDARD, user.country=US, env.QT_ACCESSIBILITY=1, sun.cpu.endian=little, user.language=en, env.WAYLAND_DISPLAY=wayland-0, env.XDG_MENU_PREFIX=gnome-, env.VIRTUAL_ENV_PROMPT=(piot-venv) , java.runtime.name=OpenJDK Runtime Environment, env.MAVEN_CMD_LINE_ARGS= test -Dtest=CoapClientConnectorTest#testConnectAndDiscover -X, java.vendor.url.bug=https://bugs.launchpad.net/ubuntu/+source/openjdk-17, env.XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, user.dir=/home/emmapaq/piot/gda-java-components, env.MEMORY_PRESSURE_WATCH=/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure, env.XDG_CURRENT_DESKTOP=ubuntu:GNOME, java.vm.version=17.0.16+8-Ubuntu-0ubuntu124.04.1, env.GNOME_SHELL_SESSION_MODE=ubuntu}
+[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[[1;36mDEBUG[m] resource with targetPath null
+directory /home/emmapaq/piot/gda-java-components/src/test/resources
+excludes []
+includes []
+[[1;36mDEBUG[m] ignoreDelta true
+[[1;34mINFO[m] Copying 1 resource
+[[1;36mDEBUG[m] file PiotConfig.props has a filtered file extension
+[[1;36mDEBUG[m] copy /home/emmapaq/piot/gda-java-components/src/test/resources/PiotConfig.props to /home/emmapaq/piot/gda-java-components/target/test-classes/PiotConfig.props
+[[1;36mDEBUG[m] no use filter components
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;36mDEBUG[m] Configuring mojo org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09]
+[[1;36mDEBUG[m] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile' with basic configurator -->
+[[1;36mDEBUG[m]   (f) basedir = /home/emmapaq/piot/gda-java-components
+[[1;36mDEBUG[m]   (f) buildDirectory = /home/emmapaq/piot/gda-java-components/target
+[[1;36mDEBUG[m]   (f) classpathElements = [/home/emmapaq/piot/gda-java-components/target/test-classes, /home/emmapaq/piot/gda-java-components/target/classes, /home/emmapaq/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar, /home/emmapaq/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar, /home/emmapaq/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar, /home/emmapaq/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-configuration2/2.12.0/commons-configuration2-2.12.0.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar, /home/emmapaq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar, /home/emmapaq/.m2/repository/commons-cli/commons-cli/1.10.0/commons-cli-1.10.0.jar, /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.mqttv5.client/1.2.5/org.eclipse.paho.mqttv5.client-1.2.5.jar, /home/emmapaq/.m2/repository/org/eclipse/californium/californium-core/3.14.0/californium-core-3.14.0.jar, /home/emmapaq/.m2/repository/org/eclipse/californium/californium-legal/3.14.0/californium-legal-3.14.0.jar, /home/emmapaq/.m2/repository/org/eclipse/californium/element-connector/3.14.0/element-connector-3.14.0.jar, /home/emmapaq/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar, /home/emmapaq/.m2/repository/org/eclipse/californium/scandium/3.14.0/scandium-3.14.0.jar, /home/emmapaq/.m2/repository/redis/clients/jedis/6.0.0/jedis-6.0.0.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-pool2/2.12.1/commons-pool2-2.12.1.jar, /home/emmapaq/.m2/repository/org/json/json/20250107/json-20250107.jar, /home/emmapaq/.m2/repository/redis/clients/authentication/redis-authx-core/0.1.1-beta2/redis-authx-core-0.1.1-beta2.jar, /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-java/7.3.0/influxdb-client-java-7.3.0.jar, /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-core/7.3.0/influxdb-client-core-7.3.0.jar, /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-utils/7.3.0/influxdb-client-utils-7.3.0.jar, /home/emmapaq/.m2/repository/com/squareup/okio/okio/3.9.0/okio-3.9.0.jar, /home/emmapaq/.m2/repository/com/squareup/okio/okio-jvm/3.9.0/okio-jvm-3.9.0.jar, /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.21/kotlin-stdlib-1.9.21.jar, /home/emmapaq/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar, /home/emmapaq/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar, /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar, /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar, /home/emmapaq/.m2/repository/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.jar, /home/emmapaq/.m2/repository/com/squareup/okhttp3/logging-interceptor/4.12.0/logging-interceptor-4.12.0.jar, /home/emmapaq/.m2/repository/org/apache/commons/commons-csv/1.11.0/commons-csv-1.11.0.jar, /home/emmapaq/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar, /home/emmapaq/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.10/rxjava-3.1.10.jar, /home/emmapaq/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar, /home/emmapaq/.m2/repository/com/squareup/retrofit2/adapter-rxjava3/2.11.0/adapter-rxjava3-2.11.0.jar, /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-scalars/2.11.0/converter-scalars-2.11.0.jar, /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.jar, /home/emmapaq/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar, /home/emmapaq/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar, /home/emmapaq/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar, /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java/1.3.13/aws-iot-device-sdk-java-1.3.13.jar, /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.4/jackson-core-2.13.4.jar, /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar, /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar, /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.4/org.eclipse.paho.client.mqttv3-1.2.4.jar, /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-secretsmanager/1.12.315/aws-java-sdk-secretsmanager-1.12.315.jar, /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-core/1.12.315/aws-java-sdk-core-1.12.315.jar, /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar, /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar, /home/emmapaq/.m2/repository/software/amazon/ion/ion-java/1.0.2/ion-java-1.0.2.jar, /home/emmapaq/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.12.6/jackson-dataformat-cbor-2.12.6.jar, /home/emmapaq/.m2/repository/joda-time/joda-time/2.8.1/joda-time-2.8.1.jar, /home/emmapaq/.m2/repository/com/amazonaws/jmespath-java/1.12.315/jmespath-java-1.12.315.jar, /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java-samples/1.3.13/aws-iot-device-sdk-java-samples-1.3.13.jar, /home/emmapaq/.m2/repository/commons-codec/commons-codec/1.12/commons-codec-1.12.jar, /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/iot-device-client/2.5.0/iot-device-client-2.5.0.jar, /home/emmapaq/.m2/repository/org/apache/qpid/proton-j/0.34.1/proton-j-0.34.1.jar, /home/emmapaq/.m2/repository/com/microsoft/azure/qpid-proton-j-extensions/1.2.4/qpid-proton-j-extensions-1.2.4.jar, /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/provisioning/security/security-provider/2.0.1/security-provider-2.0.1.jar]
+[[1;36mDEBUG[m]   (f) compileSourceRoots = [/home/emmapaq/piot/gda-java-components/src/test/java]
+[[1;36mDEBUG[m]   (f) compilerId = javac
+[[1;36mDEBUG[m]   (f) debug = true
+[[1;36mDEBUG[m]   (f) failOnError = true
+[[1;36mDEBUG[m]   (f) forceJavacCompilerUse = false
+[[1;36mDEBUG[m]   (f) fork = false
+[[1;36mDEBUG[m]   (f) generatedTestSourcesDirectory = /home/emmapaq/piot/gda-java-components/target/generated-test-sources/test-annotations
+[[1;36mDEBUG[m]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile {execution: default-testCompile}
+[[1;36mDEBUG[m]   (f) optimize = false
+[[1;36mDEBUG[m]   (f) outputDirectory = /home/emmapaq/piot/gda-java-components/target/test-classes
+[[1;36mDEBUG[m]   (f) showDeprecation = false
+[[1;36mDEBUG[m]   (f) showWarnings = false
+[[1;36mDEBUG[m]   (f) skipMultiThreadWarning = false
+[[1;36mDEBUG[m]   (f) source = 11
+[[1;36mDEBUG[m]   (f) staleMillis = 0
+[[1;36mDEBUG[m]   (f) target = 11
+[[1;36mDEBUG[m]   (f) useIncrementalCompilation = true
+[[1;36mDEBUG[m]   (f) verbose = false
+[[1;36mDEBUG[m]   (f) mavenSession = org.apache.maven.execution.MavenSession@1ba05e38
+[[1;36mDEBUG[m]   (f) session = org.apache.maven.execution.MavenSession@1ba05e38
+[[1;36mDEBUG[m] -- end configuration --
+[[1;36mDEBUG[m] Using compiler 'javac'.
+[[1;36mDEBUG[m] Source directories: [/home/emmapaq/piot/gda-java-components/src/test/java]
+[[1;36mDEBUG[m] Classpath: [/home/emmapaq/piot/gda-java-components/target/test-classes
+ /home/emmapaq/piot/gda-java-components/target/classes
+ /home/emmapaq/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar
+ /home/emmapaq/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar
+ /home/emmapaq/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar
+ /home/emmapaq/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-configuration2/2.12.0/commons-configuration2-2.12.0.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar
+ /home/emmapaq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar
+ /home/emmapaq/.m2/repository/commons-cli/commons-cli/1.10.0/commons-cli-1.10.0.jar
+ /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.mqttv5.client/1.2.5/org.eclipse.paho.mqttv5.client-1.2.5.jar
+ /home/emmapaq/.m2/repository/org/eclipse/californium/californium-core/3.14.0/californium-core-3.14.0.jar
+ /home/emmapaq/.m2/repository/org/eclipse/californium/californium-legal/3.14.0/californium-legal-3.14.0.jar
+ /home/emmapaq/.m2/repository/org/eclipse/californium/element-connector/3.14.0/element-connector-3.14.0.jar
+ /home/emmapaq/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar
+ /home/emmapaq/.m2/repository/org/eclipse/californium/scandium/3.14.0/scandium-3.14.0.jar
+ /home/emmapaq/.m2/repository/redis/clients/jedis/6.0.0/jedis-6.0.0.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-pool2/2.12.1/commons-pool2-2.12.1.jar
+ /home/emmapaq/.m2/repository/org/json/json/20250107/json-20250107.jar
+ /home/emmapaq/.m2/repository/redis/clients/authentication/redis-authx-core/0.1.1-beta2/redis-authx-core-0.1.1-beta2.jar
+ /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-java/7.3.0/influxdb-client-java-7.3.0.jar
+ /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-core/7.3.0/influxdb-client-core-7.3.0.jar
+ /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-utils/7.3.0/influxdb-client-utils-7.3.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/okio/okio/3.9.0/okio-3.9.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/okio/okio-jvm/3.9.0/okio-jvm-3.9.0.jar
+ /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.21/kotlin-stdlib-1.9.21.jar
+ /home/emmapaq/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar
+ /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar
+ /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar
+ /home/emmapaq/.m2/repository/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/okhttp3/logging-interceptor/4.12.0/logging-interceptor-4.12.0.jar
+ /home/emmapaq/.m2/repository/org/apache/commons/commons-csv/1.11.0/commons-csv-1.11.0.jar
+ /home/emmapaq/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar
+ /home/emmapaq/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.10/rxjava-3.1.10.jar
+ /home/emmapaq/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar
+ /home/emmapaq/.m2/repository/com/squareup/retrofit2/adapter-rxjava3/2.11.0/adapter-rxjava3-2.11.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-scalars/2.11.0/converter-scalars-2.11.0.jar
+ /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.jar
+ /home/emmapaq/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+ /home/emmapaq/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar
+ /home/emmapaq/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java/1.3.13/aws-iot-device-sdk-java-1.3.13.jar
+ /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.4/jackson-core-2.13.4.jar
+ /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar
+ /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar
+ /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.4/org.eclipse.paho.client.mqttv3-1.2.4.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-secretsmanager/1.12.315/aws-java-sdk-secretsmanager-1.12.315.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-core/1.12.315/aws-java-sdk-core-1.12.315.jar
+ /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar
+ /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+ /home/emmapaq/.m2/repository/software/amazon/ion/ion-java/1.0.2/ion-java-1.0.2.jar
+ /home/emmapaq/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.12.6/jackson-dataformat-cbor-2.12.6.jar
+ /home/emmapaq/.m2/repository/joda-time/joda-time/2.8.1/joda-time-2.8.1.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/jmespath-java/1.12.315/jmespath-java-1.12.315.jar
+ /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java-samples/1.3.13/aws-iot-device-sdk-java-samples-1.3.13.jar
+ /home/emmapaq/.m2/repository/commons-codec/commons-codec/1.12/commons-codec-1.12.jar
+ /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/iot-device-client/2.5.0/iot-device-client-2.5.0.jar
+ /home/emmapaq/.m2/repository/org/apache/qpid/proton-j/0.34.1/proton-j-0.34.1.jar
+ /home/emmapaq/.m2/repository/com/microsoft/azure/qpid-proton-j-extensions/1.2.4/qpid-proton-j-extensions-1.2.4.jar
+ /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/provisioning/security/security-provider/2.0.1/security-provider-2.0.1.jar]
+[[1;36mDEBUG[m] Output directory: /home/emmapaq/piot/gda-java-components/target/test-classes
+[[1;36mDEBUG[m] CompilerReuseStrategy: reuseCreated
+[[1;36mDEBUG[m] useIncrementalCompilation enabled
+[[1;34mINFO[m] Nothing to compile - all classes are up to date
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;36mDEBUG[m] Using mirror maven-default-http-blocker (http://0.0.0.0/) for ow2-snapshot (http://repository.ow2.org/nexus/content/repositories/snapshots).
+[[1;36mDEBUG[m] Dependency collection stats {ConflictMarker.analyzeTime=269057, ConflictMarker.markTime=57857, ConflictMarker.nodeCount=20, ConflictIdSorter.graphTime=129716, ConflictIdSorter.topsortTime=27745, ConflictIdSorter.conflictIdCount=16, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=480516, ConflictResolver.conflictItemCount=20, DefaultDependencyCollector.collectTime=53431831, DefaultDependencyCollector.transformTime=1051486}
+[[1;36mDEBUG[m] org.apache.maven.plugins:maven-surefire-plugin:jar:3.0.0-M5
+[[1;36mDEBUG[m]    org.apache.maven.surefire:maven-surefire-common:jar:3.0.0-M5:compile
+[[1;36mDEBUG[m]       org.apache.maven.surefire:surefire-api:jar:3.0.0-M5:compile
+[[1;36mDEBUG[m]          org.apache.maven.surefire:surefire-logger-api:jar:3.0.0-M5:compile
+[[1;36mDEBUG[m]       org.apache.maven.surefire:surefire-extensions-api:jar:3.0.0-M5:compile
+[[1;36mDEBUG[m]       org.apache.maven.surefire:surefire-booter:jar:3.0.0-M5:compile
+[[1;36mDEBUG[m]          org.apache.maven.surefire:surefire-extensions-spi:jar:3.0.0-M5:compile
+[[1;36mDEBUG[m]       org.apache.maven:maven-toolchain:jar:3.0-alpha-2:compile (version managed from default) (exclusions managed from default)
+[[1;36mDEBUG[m]       org.apache.maven.shared:maven-artifact-transfer:jar:0.11.0:compile (version managed from default) (exclusions managed from default)
+[[1;36mDEBUG[m]          org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.0:compile (version managed from default) (exclusions managed from default)
+[[1;36mDEBUG[m]             org.apache.maven:maven-plugin-api:jar:3.0:compile (version managed from default)
+[[1;36mDEBUG[m]          commons-codec:commons-codec:jar:1.11:compile (version managed from default)
+[[1;36mDEBUG[m]       org.codehaus.plexus:plexus-java:jar:1.0.5:compile (version managed from default)
+[[1;36mDEBUG[m]          org.ow2.asm:asm:jar:7.2:compile
+[[1;36mDEBUG[m]          com.thoughtworks.qdox:qdox:jar:2.0-M9:compile
+[[1;36mDEBUG[m]       org.apache.maven.surefire:surefire-shared-utils:jar:3.0.0-M4:compile
+[[1;36mDEBUG[m]    org.codehaus.plexus:plexus-utils:jar:1.1:runtime
+[[1;36mDEBUG[m] Created new class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5
+[[1;36mDEBUG[m] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5
+[[1;36mDEBUG[m]   Imported:  < maven.api
+[[1;36mDEBUG[m] Populating class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5
+[[1;36mDEBUG[m]   Included: org.apache.maven.plugins:maven-surefire-plugin:jar:3.0.0-M5
+[[1;36mDEBUG[m]   Included: org.apache.maven.surefire:maven-surefire-common:jar:3.0.0-M5
+[[1;36mDEBUG[m]   Included: org.apache.maven.surefire:surefire-api:jar:3.0.0-M5
+[[1;36mDEBUG[m]   Included: org.apache.maven.surefire:surefire-logger-api:jar:3.0.0-M5
+[[1;36mDEBUG[m]   Included: org.apache.maven.surefire:surefire-extensions-api:jar:3.0.0-M5
+[[1;36mDEBUG[m]   Included: org.apache.maven.surefire:surefire-booter:jar:3.0.0-M5
+[[1;36mDEBUG[m]   Included: org.apache.maven.surefire:surefire-extensions-spi:jar:3.0.0-M5
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-artifact-transfer:jar:0.11.0
+[[1;36mDEBUG[m]   Included: org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.0
+[[1;36mDEBUG[m]   Included: commons-codec:commons-codec:jar:1.11
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-java:jar:1.0.5
+[[1;36mDEBUG[m]   Included: org.ow2.asm:asm:jar:7.2
+[[1;36mDEBUG[m]   Included: com.thoughtworks.qdox:qdox:jar:2.0-M9
+[[1;36mDEBUG[m]   Included: org.apache.maven.surefire:surefire-shared-utils:jar:3.0.0-M4
+[[1;36mDEBUG[m]   Included: org.codehaus.plexus:plexus-utils:jar:1.1
+[[1;36mDEBUG[m] Configuring mojo org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@30946e09]
+[[1;36mDEBUG[m] Configuring mojo 'org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test' with basic configurator -->
+[[1;36mDEBUG[m]   (s) additionalClasspathElements = []
+[[1;36mDEBUG[m]   (s) basedir = /home/emmapaq/piot/gda-java-components
+[[1;36mDEBUG[m]   (s) childDelegation = false
+[[1;36mDEBUG[m]   (f) classesDirectory = /home/emmapaq/piot/gda-java-components/target/classes
+[[1;36mDEBUG[m]   (s) classpathDependencyExcludes = []
+[[1;36mDEBUG[m]   (s) dependenciesToScan = []
+[[1;36mDEBUG[m]   (s) disableXmlReport = false
+[[1;36mDEBUG[m]   (s) enableAssertions = true
+[[1;36mDEBUG[m]   (f) excludedEnvironmentVariables = []
+[[1;36mDEBUG[m]   (f) forkCount = 1
+[[1;36mDEBUG[m]   (s) forkMode = once
+[[1;36mDEBUG[m]   (s) forkedProcessExitTimeoutInSeconds = 30
+[[1;36mDEBUG[m]   (s) junitArtifactName = junit:junit
+[[1;36mDEBUG[m]   (s) localRepository =       id: local
+      url: file:///home/emmapaq/.m2/repository/
+   layout: default
+snapshots: [enabled => true, update => always]
+ releases: [enabled => true, update => always]
+   blocked: false
+
+[[1;36mDEBUG[m]   (f) parallelMavenExecution = false
+[[1;36mDEBUG[m]   (s) parallelOptimized = true
+[[1;36mDEBUG[m]   (s) perCoreThreadCount = true
+[[1;36mDEBUG[m]   (s) pluginArtifactMap = {org.apache.maven.plugins:maven-surefire-plugin=org.apache.maven.plugins:maven-surefire-plugin:maven-plugin:3.0.0-M5:, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:3.0.0-M5:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:3.0.0-M5:compile, org.apache.maven.surefire:surefire-logger-api=org.apache.maven.surefire:surefire-logger-api:jar:3.0.0-M5:compile, org.apache.maven.surefire:surefire-extensions-api=org.apache.maven.surefire:surefire-extensions-api:jar:3.0.0-M5:compile, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:3.0.0-M5:compile, org.apache.maven.surefire:surefire-extensions-spi=org.apache.maven.surefire:surefire-extensions-spi:jar:3.0.0-M5:compile, org.apache.maven:maven-toolchain=org.apache.maven:maven-toolchain:jar:3.0-alpha-2:compile, org.apache.maven.shared:maven-artifact-transfer=org.apache.maven.shared:maven-artifact-transfer:jar:0.11.0:compile, org.apache.maven.shared:maven-common-artifact-filters=org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.0:compile, org.apache.maven:maven-plugin-api=org.apache.maven:maven-plugin-api:jar:3.0:compile, commons-codec:commons-codec=commons-codec:commons-codec:jar:1.11:compile, org.codehaus.plexus:plexus-java=org.codehaus.plexus:plexus-java:jar:1.0.5:compile, org.ow2.asm:asm=org.ow2.asm:asm:jar:7.2:compile, com.thoughtworks.qdox:qdox=com.thoughtworks.qdox:qdox:jar:2.0-M9:compile, org.apache.maven.surefire:surefire-shared-utils=org.apache.maven.surefire:surefire-shared-utils:jar:3.0.0-M4:compile, org.codehaus.plexus:plexus-utils=org.codehaus.plexus:plexus-utils:jar:1.1:runtime}
+[[1;36mDEBUG[m]   (f) pluginDescriptor = Component Descriptor: role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugin.surefire.HelpMojo', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:help'
+role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugin.surefire.SurefirePlugin', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test'
+---
+[[1;36mDEBUG[m]   (s) printSummary = true
+[[1;36mDEBUG[m]   (s) project = MavenProject: programmingtheiot.gda:gateway-device-app:0.0.1 @ /home/emmapaq/piot/gda-java-components/pom.xml
+[[1;36mDEBUG[m]   (s) projectArtifactMap = {com.google.code.gson:gson=com.google.code.gson:gson:jar:2.13.1:compile, com.google.errorprone:error_prone_annotations=com.google.errorprone:error_prone_annotations:jar:2.38.0:compile, junit:junit=junit:junit:jar:4.13.2:test, org.hamcrest:hamcrest-core=org.hamcrest:hamcrest-core:jar:1.3:test, org.apache.commons:commons-configuration2=org.apache.commons:commons-configuration2:jar:2.12.0:compile, org.apache.commons:commons-lang3=org.apache.commons:commons-lang3:jar:3.17.0:compile, org.apache.commons:commons-text=org.apache.commons:commons-text:jar:1.13.1:compile, commons-logging:commons-logging=commons-logging:commons-logging:jar:1.3.5:compile, commons-cli:commons-cli=commons-cli:commons-cli:jar:1.10.0:compile, org.eclipse.paho:org.eclipse.paho.mqttv5.client=org.eclipse.paho:org.eclipse.paho.mqttv5.client:jar:1.2.5:compile, org.eclipse.californium:californium-core=org.eclipse.californium:californium-core:jar:3.14.0:compile, org.eclipse.californium:californium-legal=org.eclipse.californium:californium-legal:jar:3.14.0:runtime, org.eclipse.californium:element-connector=org.eclipse.californium:element-connector:jar:3.14.0:compile, org.slf4j:slf4j-api=org.slf4j:slf4j-api:jar:1.7.36:compile, org.eclipse.californium:scandium=org.eclipse.californium:scandium:jar:3.14.0:compile, redis.clients:jedis=redis.clients:jedis:jar:6.0.0:compile, org.apache.commons:commons-pool2=org.apache.commons:commons-pool2:jar:2.12.1:compile, org.json:json=org.json:json:jar:20250107:compile, redis.clients.authentication:redis-authx-core=redis.clients.authentication:redis-authx-core:jar:0.1.1-beta2:compile, com.influxdb:influxdb-client-java=com.influxdb:influxdb-client-java:jar:7.3.0:compile, com.influxdb:influxdb-client-core=com.influxdb:influxdb-client-core:jar:7.3.0:compile, com.influxdb:influxdb-client-utils=com.influxdb:influxdb-client-utils:jar:7.3.0:compile, com.squareup.okio:okio=com.squareup.okio:okio:jar:3.9.0:compile, com.squareup.okio:okio-jvm=com.squareup.okio:okio-jvm:jar:3.9.0:compile, org.jetbrains.kotlin:kotlin-stdlib=org.jetbrains.kotlin:kotlin-stdlib:jar:1.9.21:compile, org.jetbrains:annotations=org.jetbrains:annotations:jar:13.0:compile, com.squareup.okhttp3:okhttp=com.squareup.okhttp3:okhttp:jar:4.12.0:compile, org.jetbrains.kotlin:kotlin-stdlib-jdk8=org.jetbrains.kotlin:kotlin-stdlib-jdk8:jar:1.8.21:compile, org.jetbrains.kotlin:kotlin-stdlib-jdk7=org.jetbrains.kotlin:kotlin-stdlib-jdk7:jar:1.8.21:compile, com.squareup.retrofit2:retrofit=com.squareup.retrofit2:retrofit:jar:2.11.0:compile, com.squareup.okhttp3:logging-interceptor=com.squareup.okhttp3:logging-interceptor:jar:4.12.0:compile, org.apache.commons:commons-csv=org.apache.commons:commons-csv:jar:1.11.0:compile, commons-io:commons-io=commons-io:commons-io:jar:2.16.1:compile, io.reactivex.rxjava3:rxjava=io.reactivex.rxjava3:rxjava:jar:3.1.10:compile, org.reactivestreams:reactive-streams=org.reactivestreams:reactive-streams:jar:1.0.4:compile, com.squareup.retrofit2:adapter-rxjava3=com.squareup.retrofit2:adapter-rxjava3:jar:2.11.0:compile, com.squareup.retrofit2:converter-scalars=com.squareup.retrofit2:converter-scalars:jar:2.11.0:compile, com.squareup.retrofit2:converter-gson=com.squareup.retrofit2:converter-gson:jar:2.11.0:compile, com.google.code.findbugs:jsr305=com.google.code.findbugs:jsr305:jar:3.0.2:compile, jakarta.mail:jakarta.mail-api=jakarta.mail:jakarta.mail-api:jar:2.1.3:compile, jakarta.activation:jakarta.activation-api=jakarta.activation:jakarta.activation-api:jar:2.1.3:compile, com.amazonaws:aws-iot-device-sdk-java=com.amazonaws:aws-iot-device-sdk-java:jar:1.3.13:compile, com.fasterxml.jackson.core:jackson-core=com.fasterxml.jackson.core:jackson-core:jar:2.13.4:compile, com.fasterxml.jackson.core:jackson-databind=com.fasterxml.jackson.core:jackson-databind:jar:2.13.4.2:compile, com.fasterxml.jackson.core:jackson-annotations=com.fasterxml.jackson.core:jackson-annotations:jar:2.13.4:compile, org.eclipse.paho:org.eclipse.paho.client.mqttv3=org.eclipse.paho:org.eclipse.paho.client.mqttv3:jar:1.2.4:compile, com.amazonaws:aws-java-sdk-secretsmanager=com.amazonaws:aws-java-sdk-secretsmanager:jar:1.12.315:compile, com.amazonaws:aws-java-sdk-core=com.amazonaws:aws-java-sdk-core:jar:1.12.315:compile, org.apache.httpcomponents:httpclient=org.apache.httpcomponents:httpclient:jar:4.5.13:compile, org.apache.httpcomponents:httpcore=org.apache.httpcomponents:httpcore:jar:4.4.13:compile, software.amazon.ion:ion-java=software.amazon.ion:ion-java:jar:1.0.2:compile, com.fasterxml.jackson.dataformat:jackson-dataformat-cbor=com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:jar:2.12.6:compile, joda-time:joda-time=joda-time:joda-time:jar:2.8.1:compile, com.amazonaws:jmespath-java=com.amazonaws:jmespath-java:jar:1.12.315:compile, com.amazonaws:aws-iot-device-sdk-java-samples=com.amazonaws:aws-iot-device-sdk-java-samples:jar:1.3.13:compile, commons-codec:commons-codec=commons-codec:commons-codec:jar:1.12:compile, com.microsoft.azure.sdk.iot:iot-device-client=com.microsoft.azure.sdk.iot:iot-device-client:jar:2.5.0:compile, org.apache.qpid:proton-j=org.apache.qpid:proton-j:jar:0.34.1:compile, com.microsoft.azure:qpid-proton-j-extensions=com.microsoft.azure:qpid-proton-j-extensions:jar:1.2.4:compile, com.microsoft.azure.sdk.iot.provisioning.security:security-provider=com.microsoft.azure.sdk.iot.provisioning.security:security-provider:jar:2.0.1:compile}
+[[1;36mDEBUG[m]   (s) projectBuildDirectory = /home/emmapaq/piot/gda-java-components/target
+[[1;36mDEBUG[m]   (s) projectRemoteRepositories = [      id: project.local
+      url: file:/home/emmapaq/piot/gda-java-components/lib/
+   layout: default
+snapshots: [enabled => true, update => daily]
+ releases: [enabled => true, update => daily]
+   blocked: false
+,       id: central
+      url: https://repo.maven.apache.org/maven2
+   layout: default
+snapshots: [enabled => false, update => daily]
+ releases: [enabled => true, update => daily]
+   blocked: false
+]
+[[1;36mDEBUG[m]   (s) redirectTestOutputToFile = false
+[[1;36mDEBUG[m]   (s) remoteRepositories = [      id: central
+      url: https://repo.maven.apache.org/maven2
+   layout: default
+snapshots: [enabled => false, update => daily]
+ releases: [enabled => true, update => never]
+   blocked: false
+]
+[[1;36mDEBUG[m]   (s) reportFormat = brief
+[[1;36mDEBUG[m]   (s) reportsDirectory = /home/emmapaq/piot/gda-java-components/target/surefire-reports
+[[1;36mDEBUG[m]   (f) rerunFailingTestsCount = 0
+[[1;36mDEBUG[m]   (f) reuseForks = true
+[[1;36mDEBUG[m]   (s) runOrder = filesystem
+[[1;36mDEBUG[m]   (s) session = org.apache.maven.execution.MavenSession@1ba05e38
+[[1;36mDEBUG[m]   (f) shutdown = exit
+[[1;36mDEBUG[m]   (s) skip = false
+[[1;36mDEBUG[m]   (f) skipAfterFailureCount = 0
+[[1;36mDEBUG[m]   (s) skipTests = false
+[[1;36mDEBUG[m]   (s) suiteXmlFiles = []
+[[1;36mDEBUG[m]   (s) tempDir = surefire
+[[1;36mDEBUG[m]   (s) test = CoapClientConnectorTest#testConnectAndDiscover
+[[1;36mDEBUG[m]   (s) testClassesDirectory = /home/emmapaq/piot/gda-java-components/target/test-classes
+[[1;36mDEBUG[m]   (s) testFailureIgnore = false
+[[1;36mDEBUG[m]   (s) testNGArtifactName = org.testng:testng
+[[1;36mDEBUG[m]   (s) testSourceDirectory = /home/emmapaq/piot/gda-java-components/src/test/java
+[[1;36mDEBUG[m]   (s) threadCountClasses = 0
+[[1;36mDEBUG[m]   (s) threadCountMethods = 0
+[[1;36mDEBUG[m]   (s) threadCountSuites = 0
+[[1;36mDEBUG[m]   (s) trimStackTrace = true
+[[1;36mDEBUG[m]   (s) useFile = true
+[[1;36mDEBUG[m]   (s) useManifestOnlyJar = true
+[[1;36mDEBUG[m]   (f) useModulePath = true
+[[1;36mDEBUG[m]   (s) useSystemClassLoader = true
+[[1;36mDEBUG[m]   (s) useUnlimitedThreads = false
+[[1;36mDEBUG[m]   (s) workingDirectory = /home/emmapaq/piot/gda-java-components
+[[1;36mDEBUG[m] -- end configuration --
+[[1;36mDEBUG[m] Using JVM: /usr/lib/jvm/java-17-openjdk-amd64/bin/java with Java version 17
+[[1;36mDEBUG[m] Surefire report directory: /home/emmapaq/piot/gda-java-components/target/surefire-reports
+[[1;36mDEBUG[m] Using the provider org.apache.maven.surefire.junit4.JUnit4Provider
+[[1;36mDEBUG[m] Setting system property [basedir]=[/home/emmapaq/piot/gda-java-components]
+[[1;36mDEBUG[m] Setting system property [test]=[CoapClientConnectorTest#testConnectAndDiscover]
+[[1;36mDEBUG[m] Setting system property [user.dir]=[/home/emmapaq/piot/gda-java-components]
+[[1;36mDEBUG[m] Setting system property [localRepository]=[/home/emmapaq/.m2/repository]
+[[1;36mDEBUG[m] Adding to surefire booter test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-booter/3.0.0-M5/surefire-booter-3.0.0-M5.jar Scope: compile
+[[1;36mDEBUG[m] Adding to surefire booter test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-api/3.0.0-M5/surefire-api-3.0.0-M5.jar Scope: compile
+[[1;36mDEBUG[m] Adding to surefire booter test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.0.0-M5/surefire-logger-api-3.0.0-M5.jar Scope: compile
+[[1;36mDEBUG[m] Adding to surefire booter test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.0.0-M4/surefire-shared-utils-3.0.0-M4.jar Scope: compile
+[[1;36mDEBUG[m] Adding to surefire booter test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.0.0-M5/surefire-extensions-spi-3.0.0-M5.jar Scope: compile
+[[1;36mDEBUG[m] Found implementation of fork node factory: org.apache.maven.plugin.surefire.extensions.LegacyForkNodeFactory
+[[1;36mDEBUG[m] Adding to surefire test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-junit4/3.0.0-M5/surefire-junit4-3.0.0-M5.jar Scope: null
+[[1;36mDEBUG[m] Adding to surefire test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-junit4/3.0.0-M5/common-junit4-3.0.0-M5.jar Scope: compile
+[[1;36mDEBUG[m] Adding to surefire test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-junit3/3.0.0-M5/common-junit3-3.0.0-M5.jar Scope: compile
+[[1;36mDEBUG[m] Adding to surefire test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-api/3.0.0-M5/surefire-api-3.0.0-M5.jar Scope: compile
+[[1;36mDEBUG[m] Adding to surefire test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.0.0-M5/surefire-logger-api-3.0.0-M5.jar Scope: compile
+[[1;36mDEBUG[m] Adding to surefire test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.0.0-M4/surefire-shared-utils-3.0.0-M4.jar Scope: compile
+[[1;36mDEBUG[m] Adding to surefire test classpath: /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-java5/3.0.0-M5/common-java5-3.0.0-M5.jar Scope: compile
+[[1;36mDEBUG[m] test classpath:  /home/emmapaq/piot/gda-java-components/target/test-classes  /home/emmapaq/piot/gda-java-components/target/classes  /home/emmapaq/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar  /home/emmapaq/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar  /home/emmapaq/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar  /home/emmapaq/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-configuration2/2.12.0/commons-configuration2-2.12.0.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar  /home/emmapaq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar  /home/emmapaq/.m2/repository/commons-cli/commons-cli/1.10.0/commons-cli-1.10.0.jar  /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.mqttv5.client/1.2.5/org.eclipse.paho.mqttv5.client-1.2.5.jar  /home/emmapaq/.m2/repository/org/eclipse/californium/californium-core/3.14.0/californium-core-3.14.0.jar  /home/emmapaq/.m2/repository/org/eclipse/californium/californium-legal/3.14.0/californium-legal-3.14.0.jar  /home/emmapaq/.m2/repository/org/eclipse/californium/element-connector/3.14.0/element-connector-3.14.0.jar  /home/emmapaq/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar  /home/emmapaq/.m2/repository/org/eclipse/californium/scandium/3.14.0/scandium-3.14.0.jar  /home/emmapaq/.m2/repository/redis/clients/jedis/6.0.0/jedis-6.0.0.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-pool2/2.12.1/commons-pool2-2.12.1.jar  /home/emmapaq/.m2/repository/org/json/json/20250107/json-20250107.jar  /home/emmapaq/.m2/repository/redis/clients/authentication/redis-authx-core/0.1.1-beta2/redis-authx-core-0.1.1-beta2.jar  /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-java/7.3.0/influxdb-client-java-7.3.0.jar  /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-core/7.3.0/influxdb-client-core-7.3.0.jar  /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-utils/7.3.0/influxdb-client-utils-7.3.0.jar  /home/emmapaq/.m2/repository/com/squareup/okio/okio/3.9.0/okio-3.9.0.jar  /home/emmapaq/.m2/repository/com/squareup/okio/okio-jvm/3.9.0/okio-jvm-3.9.0.jar  /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.21/kotlin-stdlib-1.9.21.jar  /home/emmapaq/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar  /home/emmapaq/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar  /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar  /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar  /home/emmapaq/.m2/repository/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.jar  /home/emmapaq/.m2/repository/com/squareup/okhttp3/logging-interceptor/4.12.0/logging-interceptor-4.12.0.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-csv/1.11.0/commons-csv-1.11.0.jar  /home/emmapaq/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar  /home/emmapaq/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.10/rxjava-3.1.10.jar  /home/emmapaq/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar  /home/emmapaq/.m2/repository/com/squareup/retrofit2/adapter-rxjava3/2.11.0/adapter-rxjava3-2.11.0.jar  /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-scalars/2.11.0/converter-scalars-2.11.0.jar  /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.jar  /home/emmapaq/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar  /home/emmapaq/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar  /home/emmapaq/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar  /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java/1.3.13/aws-iot-device-sdk-java-1.3.13.jar  /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.4/jackson-core-2.13.4.jar  /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar  /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar  /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.4/org.eclipse.paho.client.mqttv3-1.2.4.jar  /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-secretsmanager/1.12.315/aws-java-sdk-secretsmanager-1.12.315.jar  /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-core/1.12.315/aws-java-sdk-core-1.12.315.jar  /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar  /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar  /home/emmapaq/.m2/repository/software/amazon/ion/ion-java/1.0.2/ion-java-1.0.2.jar  /home/emmapaq/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.12.6/jackson-dataformat-cbor-2.12.6.jar  /home/emmapaq/.m2/repository/joda-time/joda-time/2.8.1/joda-time-2.8.1.jar  /home/emmapaq/.m2/repository/com/amazonaws/jmespath-java/1.12.315/jmespath-java-1.12.315.jar  /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java-samples/1.3.13/aws-iot-device-sdk-java-samples-1.3.13.jar  /home/emmapaq/.m2/repository/commons-codec/commons-codec/1.12/commons-codec-1.12.jar  /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/iot-device-client/2.5.0/iot-device-client-2.5.0.jar  /home/emmapaq/.m2/repository/org/apache/qpid/proton-j/0.34.1/proton-j-0.34.1.jar  /home/emmapaq/.m2/repository/com/microsoft/azure/qpid-proton-j-extensions/1.2.4/qpid-proton-j-extensions-1.2.4.jar  /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/provisioning/security/security-provider/2.0.1/security-provider-2.0.1.jar
+[[1;36mDEBUG[m] provider classpath:  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-junit4/3.0.0-M5/surefire-junit4-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-api/3.0.0-M5/surefire-api-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.0.0-M5/surefire-logger-api-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.0.0-M4/surefire-shared-utils-3.0.0-M4.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-java5/3.0.0-M5/common-java5-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-junit3/3.0.0-M5/common-junit3-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-junit4/3.0.0-M5/common-junit4-3.0.0-M5.jar
+[[1;36mDEBUG[m] test(compact) classpath:  test-classes  classes  gson-2.13.1.jar  error_prone_annotations-2.38.0.jar  junit-4.13.2.jar  hamcrest-core-1.3.jar  commons-configuration2-2.12.0.jar  commons-lang3-3.17.0.jar  commons-text-1.13.1.jar  commons-logging-1.3.5.jar  commons-cli-1.10.0.jar  org.eclipse.paho.mqttv5.client-1.2.5.jar  californium-core-3.14.0.jar  californium-legal-3.14.0.jar  element-connector-3.14.0.jar  slf4j-api-1.7.36.jar  scandium-3.14.0.jar  jedis-6.0.0.jar  commons-pool2-2.12.1.jar  json-20250107.jar  redis-authx-core-0.1.1-beta2.jar  influxdb-client-java-7.3.0.jar  influxdb-client-core-7.3.0.jar  influxdb-client-utils-7.3.0.jar  okio-3.9.0.jar  okio-jvm-3.9.0.jar  kotlin-stdlib-1.9.21.jar  annotations-13.0.jar  okhttp-4.12.0.jar  kotlin-stdlib-jdk8-1.8.21.jar  kotlin-stdlib-jdk7-1.8.21.jar  retrofit-2.11.0.jar  logging-interceptor-4.12.0.jar  commons-csv-1.11.0.jar  commons-io-2.16.1.jar  rxjava-3.1.10.jar  reactive-streams-1.0.4.jar  adapter-rxjava3-2.11.0.jar  converter-scalars-2.11.0.jar  converter-gson-2.11.0.jar  jsr305-3.0.2.jar  jakarta.mail-api-2.1.3.jar  jakarta.activation-api-2.1.3.jar  aws-iot-device-sdk-java-1.3.13.jar  jackson-core-2.13.4.jar  jackson-databind-2.13.4.2.jar  jackson-annotations-2.13.4.jar  org.eclipse.paho.client.mqttv3-1.2.4.jar  aws-java-sdk-secretsmanager-1.12.315.jar  aws-java-sdk-core-1.12.315.jar  httpclient-4.5.13.jar  httpcore-4.4.13.jar  ion-java-1.0.2.jar  jackson-dataformat-cbor-2.12.6.jar  joda-time-2.8.1.jar  jmespath-java-1.12.315.jar  aws-iot-device-sdk-java-samples-1.3.13.jar  commons-codec-1.12.jar  iot-device-client-2.5.0.jar  proton-j-0.34.1.jar  qpid-proton-j-extensions-1.2.4.jar  security-provider-2.0.1.jar
+[[1;36mDEBUG[m] provider(compact) classpath:  surefire-junit4-3.0.0-M5.jar  surefire-api-3.0.0-M5.jar  surefire-logger-api-3.0.0-M5.jar  surefire-shared-utils-3.0.0-M4.jar  common-java5-3.0.0-M5.jar  common-junit3-3.0.0-M5.jar  common-junit4-3.0.0-M5.jar
+[[1;36mDEBUG[m] in-process classpath:  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-junit4/3.0.0-M5/surefire-junit4-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-api/3.0.0-M5/surefire-api-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.0.0-M5/surefire-logger-api-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.0.0-M4/surefire-shared-utils-3.0.0-M4.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-java5/3.0.0-M5/common-java5-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-junit3/3.0.0-M5/common-junit3-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-junit4/3.0.0-M5/common-junit4-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/maven-surefire-common/3.0.0-M5/maven-surefire-common-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-booter/3.0.0-M5/surefire-booter-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-extensions-api/3.0.0-M5/surefire-extensions-api-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.0.0-M5/surefire-extensions-spi-3.0.0-M5.jar
+[[1;36mDEBUG[m] in-process(compact) classpath:  surefire-junit4-3.0.0-M5.jar  surefire-api-3.0.0-M5.jar  surefire-logger-api-3.0.0-M5.jar  surefire-shared-utils-3.0.0-M4.jar  common-java5-3.0.0-M5.jar  common-junit3-3.0.0-M5.jar  common-junit4-3.0.0-M5.jar  maven-surefire-common-3.0.0-M5.jar  surefire-booter-3.0.0-M5.jar  surefire-extensions-api-3.0.0-M5.jar  surefire-extensions-spi-3.0.0-M5.jar
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;36mDEBUG[m] Determined Maven Process ID 71151
+[[1;36mDEBUG[m] Fork Channel [1] connection string 'pipe://1' for the implementation class org.apache.maven.plugin.surefire.extensions.LegacyForkChannel
+[[1;36mDEBUG[m] boot classpath:  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-booter/3.0.0-M5/surefire-booter-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-api/3.0.0-M5/surefire-api-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.0.0-M5/surefire-logger-api-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.0.0-M4/surefire-shared-utils-3.0.0-M4.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.0.0-M5/surefire-extensions-spi-3.0.0-M5.jar  /home/emmapaq/piot/gda-java-components/target/test-classes  /home/emmapaq/piot/gda-java-components/target/classes  /home/emmapaq/.m2/repository/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar  /home/emmapaq/.m2/repository/com/google/errorprone/error_prone_annotations/2.38.0/error_prone_annotations-2.38.0.jar  /home/emmapaq/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar  /home/emmapaq/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-configuration2/2.12.0/commons-configuration2-2.12.0.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-text/1.13.1/commons-text-1.13.1.jar  /home/emmapaq/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar  /home/emmapaq/.m2/repository/commons-cli/commons-cli/1.10.0/commons-cli-1.10.0.jar  /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.mqttv5.client/1.2.5/org.eclipse.paho.mqttv5.client-1.2.5.jar  /home/emmapaq/.m2/repository/org/eclipse/californium/californium-core/3.14.0/californium-core-3.14.0.jar  /home/emmapaq/.m2/repository/org/eclipse/californium/californium-legal/3.14.0/californium-legal-3.14.0.jar  /home/emmapaq/.m2/repository/org/eclipse/californium/element-connector/3.14.0/element-connector-3.14.0.jar  /home/emmapaq/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar  /home/emmapaq/.m2/repository/org/eclipse/californium/scandium/3.14.0/scandium-3.14.0.jar  /home/emmapaq/.m2/repository/redis/clients/jedis/6.0.0/jedis-6.0.0.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-pool2/2.12.1/commons-pool2-2.12.1.jar  /home/emmapaq/.m2/repository/org/json/json/20250107/json-20250107.jar  /home/emmapaq/.m2/repository/redis/clients/authentication/redis-authx-core/0.1.1-beta2/redis-authx-core-0.1.1-beta2.jar  /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-java/7.3.0/influxdb-client-java-7.3.0.jar  /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-core/7.3.0/influxdb-client-core-7.3.0.jar  /home/emmapaq/.m2/repository/com/influxdb/influxdb-client-utils/7.3.0/influxdb-client-utils-7.3.0.jar  /home/emmapaq/.m2/repository/com/squareup/okio/okio/3.9.0/okio-3.9.0.jar  /home/emmapaq/.m2/repository/com/squareup/okio/okio-jvm/3.9.0/okio-jvm-3.9.0.jar  /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.21/kotlin-stdlib-1.9.21.jar  /home/emmapaq/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar  /home/emmapaq/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar  /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar  /home/emmapaq/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar  /home/emmapaq/.m2/repository/com/squareup/retrofit2/retrofit/2.11.0/retrofit-2.11.0.jar  /home/emmapaq/.m2/repository/com/squareup/okhttp3/logging-interceptor/4.12.0/logging-interceptor-4.12.0.jar  /home/emmapaq/.m2/repository/org/apache/commons/commons-csv/1.11.0/commons-csv-1.11.0.jar  /home/emmapaq/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar  /home/emmapaq/.m2/repository/io/reactivex/rxjava3/rxjava/3.1.10/rxjava-3.1.10.jar  /home/emmapaq/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar  /home/emmapaq/.m2/repository/com/squareup/retrofit2/adapter-rxjava3/2.11.0/adapter-rxjava3-2.11.0.jar  /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-scalars/2.11.0/converter-scalars-2.11.0.jar  /home/emmapaq/.m2/repository/com/squareup/retrofit2/converter-gson/2.11.0/converter-gson-2.11.0.jar  /home/emmapaq/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar  /home/emmapaq/.m2/repository/jakarta/mail/jakarta.mail-api/2.1.3/jakarta.mail-api-2.1.3.jar  /home/emmapaq/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar  /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java/1.3.13/aws-iot-device-sdk-java-1.3.13.jar  /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.4/jackson-core-2.13.4.jar  /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar  /home/emmapaq/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar  /home/emmapaq/.m2/repository/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.4/org.eclipse.paho.client.mqttv3-1.2.4.jar  /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-secretsmanager/1.12.315/aws-java-sdk-secretsmanager-1.12.315.jar  /home/emmapaq/.m2/repository/com/amazonaws/aws-java-sdk-core/1.12.315/aws-java-sdk-core-1.12.315.jar  /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar  /home/emmapaq/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar  /home/emmapaq/.m2/repository/software/amazon/ion/ion-java/1.0.2/ion-java-1.0.2.jar  /home/emmapaq/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-cbor/2.12.6/jackson-dataformat-cbor-2.12.6.jar  /home/emmapaq/.m2/repository/joda-time/joda-time/2.8.1/joda-time-2.8.1.jar  /home/emmapaq/.m2/repository/com/amazonaws/jmespath-java/1.12.315/jmespath-java-1.12.315.jar  /home/emmapaq/.m2/repository/com/amazonaws/aws-iot-device-sdk-java-samples/1.3.13/aws-iot-device-sdk-java-samples-1.3.13.jar  /home/emmapaq/.m2/repository/commons-codec/commons-codec/1.12/commons-codec-1.12.jar  /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/iot-device-client/2.5.0/iot-device-client-2.5.0.jar  /home/emmapaq/.m2/repository/org/apache/qpid/proton-j/0.34.1/proton-j-0.34.1.jar  /home/emmapaq/.m2/repository/com/microsoft/azure/qpid-proton-j-extensions/1.2.4/qpid-proton-j-extensions-1.2.4.jar  /home/emmapaq/.m2/repository/com/microsoft/azure/sdk/iot/provisioning/security/security-provider/2.0.1/security-provider-2.0.1.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/surefire-junit4/3.0.0-M5/surefire-junit4-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-java5/3.0.0-M5/common-java5-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-junit3/3.0.0-M5/common-junit3-3.0.0-M5.jar  /home/emmapaq/.m2/repository/org/apache/maven/surefire/common-junit4/3.0.0-M5/common-junit4-3.0.0-M5.jar
+[[1;36mDEBUG[m] boot(compact) classpath:  surefire-booter-3.0.0-M5.jar  surefire-api-3.0.0-M5.jar  surefire-logger-api-3.0.0-M5.jar  surefire-shared-utils-3.0.0-M4.jar  surefire-extensions-spi-3.0.0-M5.jar  test-classes  classes  gson-2.13.1.jar  error_prone_annotations-2.38.0.jar  junit-4.13.2.jar  hamcrest-core-1.3.jar  commons-configuration2-2.12.0.jar  commons-lang3-3.17.0.jar  commons-text-1.13.1.jar  commons-logging-1.3.5.jar  commons-cli-1.10.0.jar  org.eclipse.paho.mqttv5.client-1.2.5.jar  californium-core-3.14.0.jar  californium-legal-3.14.0.jar  element-connector-3.14.0.jar  slf4j-api-1.7.36.jar  scandium-3.14.0.jar  jedis-6.0.0.jar  commons-pool2-2.12.1.jar  json-20250107.jar  redis-authx-core-0.1.1-beta2.jar  influxdb-client-java-7.3.0.jar  influxdb-client-core-7.3.0.jar  influxdb-client-utils-7.3.0.jar  okio-3.9.0.jar  okio-jvm-3.9.0.jar  kotlin-stdlib-1.9.21.jar  annotations-13.0.jar  okhttp-4.12.0.jar  kotlin-stdlib-jdk8-1.8.21.jar  kotlin-stdlib-jdk7-1.8.21.jar  retrofit-2.11.0.jar  logging-interceptor-4.12.0.jar  commons-csv-1.11.0.jar  commons-io-2.16.1.jar  rxjava-3.1.10.jar  reactive-streams-1.0.4.jar  adapter-rxjava3-2.11.0.jar  converter-scalars-2.11.0.jar  converter-gson-2.11.0.jar  jsr305-3.0.2.jar  jakarta.mail-api-2.1.3.jar  jakarta.activation-api-2.1.3.jar  aws-iot-device-sdk-java-1.3.13.jar  jackson-core-2.13.4.jar  jackson-databind-2.13.4.2.jar  jackson-annotations-2.13.4.jar  org.eclipse.paho.client.mqttv3-1.2.4.jar  aws-java-sdk-secretsmanager-1.12.315.jar  aws-java-sdk-core-1.12.315.jar  httpclient-4.5.13.jar  httpcore-4.4.13.jar  ion-java-1.0.2.jar  jackson-dataformat-cbor-2.12.6.jar  joda-time-2.8.1.jar  jmespath-java-1.12.315.jar  aws-iot-device-sdk-java-samples-1.3.13.jar  commons-codec-1.12.jar  iot-device-client-2.5.0.jar  proton-j-0.34.1.jar  qpid-proton-j-extensions-1.2.4.jar  security-provider-2.0.1.jar  surefire-junit4-3.0.0-M5.jar  common-java5-3.0.0-M5.jar  common-junit3-3.0.0-M5.jar  common-junit4-3.0.0-M5.jar
+[[1;36mDEBUG[m] Forking command line: /bin/sh -c cd /home/emmapaq/piot/gda-java-components && /usr/lib/jvm/java-17-openjdk-amd64/bin/java -jar /home/emmapaq/piot/gda-java-components/target/surefire/surefirebooter12883493562206021043.jar /home/emmapaq/piot/gda-java-components/target/surefire 2025-11-11T14-32-59_890-jvmRun1 surefire13505670973806637814tmp surefire_016618698167883669669tmp
+[[1;36mDEBUG[m] Fork Channel [1] connected to the client.
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mCoapClientConnectorTest[m
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: === Starting initClient() ===
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: === Starting initClient() ===
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Step 1: Checking Configuration.getStandard()...
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Step 1: Checking Configuration.getStandard()...
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Step 2: Creating CoapClient with URI: coap://localhost:5683
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Step 2: Creating CoapClient with URI: coap://localhost:5683
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Step 3: CoapClient created successfully
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Step 3: CoapClient created successfully
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Created client connection to server / resource: coap://localhost:5683
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Created client connection to server / resource: coap://localhost:5683
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: === Finished initClient() - clientConn is NOT NULL ===
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: === Finished initClient() - clientConn is NOT NULL ===
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector <init>
+INFO: Using URL for server conn: coap://localhost:5683
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector <init>
+INFO: Using URL for server conn: coap://localhost:5683
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+INFO: Issuing discover...
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+INFO: Issuing discover...
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+INFO: Calling discover() on client...
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+INFO: Calling discover() on client...
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+SEVERE: Failed to execute DISCOVERY request.
+java.lang.IllegalStateException: Configuration contains no definitions!
+	at org.eclipse.californium.elements.config.Configuration.add(Configuration.java:802)
+	at org.eclipse.californium.elements.config.Configuration.load(Configuration.java:772)
+	at org.eclipse.californium.elements.config.Configuration.load(Configuration.java:738)
+	at org.eclipse.californium.elements.config.Configuration.createWithFile(Configuration.java:628)
+	at org.eclipse.californium.elements.config.Configuration.createStandardWithFile(Configuration.java:588)
+	at org.eclipse.californium.elements.config.Configuration.getStandard(Configuration.java:458)
+	at org.eclipse.californium.core.network.CoapEndpoint$Builder.build(CoapEndpoint.java:1764)
+	at org.eclipse.californium.core.network.EndpointManager.getDefaultEndpoint(EndpointManager.java:130)
+	at org.eclipse.californium.core.CoapClient.getEffectiveEndpoint(CoapClient.java:1562)
+	at org.eclipse.californium.core.CoapClient.synchronous(CoapClient.java:1358)
+	at org.eclipse.californium.core.CoapClient.discover(CoapClient.java:567)
+	at org.eclipse.californium.core.CoapClient.discover(CoapClient.java:556)
+	at programmingtheiot.gda.connection.CoapClientConnector.sendDiscoveryRequest(CoapClientConnector.java:108)
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover(CoapClientConnectorTest.java:99)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+Nov 11, 2025 2:33:00 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+SEVERE: Failed to execute DISCOVERY request.
+java.lang.IllegalStateException: Configuration contains no definitions!
+	at org.eclipse.californium.elements.config.Configuration.add(Configuration.java:802)
+	at org.eclipse.californium.elements.config.Configuration.load(Configuration.java:772)
+	at org.eclipse.californium.elements.config.Configuration.load(Configuration.java:738)
+	at org.eclipse.californium.elements.config.Configuration.createWithFile(Configuration.java:628)
+	at org.eclipse.californium.elements.config.Configuration.createStandardWithFile(Configuration.java:588)
+	at org.eclipse.californium.elements.config.Configuration.getStandard(Configuration.java:458)
+	at org.eclipse.californium.core.network.CoapEndpoint$Builder.build(CoapEndpoint.java:1764)
+	at org.eclipse.californium.core.network.EndpointManager.getDefaultEndpoint(EndpointManager.java:130)
+	at org.eclipse.californium.core.CoapClient.getEffectiveEndpoint(CoapClient.java:1562)
+	at org.eclipse.californium.core.CoapClient.synchronous(CoapClient.java:1358)
+	at org.eclipse.californium.core.CoapClient.discover(CoapClient.java:567)
+	at org.eclipse.californium.core.CoapClient.discover(CoapClient.java:556)
+	at programmingtheiot.gda.connection.CoapClientConnector.sendDiscoveryRequest(CoapClientConnector.java:108)
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover(CoapClientConnectorTest.java:99)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+
+java.lang.IllegalStateException: Configuration contains no definitions!
+	at org.eclipse.californium.elements.config.Configuration.add(Configuration.java:802)
+	at org.eclipse.californium.elements.config.Configuration.load(Configuration.java:772)
+	at org.eclipse.californium.elements.config.Configuration.load(Configuration.java:738)
+	at org.eclipse.californium.elements.config.Configuration.createWithFile(Configuration.java:628)
+	at org.eclipse.californium.elements.config.Configuration.createStandardWithFile(Configuration.java:588)
+	at org.eclipse.californium.elements.config.Configuration.getStandard(Configuration.java:458)
+	at org.eclipse.californium.core.network.CoapEndpoint$Builder.build(CoapEndpoint.java:1764)
+	at org.eclipse.californium.core.network.EndpointManager.getDefaultEndpoint(EndpointManager.java:130)
+	at org.eclipse.californium.core.CoapClient.getEffectiveEndpoint(CoapClient.java:1562)
+	at org.eclipse.californium.core.CoapClient.synchronous(CoapClient.java:1358)
+	at org.eclipse.californium.core.CoapClient.discover(CoapClient.java:567)
+	at org.eclipse.californium.core.CoapClient.discover(CoapClient.java:556)
+	at programmingtheiot.gda.connection.CoapClientConnector.sendDiscoveryRequest(CoapClientConnector.java:108)
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover(CoapClientConnectorTest.java:99)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:364)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:272)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:237)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:158)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:428)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m1[m, [1;31mFailures: [0;1;31m1[m, Errors: 0, Skipped: 0, Time elapsed: 0.235 s[1;31m <<< FAILURE![m - in programmingtheiot.integration.connection.[1mCoapClientConnectorTest[m
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover  Time elapsed: 0.194 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover(CoapClientConnectorTest.java:99)
+
+[[1;36mDEBUG[m] Closing the fork 1 after saying GoodBye.
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mFailures: [m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testConnectAndDiscover:99[m
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mTests run: 1, Failures: 1, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  1.797 s
+[[1;34mINFO[m] Finished at: 2025-11-11T14:33:00-05:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m on project [36mgateway-device-app[m: [1;31mThere are test failures.[m
+[[1;31mERROR[m] [1;31m[m
+[[1;31mERROR[m] [1;31mPlease refer to /home/emmapaq/piot/gda-java-components/target/surefire-reports for the individual test results.[m
+[[1;31mERROR[m] [1;31mPlease refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[1;31morg.apache.maven.lifecycle.LifecycleExecutionException[m: [1;31mFailed to execute goal [32morg.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m on project [36mgateway-device-app[m: [1;31mThere are test failures.
+
+Please refer to /home/emmapaq/piot/gda-java-components/target/surefire-reports for the individual test results.
+Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.[m[m
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 ([1mMojoExecutor.java:375[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.doExecute ([1mMojoExecutor.java:351[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:215[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:171[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:163[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:117[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:81[m)
+    [1mat[m org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build ([1mSingleThreadedBuilder.java:56[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleStarter.execute ([1mLifecycleStarter.java:128[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:298[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:192[m)
+    [1mat[m org.apache.maven.DefaultMaven.execute ([1mDefaultMaven.java:105[m)
+    [1mat[m org.apache.maven.cli.MavenCli.execute ([1mMavenCli.java:960[m)
+    [1mat[m org.apache.maven.cli.MavenCli.doMain ([1mMavenCli.java:293[m)
+    [1mat[m org.apache.maven.cli.MavenCli.main ([1mMavenCli.java:196[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 ([1mNative Method[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke ([1mNativeMethodAccessorImpl.java:77[m)
+    [1mat[m jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke ([1mDelegatingMethodAccessorImpl.java:43[m)
+    [1mat[m java.lang.reflect.Method.invoke ([1mMethod.java:569[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced ([1mLauncher.java:283[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launch ([1mLauncher.java:226[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode ([1mLauncher.java:407[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.main ([1mLauncher.java:348[m)
+[1mCaused by[m: org.apache.maven.plugin.MojoFailureException: [1;31mThere are test failures.
+
+Please refer to /home/emmapaq/piot/gda-java-components/target/surefire-reports for the individual test results.
+Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.[m
+    [1mat[m org.apache.maven.plugin.surefire.SurefireHelper.throwException ([1mSurefireHelper.java:271[m)
+    [1mat[m org.apache.maven.plugin.surefire.SurefireHelper.reportExecution ([1mSurefireHelper.java:159[m)
+    [1mat[m org.apache.maven.plugin.surefire.SurefirePlugin.handleSummary ([1mSurefirePlugin.java:453[m)
+    [1mat[m org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked ([1mAbstractSurefireMojo.java:1175[m)
+    [1mat[m org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute ([1mAbstractSurefireMojo.java:932[m)
+    [1mat[m org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo ([1mDefaultBuildPluginManager.java:137[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2 ([1mMojoExecutor.java:370[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.doExecute ([1mMojoExecutor.java:351[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:215[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:171[m)
+    [1mat[m org.apache.maven.lifecycle.internal.MojoExecutor.execute ([1mMojoExecutor.java:163[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:117[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject ([1mLifecycleModuleBuilder.java:81[m)
+    [1mat[m org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build ([1mSingleThreadedBuilder.java:56[m)
+    [1mat[m org.apache.maven.lifecycle.internal.LifecycleStarter.execute ([1mLifecycleStarter.java:128[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:298[m)
+    [1mat[m org.apache.maven.DefaultMaven.doExecute ([1mDefaultMaven.java:192[m)
+    [1mat[m org.apache.maven.DefaultMaven.execute ([1mDefaultMaven.java:105[m)
+    [1mat[m org.apache.maven.cli.MavenCli.execute ([1mMavenCli.java:960[m)
+    [1mat[m org.apache.maven.cli.MavenCli.doMain ([1mMavenCli.java:293[m)
+    [1mat[m org.apache.maven.cli.MavenCli.main ([1mMavenCli.java:196[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 ([1mNative Method[m)
+    [1mat[m jdk.internal.reflect.NativeMethodAccessorImpl.invoke ([1mNativeMethodAccessorImpl.java:77[m)
+    [1mat[m jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke ([1mDelegatingMethodAccessorImpl.java:43[m)
+    [1mat[m java.lang.reflect.Method.invoke ([1mMethod.java:569[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced ([1mLauncher.java:283[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.launch ([1mLauncher.java:226[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode ([1mLauncher.java:407[m)
+    [1mat[m org.codehaus.plexus.classworlds.launcher.Launcher.main ([1mLauncher.java:348[m)
+[[1;31mERROR[m] 
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

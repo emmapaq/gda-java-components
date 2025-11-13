@@ -1,0 +1,100 @@
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--------------< [0;36mprogrammingtheiot.gda:gateway-device-app[0;1m >--------------[m
+[[1;34mINFO[m] [1mBuilding Gateway Device App 0.0.1[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;34mINFO[m] Deleting /home/emmapaq/piot/gda-java-components/target
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;33mWARNING[m] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[[1;34mINFO[m] Compiling 38 source files to /home/emmapaq/piot/gda-java-components/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;33mWARNING[m] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;33mWARNING[m] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[[1;34mINFO[m] Compiling 30 source files to /home/emmapaq/piot/gda-java-components/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m @ [36mgateway-device-app[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m]  T E S T S
+[[1;34mINFO[m] -------------------------------------------------------
+[[1;34mINFO[m] Running programmingtheiot.integration.connection.[1mCoapClientConnectorTest[m
+=== CONSTRUCTOR STARTING ===
+Calling initClient()...
+=== Starting initClient() ===
+Server address: coap://localhost:5683
+Step 1: Setting up Californium Configuration...
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Step 2: Configuration initialized successfully
+Step 3: Creating CoapClient...
+Step 4: CoapClient created: true
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Created client connection to server / resource: coap://localhost:5683
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector initClient
+INFO: Created client connection to server / resource: coap://localhost:5683
+=== Finished initClient() - clientConn is NOT NULL ===
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector <init>
+INFO: Using URL for server connection: coap://localhost:5683
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector <init>
+INFO: Using URL for server connection: coap://localhost:5683
+=== CONSTRUCTOR FINISHED ===
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+INFO: Issuing CoAP discovery request...
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+INFO: Issuing CoAP discovery request...
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+INFO: Discovery call completed. Result: null
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+INFO: Discovery call completed. Result: null
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+WARNING: No resources discovered using discover(). Trying fallback...
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+WARNING: No resources discovered using discover(). Trying fallback...
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+WARNING: No response received from /.well-known/core request.
+Nov 11, 2025 3:33:26 PM programmingtheiot.gda.connection.CoapClientConnector sendDiscoveryRequest
+WARNING: No response received from /.well-known/core request.
+[[1;31mERROR[m] [1;31mTests [0;1mrun: [0;1m1[m, [1;31mFailures: [0;1;31m1[m, Errors: 0, Skipped: 0, Time elapsed: 0.281 s[1;31m <<< FAILURE![m - in programmingtheiot.integration.connection.[1mCoapClientConnectorTest[m
+[[1;31mERROR[m] programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover  Time elapsed: 0.236 s  <<< FAILURE!
+java.lang.AssertionError
+	at programmingtheiot.integration.connection.CoapClientConnectorTest.testConnectAndDiscover(CoapClientConnectorTest.java:99)
+
+[[1;34mINFO[m] 
+[[1;34mINFO[m] Results:
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mFailures: [m
+[[1;31mERROR[m] [1;31m  CoapClientConnectorTest.testConnectAndDiscover:99[m
+[[1;34mINFO[m] 
+[[1;31mERROR[m] [1;31mTests run: 1, Failures: 1, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;31mBUILD FAILURE[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  3.621 s
+[[1;34mINFO[m] Finished at: 2025-11-11T15:33:26-05:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;31mERROR[m] Failed to execute goal [32morg.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5:test[m [1m(default-test)[m on project [36mgateway-device-app[m: [1;31mThere are test failures.[m
+[[1;31mERROR[m] [1;31m[m
+[[1;31mERROR[m] [1;31mPlease refer to /home/emmapaq/piot/gda-java-components/target/surefire-reports for the individual test results.[m
+[[1;31mERROR[m] [1;31mPlease refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.[m
+[[1;31mERROR[m] -> [1m[Help 1][m
+[[1;31mERROR[m] 
+[[1;31mERROR[m] To see the full stack trace of the errors, re-run Maven with the [1m-e[m switch.
+[[1;31mERROR[m] Re-run Maven using the [1m-X[m switch to enable full debug logging.
+[[1;31mERROR[m] 
+[[1;31mERROR[m] For more information about the errors and possible solutions, please read the following articles:
+[[1;31mERROR[m] [1m[Help 1][m http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
