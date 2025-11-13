@@ -104,30 +104,30 @@ public class MqttClientConnector implements IPubSubClient, MqttCallbackExtended
 	@Override
 	public boolean connectClient()
 	{
-		try {
-			if (this.mqttClient == null) {
-				this.mqttClient = new MqttClient(this.brokerAddr, this.clientID, this.persistence);
-				this.mqttClient.setCallback(this);
-			}
-			
-			if (!this.mqttClient.isConnected()) {
-				_Logger.info("MQTT client connecting to broker: " + this.brokerAddr);
-				this.mqttClient.connect(this.connOpts);
-				_Logger.info("MQTT client connected successfully.");
-				return true;
-			} else {
-				_Logger.warning("MQTT client already connected to broker: " + this.brokerAddr);
-				return true;
-			}
-		} catch (MqttException e) {
-			_Logger.log(Level.SEVERE, "Failed to connect MQTT client to broker: " + this.brokerAddr, e);
-			
-			// Notify connection listener of connection failure
-			if (this.connectionListener != null) {
-				this.connectionListener.onConnectionFailure(e);
-			}
-		}
-		return false;
+	    try {
+	        if (this.mqttClient == null) {
+	            this.mqttClient = new MqttClient(this.brokerAddr, this.clientID, this.persistence);
+	            this.mqttClient.setCallback(this);
+	        }
+	        
+	        if (!this.mqttClient.isConnected()) {
+	            _Logger.info("MQTT client connecting to broker: " + this.brokerAddr);
+	            this.mqttClient.connect(this.connOpts);
+	            _Logger.info("MQTT client connected successfully.");
+	            return true;
+	        } else {
+	            _Logger.warning("MQTT client already connected to broker: " + this.brokerAddr);
+	            return false;  // CHANGED FROM true TO false
+	        }
+	    } catch (MqttException e) {
+	        _Logger.log(Level.SEVERE, "Failed to connect MQTT client to broker: " + this.brokerAddr, e);
+	        
+	        // Notify connection listener of connection failure
+	        if (this.connectionListener != null) {
+	            this.connectionListener.onConnectionFailure(e);
+	        }
+	    }
+	    return false;
 	}
 	
 	@Override

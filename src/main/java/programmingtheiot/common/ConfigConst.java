@@ -6,14 +6,14 @@ package programmingtheiot.common;
  */
 public class ConfigConst {
     
-    // ========================================
-    // GENERAL CONFIGURATION
-    // ========================================
-    
-    public static final String NOT_SET = "Not Set";
-    public static final String DEFAULT_CONFIG_FILE_NAME = "PiotConfig.props";
-    public static final String CONFIG_FILE_KEY = "configFile";
-    public static final String CRED_FILE_KEY = "credFile";
+	// ========================================
+	// GENERAL CONFIGURATION
+	// ========================================
+
+	public static final String NOT_SET = "Not Set";
+	public static final String DEFAULT_CONFIG_FILE_NAME = "./config/PiotConfig.props";  // CHANGED THIS LINE
+	public static final String CONFIG_FILE_KEY = "configFile";
+	public static final String CRED_FILE_KEY = "credFile";
     
     // ========================================
     // DEVICE IDENTIFIERS

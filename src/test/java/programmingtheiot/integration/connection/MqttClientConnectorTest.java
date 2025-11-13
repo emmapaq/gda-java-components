@@ -1,11 +1,4 @@
-/**
- * 
- * This class is part of the Programming the Internet of Things
- * project, and is available via the MIT License, which can be
- * found in the LICENSE file at the top level of this repository.
- * 
- * Copyright (c) 2020 - 2025 by Andrew D. King
- */ 
+
 
 package programmingtheiot.integration.connection;
 
@@ -73,23 +66,36 @@ public class MqttClientConnectorTest
 	/**
 	 * Test method for {@link programmingtheiot.gda.connection.MqttClientConnector#connectClient()}.
 	 */
-//	@Test
+	@Test
 	public void testConnectAndDisconnect()
 	{
-		int delay = ConfigUtil.getInstance().getInteger(ConfigConst.MQTT_GATEWAY_SERVICE, ConfigConst.KEEP_ALIVE_KEY, ConfigConst.DEFAULT_KEEP_ALIVE);
-		
-		assertTrue(this.mqttClient.connectClient());
-		assertFalse(this.mqttClient.connectClient());
-		
-		try {
-			Thread.sleep(delay * 1000 + 5000);
-		} catch (Exception e) {
-			// ignore
-		}
-		
-		assertTrue(this.mqttClient.disconnectClient());
-		assertFalse(this.mqttClient.disconnectClient());
+	    int delaySec = ConfigUtil.getInstance().getInteger(
+	            ConfigConst.MQTT_GATEWAY_SERVICE,
+	            ConfigConst.KEEP_ALIVE_KEY,
+	            ConfigConst.DEFAULT_KEEP_ALIVE
+	    );
+
+	    // FIRST connect should be true
+	    assertTrue(this.mqttClient.connectClient());
+
+	    // SECOND connect should be false
+	    assertFalse(this.mqttClient.connectClient());
+
+	    // Wait for keep-alive timeout
+	    try {
+	        Thread.sleep((delaySec * 1000) + 3000);
+	    } catch (InterruptedException e) {
+	        // ignore
+	    }
+
+	    // FIRST disconnect should be true
+	    assertTrue(this.mqttClient.disconnectClient());
+
+	    // SECOND disconnect should be false
+	    assertFalse(this.mqttClient.disconnectClient());
 	}
+
+
 	
 	/**
 	 * Test method for {@link programmingtheiot.gda.connection.MqttClientConnector#publishMessage(programmingtheiot.common.ResourceNameEnum, java.lang.String, int)}.
@@ -145,7 +151,7 @@ public class MqttClientConnectorTest
 	/**
 	 * Test method for {@link programmingtheiot.gda.connection.MqttClientConnector#publishMessage(programmingtheiot.common.ResourceNameEnum, java.lang.String, int)}.
 	 */
-//	@Test
+ @Test
 	public void testPublishAndSubscribeTwoClients()
 	{
 		int qos = 0;
@@ -190,7 +196,7 @@ public class MqttClientConnectorTest
 	/**
 	 * Test method for {@link programmingtheiot.gda.connection.MqttClientConnector#publishMessage(programmingtheiot.common.ResourceNameEnum, java.lang.String, int)}.
 	 */
-//	@Test
+	@Test
 	public void testIntegrateWithCdaPublishCdaCmdTopic()
 	{
 		int qos = 1;
@@ -210,7 +216,7 @@ public class MqttClientConnectorTest
 	/**
 	 * Test method for {@link programmingtheiot.gda.connection.MqttClientConnector#publishMessage(programmingtheiot.common.ResourceNameEnum, java.lang.String, int)}.
 	 */
-//	@Test
+	@Test
 	public void testIntegrateWithCdaSubscribeCdaMgmtTopic()
 	{
 		int qos = 1;
