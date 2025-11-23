@@ -17,6 +17,11 @@ import programmingtheiot.common.ResourceNameEnum;
 
 /**
  * CoAP Client Connector for GET, PUT, POST, DELETE, and OBSERVE operations
+ * 
+ * This class provides CoAP client functionality using Eclipse Californium.
+ * It supports both CON (confirmed) and NON (non-confirmed) messaging.
+ * 
+ * @author Emma
  */
 public class CoapClientConnector {
     private static final Logger _Logger = 
@@ -41,7 +46,7 @@ public class CoapClientConnector {
     private Map<String, CoapObserveRelation> observeRelations;
     
     /**
-     * Constructor
+     * Constructor - initializes CoAP client with configuration from PiotConfig.props
      */
     public CoapClientConnector() {
         ConfigUtil configUtil = ConfigUtil.getInstance();
@@ -174,6 +179,9 @@ public class CoapClientConnector {
     /**
      * Sends a PUT request to the specified resource
      * 
+     * PERFORMANCE TESTING: Logging has been disabled in this method for performance testing.
+     * Uncomment logging statements after performance tests are complete.
+     * 
      * @param resource The ResourceNameEnum representing the target resource
      * @param enableCON If true, uses confirmable (CON) messaging; otherwise uses non-confirmable (NON)
      * @param payload The payload to send (typically JSON string)
@@ -197,26 +205,31 @@ public class CoapClientConnector {
         try {
             if (enableCON) {
                 this.clientConn.useCONs();
-                _Logger.info("Using CON messaging for PUT request");
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.info("Using CON messaging for PUT request");
             } else {
                 this.clientConn.useNONs();
-                _Logger.info("Using NON messaging for PUT request");
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.info("Using NON messaging for PUT request");
             }
             
             this.clientConn.setURI(targetUri);
-            _Logger.info("Sending PUT request to: " + targetUri);
-            _Logger.info("Payload: " + payload);
+            // PERFORMANCE TESTING: Comment out during performance tests
+            // _Logger.info("Sending PUT request to: " + targetUri);
+            // _Logger.info("Payload: " + payload);
             
             if (timeout > 0) {
                 this.clientConn.setTimeout((long) timeout * 1000);
-                _Logger.info("Timeout set to: " + timeout + " seconds");
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.info("Timeout set to: " + timeout + " seconds");
             }
             
             response = this.clientConn.put(payload, MediaTypeRegistry.APPLICATION_JSON);
             
             if (response != null) {
-                _Logger.info("Handling PUT. Response: " + response.isSuccess() + " - " + response.getOptions() + " - " +
-                    response.getCode() + " - " + response.getResponseText());
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.info("Handling PUT. Response: " + response.isSuccess() + " - " + response.getOptions() + " - " +
+                //     response.getCode() + " - " + response.getResponseText());
                 
                 if (this.dataMsgListener != null) {
                     // TODO: Parse the response payload and convert to appropriate message type
@@ -224,8 +237,8 @@ public class CoapClientConnector {
                 
                 return true;
             } else {
-                _Logger.warning("Handling PUT. No response received from: " + targetUri);
-                _Logger.warning("Possible causes: Server not running, resource not found, network timeout");
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.warning("Handling PUT. No response received from: " + targetUri);
             }
         } catch (Exception e) {
             _Logger.severe("Exception during PUT request to " + targetUri + ": " + e.getClass().getName() + " - " + e.getMessage());
@@ -279,6 +292,9 @@ public class CoapClientConnector {
     /**
      * Sends a POST request to the specified resource
      * 
+     * PERFORMANCE TESTING: Logging has been disabled in this method for performance testing.
+     * Uncomment logging statements after performance tests are complete.
+     * 
      * @param resource The ResourceNameEnum representing the target resource
      * @param enableCON If true, uses confirmable (CON) messaging; otherwise uses non-confirmable (NON)
      * @param payload The payload to send (typically JSON string)
@@ -302,26 +318,31 @@ public class CoapClientConnector {
         try {
             if (enableCON) {
                 this.clientConn.useCONs();
-                _Logger.info("Using CON messaging for POST request");
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.info("Using CON messaging for POST request");
             } else {
                 this.clientConn.useNONs();
-                _Logger.info("Using NON messaging for POST request");
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.info("Using NON messaging for POST request");
             }
             
             this.clientConn.setURI(targetUri);
-            _Logger.info("Sending POST request to: " + targetUri);
-            _Logger.info("Payload: " + payload);
+            // PERFORMANCE TESTING: Comment out during performance tests
+            // _Logger.info("Sending POST request to: " + targetUri);
+            // _Logger.info("Payload: " + payload);
             
             if (timeout > 0) {
                 this.clientConn.setTimeout((long) timeout * 1000);
-                _Logger.info("Timeout set to: " + timeout + " seconds");
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.info("Timeout set to: " + timeout + " seconds");
             }
             
             response = this.clientConn.post(payload, MediaTypeRegistry.APPLICATION_JSON);
             
             if (response != null) {
-                _Logger.info("Handling POST. Response: " + response.isSuccess() + " - " + response.getOptions() + " - " +
-                    response.getCode() + " - " + response.getResponseText());
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.info("Handling POST. Response: " + response.isSuccess() + " - " + response.getOptions() + " - " +
+                //     response.getCode() + " - " + response.getResponseText());
                 
                 if (this.dataMsgListener != null) {
                     // TODO: Parse the response payload and convert to appropriate message type
@@ -329,7 +350,8 @@ public class CoapClientConnector {
                 
                 return true;
             } else {
-                _Logger.warning("Handling POST. No response received from: " + targetUri);
+                // PERFORMANCE TESTING: Comment out during performance tests
+                // _Logger.warning("Handling POST. No response received from: " + targetUri);
             }
         } catch (Exception e) {
             _Logger.severe("Exception during POST request to " + targetUri + ": " + e.getClass().getName() + " - " + e.getMessage());
@@ -452,7 +474,10 @@ public class CoapClientConnector {
     }
     
     /**
-     * Sends a discovery request
+     * Sends a discovery request to find available resources
+     * 
+     * @param timeout Timeout in seconds (0 for default)
+     * @return boolean True if discovery request completed successfully
      */
     public boolean sendDiscoveryRequest(int timeout) {
         _Logger.info("Discovering resources at: " + this.serverAddr);
@@ -609,7 +634,9 @@ public class CoapClientConnector {
     }
     
     /**
-     * Sets the data message listener
+     * Sets the data message listener for handling responses
+     * 
+     * @param listener The IDataMessageListener implementation
      */
     public void setDataMessageListener(IDataMessageListener listener) {
         this.dataMsgListener = listener;
@@ -617,6 +644,8 @@ public class CoapClientConnector {
     
     /**
      * Starts the client connector
+     * 
+     * @return boolean True if started successfully
      */
     public boolean startClient() {
         _Logger.info("CoAP client started.");
@@ -624,7 +653,9 @@ public class CoapClientConnector {
     }
     
     /**
-     * Stops the client connector
+     * Stops the client connector and cleans up resources
+     * 
+     * @return boolean True if stopped successfully
      */
     public boolean stopClient() {
         _Logger.info("CoAP client stopping...");

@@ -75,6 +75,6 @@ public interface IDataMessageListener
 	 * @param name
 	 * @param listener
 	 */
-	public void setActuatorDataListener(String name, IActuatorDataListener listener);
+	public boolean setActuatorDataListener(String name, IActuatorDataListener listener);
 	
 }

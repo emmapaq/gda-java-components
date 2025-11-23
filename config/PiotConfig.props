@@ -6,116 +6,175 @@
 #
 # IMPORTANT: Edit this file to meet your local system requirements.
 #
+# @author: Emma
+#####
 
-#
-# Cloud client configuration information
-#
-[Cloud.GatewayService]
-credFile       = ./cred/PiotCloudCred.props
-certFile       = ./cert/PiotCloudCert.pem
-host           = localhost
-port           = 1883
-securePort     = 8883
-defaultQoS     = 0
-keepAlive      = 60
-useAsyncClient = True
-enableAuth     = True
-enableCrypt    = True
-baseUrl        = 
-baseTopic      = 
-
-#
-# SMTP client configuration information
-#
-[Smtp.GatewayService]
-credFile       = ./cred/PiotSmtpCred.props
-host           = localhost
-port           = 25
-securePort     = 587
-enableAuth     = True
-enableCrypt    = True
-
-#
-# MQTT client configuration information
-#
-[Mqtt.GatewayService]
-credFile       = ./cred/PiotMqttCred.props
-certFile       = ./cert/PiotMqttLocalCertFile.pem
-host           = localhost
-port           = 1883
-securePort     = 8883
-defaultQoS     = 0
-keepAlive      = 60
-enableAuth     = False
-enableCrypt    = False
-useAsyncClient = False
-
-#
-# CoAP client and server configuration information
-#
-[Coap.GatewayService]
-credFile       = ./cred/PiotCoapCred.props
-certFile       = ./cert/PiotCoapLocalCertFile.pem
-host           = localhost
-port           = 5683
-securePort     = 5684
-enableAuth     = False
-enableCrypt    = False
-enableConfirmedMsgs = True
-
-#
-# GDA specific configuration information
-#
+#####
+# Gateway Device Section
+#####
 [GatewayDevice]
-deviceLocationID        = gatewaydevice001
-enableLogging           = True
-pollCycleSecs           = 60
-enableMqttClient        = True
-enableCoapServer        = True
-enableCoapClient        = False
-enableCloudClient       = False
-enableSmtpClient        = False
-enablePersistenceClient = False
-enableSystemPerformance = True
-testGdaDataPath         = /tmp/gda-data
-testCdaDataPath         = /tmp/cda-data
-testEmptyApp            = False
 
+# Device identification
 deviceLocationID = gatewaydevice001
-defaultLocationID = Not Set          # Fixes BaseIotDataTest failures
-sensorDefaultName = DefaultSensor    # Fixes SensorDataTest failures
 
-# Test properties that ConfigUtil tests are looking for
-[MqttGatewayService]
-host = localhost
-port = 1883
-
-enableCrypt = False 
-
-[Coap.GatewayService]
-host = localhost
-port = 5683
-
-[GatewayDevice]
-deviceLocationID = gatewaydevice001
-enableLogging = True
-pollCycleSecs = 60
+# Enable/disable connectivity clients
 enableMqttClient = True
 enableCoapServer = True
 enableCoapClient = False
 enableCloudClient = False
 enableSmtpClient = False
 enablePersistenceClient = False
-enableSystemPerformance = False
+
+# Enable/disable system managers
+enableSystemPerformance = True
+enableLogging = True
+
+# Polling cycles (in seconds)
+pollCycleSecs = 60
+keepAlive = 60
+
+# Data paths for testing
 testGdaDataPath = /tmp/gda-data
 testCdaDataPath = /tmp/cda-data
 gatewayDataPath = /tmp/gda-data
 cdaDataPath = /tmp/cda-data
 gdaDataPath = /tmp/gda-data
+
+# Test configuration
 testEmptyApp = False
+
+# Default values (for tests)
 defaultLocationID = Not Set
 sensorDefaultName = DefaultSensor
-keepAlive = 60
 
+# Lab Module 10: Humidity change handling on GDA
+handleHumidityChangeOnDevice = True
+
+# Min seconds between readings before triggering actuation event
+humidityMaxTimePastThreshold = 10
+
+# Ideal average humidity level (% relative)
+nominalHumiditySetting = 40.0
+
+# Min value before turning on humidifier (% relative)
+triggerHumidifierFloor = 30.0
+
+# Max value before turning off humidifier (% relative)
+triggerHumidifierCeiling = 50.0
+
+
+#####
+# MQTT Gateway Service Section
+#####
+[Mqtt.GatewayService]
+
+# MQTT broker connection settings
+host = localhost
+port = 1883
+securePort = 8883
+
+# MQTT client settings
+keepAlive = 60
+defaultQos = 1
+
+# MQTT authentication
+enableAuth = False
+userName = 
+userPassword = 
+
+# MQTT TLS/SSL settings
+enableCrypt = False
+enableEncryption = False
+certFile = ./cert/PiotMqttLocalCertFile.pem
+pemFileName = ./cert/PiotMqttLocalCertFile.pem
+
+# MQTT credentials file
+credFile = ./cred/PiotMqttCred.props
+
+# Async client configuration
+useAsyncClient = True
+useCleanSession = True
+
+
+#####
+# CoAP Gateway Service Section
+#####
+[Coap.GatewayService]
+
+# CoAP server connection settings
+host = localhost
+port = 5683
+securePort = 5684
+
+# CoAP security settings
+enableAuth = False
+enableCrypt = False
+enableConfirmedMsgs = True
+
+# CoAP credentials and certificates
+credFile = ./cred/PiotCoapCred.props
+certFile = ./cert/PiotCoapLocalCertFile.pem
+
+
+#####
+# Cloud Gateway Service Section
+#####
+[Cloud.GatewayService]
+
+# Cloud provider settings
+host = localhost
+port = 1883
+securePort = 8883
+
+# Cloud authentication
+enableAuth = True
+userName = 
+userPassword = 
+
+# Cloud TLS/SSL
+enableCrypt = True
+certFile = ./cert/PiotCloudCert.pem
+
+# Cloud credentials
+credFile = ./cred/PiotCloudCred.props
+
+# Cloud MQTT settings
+defaultQoS = 0
+keepAlive = 60
+useAsyncClient = True
+
+# Cloud URLs and topics
+baseUrl = 
+baseTopic = 
+
+
+#####
+# SMTP Gateway Service Section
+#####
+[Smtp.GatewayService]
+
+# SMTP server settings
+host = localhost
+port = 25
+securePort = 587
+
+# SMTP authentication
+enableAuth = True
+enableCrypt = True
+
+# SMTP credentials
+credFile = ./cred/PiotSmtpCred.props
+
+
+#####
+# Gateway Device Data Manager Section
+#####
 [Gateway.DeviceDataManager]
+
+# Enable/disable data persistence
 enablePersistence = True
+
+
+#####
+# End of Configuration File
+#####

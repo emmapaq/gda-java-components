@@ -10,8 +10,8 @@ public class ConfigConst {
     // ========================================
     // GENERAL CONFIGURATION
     // ========================================
-	public static final String TEST_EMPTY_APP_KEY = "testEmptyApp";
-	
+    public static final String TEST_EMPTY_APP_KEY = "testEmptyApp";
+    
     public static final String NOT_SET = "Not Set";
     public static final String DEFAULT_CONFIG_FILE_NAME = "config/PiotConfig.props";
     public static final String CONFIG_FILE_KEY = "configFile";
@@ -58,6 +58,11 @@ public class ConfigConst {
     public static final int DEFAULT_KEEP_ALIVE = 60;
     public static final int DEFAULT_REDIS_PORT = 6379;
     
+    // MQTT Default Values
+    public static final int DEFAULT_MQTT_PORT = 1883;
+    public static final int DEFAULT_MQTT_SECURE_PORT = 8883;
+    public static final int DEFAULT_QOS = 1;
+    
     // ========================================
     // SYSTEM CONFIGURATION KEYS
     // ========================================
@@ -97,6 +102,12 @@ public class ConfigConst {
     
     public static final String USER_NAME_TOKEN_KEY = "userToken";
     public static final String USER_AUTH_TOKEN_KEY = "authToken";
+    
+    // MQTT Authentication and Security Keys
+    public static final String ENABLE_AUTH_KEY = "enableAuth";
+    public static final String USER_NAME_KEY = "userName";
+    public static final String CERT_FILE_KEY = "pemFileName";
+    public static final String USE_CLEAN_SESSION_KEY = "useCleanSession";
     
     // ========================================
     // RESOURCE NAMES - Messages
@@ -140,6 +151,24 @@ public class ConfigConst {
     
     public static final String TIMESTAMP_PROP = "timeStamp";
     public static final String VALUE_PROP = "value";
+    
+ // Commands
+    public static final int COMMAND_OFF = 0;
+
+    public static final int COMMAND_ON = 1;
+    public static final int ON_COMMAND = 1;
+
+    // Actuator names
+    public static final String HUMIDIFIER_ACTUATOR_NAME = "HumidifierActuator";
+    public static final String HVAC_ACTUATOR_NAME = "HvacActuator";
+
+    // Sensor types
+    public static final int HUMIDITY_SENSOR_TYPE = 3;
+    public static final int TEMP_SENSOR_TYPE = 1;
+
+    // Actuator types
+    public static final int HUMIDIFIER_ACTUATOR_TYPE = 2;
+    public static final int HVAC_ACTUATOR_TYPE = 1;
     
     // ========================================
     // CONSTRUCTOR (private to prevent instantiation)
