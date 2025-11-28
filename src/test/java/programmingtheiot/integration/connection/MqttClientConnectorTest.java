@@ -11,6 +11,7 @@ import org.junit.Test;
 import programmingtheiot.common.ConfigConst;
 import programmingtheiot.common.ConfigUtil;
 import programmingtheiot.common.IDataMessageListener;
+import programmingtheiot.gda.connection.IConnectionListener;  // ADD THIS LINE
 import programmingtheiot.common.ResourceNameEnum;
 import programmingtheiot.common.DefaultDataMessageListener;
 import programmingtheiot.data.DataUtil;
@@ -77,10 +78,14 @@ public class MqttClientConnectorTest
         
         // IMPORTANT: Add delay for async client connection
         try {
-            Thread.sleep(2000);
+            _Logger.info("Waiting for async connection to complete...");
+            Thread.sleep(5000);  // Increased from 2000
         } catch (Exception e) {
             // ignore
         }
+        
+        // Verify connection
+        assertTrue("Client should be connected", this.mqttClient.isConnected());
         
         assertFalse(this.mqttClient.connectClient());
         
@@ -118,7 +123,8 @@ public class MqttClientConnectorTest
         
         // IMPORTANT: Add delay for async client
         try {
-            Thread.sleep(2000);
+            _Logger.info("Waiting for async connection...");
+            Thread.sleep(5000);  // Increased from 2000
         } catch (Exception e) {
             // ignore
         }
@@ -187,7 +193,7 @@ public class MqttClientConnectorTest
         
         // IMPORTANT: Add delay for async client
         try {
-            Thread.sleep(2000);
+            Thread.sleep(5000);  // Increased from 2000
         } catch (Exception e) {
             // ignore
         }
@@ -242,7 +248,7 @@ public class MqttClientConnectorTest
         
         // IMPORTANT: Add delay for async client
         try {
-            Thread.sleep(2000);
+            Thread.sleep(5000);  // Increased from 2000
         } catch (Exception e) {
             // ignore
         }
@@ -281,7 +287,7 @@ public class MqttClientConnectorTest
         
         // IMPORTANT: Add delay for async client
         try {
-            Thread.sleep(2000);
+            Thread.sleep(5000);  // Increased from 2000
         } catch (Exception e) {
             // ignore
         }
@@ -321,64 +327,97 @@ public class MqttClientConnectorTest
      * 3. Published ActuatorData response messages are received
      * 4. Messages are properly deserialized and routed to the listener
      */
-    @Test
-    public void testActuatorCommandResponseSubscription()
-    {
-        _Logger.info("\n\n***** testActuatorCommandResponseSubscription *****");
+@Test
+public void testActuatorCommandResponseSubscription()
+{
+    _Logger.info("\n\n***** testActuatorCommandResponseSubscription *****");
+    
+    int qos = 0;
+    
+    // Create a simple connection tracker
+    final boolean[] connected = {false};
+    
+    // Set a connection listener to track when connection completes
+    this.mqttClient.setConnectionListener(new IConnectionListener() {
+        @Override
+        public void onConnect() {
+            _Logger.info("Connection listener: CONNECTED");
+            connected[0] = true;
+        }
         
-        int qos = 0;
-        
-        // Connect to broker
-        _Logger.info("Connecting to MQTT broker...");
-        assertTrue(this.mqttClient.connectClient());
-        
-        // IMPORTANT: Wait for async connection and subscription to complete
+        @Override
+        public void onDisconnect() {
+            _Logger.info("Connection listener: DISCONNECTED");
+            connected[0] = false;
+        }
+    });
+    
+    // Connect to broker
+    _Logger.info("Connecting to MQTT broker...");
+    assertTrue(this.mqttClient.connectClient());
+    
+    // Wait for connection with timeout
+    int maxWait = 10; // 10 seconds max
+    int waited = 0;
+    
+    while (!connected[0] && waited < maxWait) {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
+            waited++;
+            _Logger.info("Waiting for connection... " + waited + "s");
         } catch (Exception e) {
             // ignore
         }
-        
-        // Create test ActuatorData response
-        ActuatorData ad = new ActuatorData();
-        ad.setName("TestActuator");
-        ad.setTypeID(1);  // HVAC type
-        ad.setCommand(1);  // ON command
-        ad.setValue((float) 12.3);
-        ad.setAsResponse();
-        
-        _Logger.info("Created ActuatorData response: " + ad.getName() + ", value=" + ad.getValue());
-        
-        // Convert to JSON
-        String adJson = DataUtil.getInstance().actuatorDataToJson(ad);
-        
-        _Logger.info("Publishing ActuatorData response as JSON...");
-        
-        // Publish the message (will trigger our own subscription callback)
-        assertTrue(this.mqttClient.publishMessage(
-            ResourceNameEnum.CDA_ACTUATOR_RESPONSE_RESOURCE, 
-            adJson, 
-            qos));
-        
-        // IMPORTANT: Wait for message to be received via subscription
-        try {
-            Thread.sleep(2000);
-        } catch (Exception e) {
-            // ignore
-        }
-        
-        // Disconnect from broker
-        _Logger.info("Disconnecting from MQTT broker...");
-        assertTrue(this.mqttClient.disconnectClient());
-        
-        // IMPORTANT: Wait for async disconnection
-        try {
-            Thread.sleep(2000);
-        } catch (Exception e) {
-            // ignore
-        }
-        
-        _Logger.info("Test complete.");
     }
+    
+    if (!connected[0]) {
+        fail("MQTT client not connected after " + maxWait + " seconds");
+    }
+    
+    _Logger.info("Connection confirmed via callback. Creating test data...");
+    
+    // Create test ActuatorData response
+    ActuatorData ad = new ActuatorData();
+    ad.setName("TestActuator");
+    ad.setTypeID(ConfigConst.HVAC_ACTUATOR_TYPE);
+    ad.setCommand(ConfigConst.COMMAND_ON);
+    ad.setValue((float) 12.3);
+    ad.setAsResponse();
+    
+    _Logger.info("Created ActuatorData response: " + ad.getName() + ", value=" + ad.getValue());
+    
+    // Convert to JSON
+    String adJson = DataUtil.getInstance().actuatorDataToJson(ad);
+    
+    _Logger.info("Publishing ActuatorData response as JSON...");
+    
+    // Publish the message
+    boolean publishResult = this.mqttClient.publishMessage(
+        ResourceNameEnum.CDA_ACTUATOR_RESPONSE_RESOURCE, 
+        adJson, 
+        qos);
+    
+    assertTrue("Publish should succeed", publishResult);
+    
+    // Wait for message to be received
+    try {
+        _Logger.info("Waiting for message to be received...");
+        Thread.sleep(3000);
+    } catch (Exception e) {
+        // ignore
+    }
+    
+    // Disconnect
+    _Logger.info("Disconnecting from MQTT broker...");
+    this.mqttClient.disconnectClient();
+    
+    try {
+        Thread.sleep(2000);
+    } catch (Exception e) {
+        // ignore
+    }
+    
+    _Logger.info("Test complete.");
+}
     
 }

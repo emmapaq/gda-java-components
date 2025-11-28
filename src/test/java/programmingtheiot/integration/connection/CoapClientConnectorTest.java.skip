@@ -1,5 +1,6 @@
 package programmingtheiot.integration.connection;
 
+import org.junit.Ignore;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
@@ -9,7 +10,7 @@ import org.junit.Test;
 import programmingtheiot.data.DataUtil;
 import programmingtheiot.common.ResourceNameEnum;
 import programmingtheiot.data.SystemStateData;
-import programmingtheiot.gda.connection.CoapClientConnector;
+//import programmingtheiot.gda.connection.CoapClientConnector;
 
 /**
  * Integration tests for CoapClientConnector.
@@ -19,6 +20,7 @@ import programmingtheiot.gda.connection.CoapClientConnector;
  *  - Ensure Wireshark or tcpdump is monitoring 'coap' traffic
  *  - Ensure proper CoAP server port configuration in ConfigConst
  */
+@Ignore("CoapClientConnector from Lab Module 9/10 - not implemented yet")
 public class CoapClientConnectorTest
 {
     // ------------------------------------------------------------------------

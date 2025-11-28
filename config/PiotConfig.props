@@ -1,10 +1,6 @@
 #####
-# Configuration file for the Gateway Device App (GDA)
-#
-# This provides a section-based configuration format for use by
-# ConfigUtil with keys defined in ConfigConst.
-#
-# IMPORTANT: Edit this file to meet your local system requirements.
+# Configuration file for Gateway Device App (GDA)
+# Lab Module 11 - Cloud Connectivity
 #
 # @author: Emma
 #####
@@ -21,13 +17,16 @@ deviceLocationID = gatewaydevice001
 enableMqttClient = True
 enableCoapServer = True
 enableCoapClient = False
-enableCloudClient = False
+enableCloudClient = True
 enableSmtpClient = False
 enablePersistenceClient = False
 
 # Enable/disable system managers
 enableSystemPerformance = True
 enableLogging = True
+
+# Default QoS
+defaultQos = 1
 
 # Polling cycles (in seconds)
 pollCycleSecs = 60
@@ -64,7 +63,39 @@ triggerHumidifierCeiling = 50.0
 
 
 #####
-# MQTT Gateway Service Section
+# Cloud Gateway Service Section
+# For Lab Module 11 - Start with localhost for testing
+#####
+[Cloud.GatewayService]
+
+# Local MQTT broker for initial testing
+host = localhost
+port = 1883
+securePort = 8883
+
+# Authentication and encryption (disabled for local testing)
+enableAuth = False
+enableCrypt = False
+
+# MQTT settings
+defaultQos = 1
+keepAlive = 60
+
+# Topic structure
+baseTopic = /devices/GDA01
+
+# Optional: Uncomment to use Ubidots instead of localhost
+# host = industrial.api.ubidots.com
+# enableAuth = True
+# enableCrypt = True
+# certFile = ./cert/UbidotsCloudCert.pem
+# credFile = ./cred/UbidotsCloudCred.props
+# defaultQos = 0
+# baseTopic = /v1.6/devices/
+
+
+#####
+# MQTT Gateway Service Section (for CDA communication)
 #####
 [Mqtt.GatewayService]
 
@@ -79,8 +110,8 @@ defaultQos = 1
 
 # MQTT authentication
 enableAuth = False
-userName = 
-userPassword = 
+userName =
+userPassword =
 
 # MQTT TLS/SSL settings
 enableCrypt = False
@@ -114,56 +145,6 @@ enableConfirmedMsgs = True
 # CoAP credentials and certificates
 credFile = ./cred/PiotCoapCred.props
 certFile = ./cert/PiotCoapLocalCertFile.pem
-
-
-#####
-# Cloud Gateway Service Section
-#####
-[Cloud.GatewayService]
-
-# Cloud provider settings
-host = localhost
-port = 1883
-securePort = 8883
-
-# Cloud authentication
-enableAuth = True
-userName = 
-userPassword = 
-
-# Cloud TLS/SSL
-enableCrypt = True
-certFile = ./cert/PiotCloudCert.pem
-
-# Cloud credentials
-credFile = ./cred/PiotCloudCred.props
-
-# Cloud MQTT settings
-defaultQoS = 0
-keepAlive = 60
-useAsyncClient = True
-
-# Cloud URLs and topics
-baseUrl = 
-baseTopic = 
-
-
-#####
-# SMTP Gateway Service Section
-#####
-[Smtp.GatewayService]
-
-# SMTP server settings
-host = localhost
-port = 25
-securePort = 587
-
-# SMTP authentication
-enableAuth = True
-enableCrypt = True
-
-# SMTP credentials
-credFile = ./cred/PiotSmtpCred.props
 
 
 #####

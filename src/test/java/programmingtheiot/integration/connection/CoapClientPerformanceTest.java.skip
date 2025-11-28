@@ -1,6 +1,7 @@
 package programmingtheiot.integration.connection;
 
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 import java.util.logging.Logger;
 
@@ -13,7 +14,7 @@ import org.junit.Test;
 import programmingtheiot.common.ConfigConst;
 import programmingtheiot.common.ResourceNameEnum;
 import programmingtheiot.data.SensorData;
-import programmingtheiot.gda.connection.CoapClientConnector;
+//import programmingtheiot.gda.connection.CoapClientConnector;
 import programmingtheiot.data.DataUtil;
 
 /**
@@ -32,6 +33,7 @@ import programmingtheiot.data.DataUtil;
  * 
  * @author Emma
  */
+
 public class CoapClientPerformanceTest
 {
 	// Static variables
