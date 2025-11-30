@@ -35,7 +35,6 @@ public class DeviceDataManager implements IDataMessageListener
     private static final Logger _Logger =
         Logger.getLogger(DeviceDataManager.class.getName());
     
-    
     // Member variables
     
     private ConfigUtil configUtil = null;
@@ -55,6 +54,8 @@ public class DeviceDataManager implements IDataMessageListener
     private SensorData latestHumiditySensorData = null;
     private OffsetDateTime latestHumiditySensorTimeStamp = null;
     
+    private FermentationProfileManager fermentationProfileMgr;
+    
     private boolean handleHumidityChangeOnDevice = false;
     private int lastKnownHumidifierCommand = ConfigConst.COMMAND_OFF;
     
@@ -63,7 +64,6 @@ public class DeviceDataManager implements IDataMessageListener
     private float nominalHumiditySetting = 40.0f;
     private float triggerHumidifierFloor = 30.0f;
     private float triggerHumidifierCeiling = 50.0f;
-    
     
     // Constructor
     
@@ -145,6 +145,8 @@ public class DeviceDataManager implements IDataMessageListener
         _Logger.info("\tNominal Humidity Setting: " + this.nominalHumiditySetting + "%");
         _Logger.info("\tTrigger Humidifier Floor: " + this.triggerHumidifierFloor + "%");
         _Logger.info("\tTrigger Humidifier Ceiling: " + this.triggerHumidifierCeiling + "%");
+        
+        this.fermentationProfileMgr = new FermentationProfileManager();
     }
     
     
@@ -238,15 +240,38 @@ public class DeviceDataManager implements IDataMessageListener
         if (data != null) {
             _Logger.info("Handling actuator response: " + data.getName());
             
-            // Store the latest humidifier response
+            // Check if this is a profile change command FIRST
+            if (data.getTypeID() == ConfigConst.FERMENTATION_PROFILE_ACTUATOR_TYPE) {
+                String newProfile = data.getStateData();  // Get profile from stateData
+                
+                _Logger.info("Received fermentation profile change command: " + newProfile);
+                
+                // Update GDA's profile manager
+                boolean profileChanged = this.fermentationProfileMgr.setProfile(newProfile);
+                
+                if (profileChanged) {
+                    // Forward profile change to CDA
+                    sendActuatorCommandtoCda(resourceName, data);
+                    
+                    _Logger.info("Profile change successful and forwarded to CDA: " + newProfile);
+                    return true;
+                } else {
+                    _Logger.warning("Failed to change profile to: " + newProfile);
+                    return false;
+                }
+            }
+            
+            // Store the latest humidifier response (for non-profile commands)
             if (data.getTypeID() == ConfigConst.HUMIDIFIER_ACTUATOR_TYPE) {
                 this.latestHumidifierActuatorResponse = data;
                 _Logger.info("Stored latest humidifier response: command=" + data.getCommand());
             }
             
+            // Perform general data analysis
             this.handleIncomingDataAnalysis(resourceName, data);
             
             return true;
+            
         } else {
             return false;
         }
@@ -257,10 +282,30 @@ public class DeviceDataManager implements IDataMessageListener
     {
         if (data != null) {
             _Logger.info("Handling actuator command request: " + data.getName());
+            
+            // Check if this is a fermentation profile change request
+            if (data.getTypeID() == ConfigConst.FERMENTATION_PROFILE_ACTUATOR_TYPE) {
+                String newProfile = data.getStateData();
+                
+                if (newProfile != null && !newProfile.isEmpty()) {
+                    _Logger.info("Processing profile change request: " + newProfile);
+                    return this.changeFermentationProfile(newProfile);
+                } else {
+                    _Logger.warning("Profile change request has null or empty profile name");
+                    return false;
+                }
+            }
+            
+            // For other actuator command requests, perform data analysis
+            this.handleIncomingDataAnalysis(resourceName, data);
+            
+            // Optionally forward the request to CDA
+            // sendActuatorCommandtoCda(resourceName, data);
+            
             return true;
-        } else {
-            return false;
         }
+        
+        return false;
     }
     
     @Override
@@ -491,5 +536,36 @@ public class DeviceDataManager implements IDataMessageListener
         }
         
         return odt;
+    }
+    
+  
+    
+    /**
+     * Public method to allow external profile changes (e.g., from cloud dashboard).
+     */
+    public boolean changeFermentationProfile(String profileName) {
+        if (profileName == null || profileName.isEmpty()) {
+            _Logger.warning("Cannot change profile: profile name is null or empty");
+            return false;
+        }
+        
+        _Logger.info("Changing fermentation profile to: " + profileName);
+        
+        // Update GDA's profile manager
+        if (this.fermentationProfileMgr.setProfile(profileName)) {
+            // Generate command to send to CDA
+            ActuatorData profileCmd = this.fermentationProfileMgr.generateProfileChangeCommand(profileName);
+            
+            if (profileCmd != null) {
+                // TODO: Send to CDA using your existing mechanism
+                // For now, just log it
+                _Logger.info("Fermentation profile changed to: " + profileName);
+                _Logger.info("TODO: Forward command to CDA");
+                return true;
+            }
+        }
+        
+        _Logger.warning("Failed to change fermentation profile to: " + profileName);
+        return false;
     }
 }

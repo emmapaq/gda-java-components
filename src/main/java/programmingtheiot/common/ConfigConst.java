@@ -170,6 +170,108 @@ public class ConfigConst {
     public static final int HUMIDIFIER_ACTUATOR_TYPE = 2;
     public static final int HVAC_ACTUATOR_TYPE = 1;
     
+    /**
+     * Configuration constants for fermentation control system.
+     * Add these to your existing ConfigConst.java file.
+     */
+
+    // ========================================================================
+    // Fermentation Profile Types
+    // ========================================================================
+
+    public static final int FERMENTATION_PROFILE_ACTUATOR_TYPE = 20;
+
+    public static final String FERMENTATION_PROFILE_ALE = "ALE";
+    public static final String FERMENTATION_PROFILE_LAGER = "LAGER";
+    public static final String FERMENTATION_PROFILE_CONDITIONING = "CONDITIONING";
+    public static final String FERMENTATION_PROFILE_COLD_CRASH = "COLD_CRASH";
+    
+    public static final int PRESSURE_SENSOR_TYPE = 1012;  // Or whatever value you use
+
+    // ========================================================================
+    // ALE Profile Thresholds
+    // ========================================================================
+
+    public static final float ALE_TEMP_MIN = 68.0f;
+    public static final float ALE_TEMP_MAX = 72.0f;
+    public static final float ALE_TEMP_NOMINAL = 70.0f;
+    public static final float ALE_HUMIDITY_MIN = 60.0f;
+    public static final float ALE_HUMIDITY_MAX = 70.0f;
+    public static final float ALE_HUMIDITY_NOMINAL = 65.0f;
+
+    // ========================================================================
+    // LAGER Profile Thresholds
+    // ========================================================================
+
+    public static final float LAGER_TEMP_MIN = 50.0f;
+    public static final float LAGER_TEMP_MAX = 55.0f;
+    public static final float LAGER_TEMP_NOMINAL = 52.0f;
+    public static final float LAGER_HUMIDITY_MIN = 55.0f;
+    public static final float LAGER_HUMIDITY_MAX = 65.0f;
+    public static final float LAGER_HUMIDITY_NOMINAL = 60.0f;
+
+    // ========================================================================
+    // CONDITIONING Profile Thresholds
+    // ========================================================================
+
+    public static final float CONDITIONING_TEMP_MIN = 55.0f;
+    public static final float CONDITIONING_TEMP_MAX = 65.0f;
+    public static final float CONDITIONING_TEMP_NOMINAL = 60.0f;
+    public static final float CONDITIONING_HUMIDITY_MIN = 50.0f;
+    public static final float CONDITIONING_HUMIDITY_MAX = 60.0f;
+    public static final float CONDITIONING_HUMIDITY_NOMINAL = 55.0f;
+
+    // ========================================================================
+    // COLD_CRASH Profile Thresholds
+    // ========================================================================
+
+    public static final float COLD_CRASH_TEMP_MIN = 35.0f;
+    public static final float COLD_CRASH_TEMP_MAX = 40.0f;
+    public static final float COLD_CRASH_TEMP_NOMINAL = 38.0f;
+    public static final float COLD_CRASH_HUMIDITY_MIN = 50.0f;
+    public static final float COLD_CRASH_HUMIDITY_MAX = 60.0f;
+    public static final float COLD_CRASH_HUMIDITY_NOMINAL = 55.0f;
+
+    // ========================================================================
+    // Alert Thresholds
+    // ========================================================================
+
+    public static final float TEMP_SPIKE_THRESHOLD = 5.0f;
+    public static final float TEMP_CRITICAL_HIGH = 80.0f;
+    public static final float TEMP_CRITICAL_LOW = 32.0f;
+    public static final float HUMIDITY_CRITICAL_LOW = 30.0f;
+    public static final float HUMIDITY_CRITICAL_HIGH = 85.0f;
+
+    // ========================================================================
+    // Actuation Response Configuration
+    // ========================================================================
+
+    public static final int ACTUATION_RESPONSE_TIME_SECS = 30;
+
+    // ========================================================================
+    // HVAC Actuator Commands
+    // ========================================================================
+
+    public static final String HVAC_COOLING_CMD = "COOLING";
+    public static final String HVAC_HEATING_CMD = "HEATING";
+    public static final String HVAC_OFF_CMD = "OFF";
+
+    // ========================================================================
+    // Humidifier Actuator Commands
+    // ========================================================================
+
+    public static final String HUMIDIFIER_ON_CMD = "ON";
+    public static final String HUMIDIFIER_OFF_CMD = "OFF";
+
+    // ========================================================================
+    // LED Display Actuator Commands
+    // ========================================================================
+
+    public static final String LED_OPTIMAL_CMD = "OPTIMAL";
+    public static final String LED_ACTIVE_CMD = "ACTIVE";
+    public static final String LED_ALERT_CMD = "ALERT";
+    public static final String LED_OFF_CMD = "OFF";
+    
     // ========================================
     // CONSTRUCTOR (private to prevent instantiation)
     // ========================================

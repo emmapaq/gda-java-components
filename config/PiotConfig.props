@@ -174,6 +174,39 @@ credFile = ./cred/PiotSmtpCred.props
 # Enable/disable data persistence
 enablePersistence = True
 
+# Fermentation Profile Configuration
+fermentation.profile.default=ALE
+
+# Ale Profile Settings
+fermentation.ale.temp.min=68.0
+fermentation.ale.temp.max=72.0
+fermentation.ale.humidity.min=60.0
+fermentation.ale.humidity.max=70.0
+
+# Lager Profile Settings
+fermentation.lager.temp.min=50.0
+fermentation.lager.temp.max=55.0
+fermentation.lager.humidity.min=55.0
+fermentation.lager.humidity.max=65.0
+
+# Conditioning Profile Settings
+fermentation.conditioning.temp.min=55.0
+fermentation.conditioning.temp.max=65.0
+fermentation.conditioning.humidity.min=50.0
+fermentation.conditioning.humidity.max=60.0
+
+# Cold Crash Profile Settings
+fermentation.coldcrash.temp.min=35.0
+fermentation.coldcrash.temp.max=40.0
+fermentation.coldcrash.humidity.min=50.0
+fermentation.coldcrash.humidity.max=60.0
+
+# Alert Thresholds
+fermentation.alert.temp.spike=5.0
+fermentation.alert.temp.critical.high=80.0
+fermentation.alert.temp.critical.low=32.0
+fermentation.alert.humidity.critical.low=30.0
+fermentation.alert.humidity.critical.high=85.0
 
 #####
 # End of Configuration File
