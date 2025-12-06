@@ -64,9 +64,30 @@ triggerHumidifierCeiling = 50.0
 
 #####
 # Cloud Gateway Service Section
-# For Lab Module 11 - Start with localhost for testing
+# For Lab Module 11 - Ubidots Cloud Connection
 #####
 [Cloud.GatewayService]
+
+# Ubidots connection settings
+host = things.ubidots.com
+port = 1883
+securePort = 8883
+
+# Authentication and encryption
+enableAuth = True
+enableCrypt = False
+credFile = ./cred/UbidotsCloudCred.props
+certFile = ./cert/UbidotsCloudCert.pem
+
+# MQTT settings
+defaultQos = 1
+keepAlive = 60
+
+# Topic structure
+baseTopic = /v1.6/devices/
+
+# API settings
+baseUrl = https://industrial.api.ubidots.com/api/v2.0/
 
 # Local MQTT broker for initial testing
 host = localhost
