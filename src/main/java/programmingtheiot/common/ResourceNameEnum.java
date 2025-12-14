@@ -87,6 +87,15 @@ public enum ResourceNameEnum {
     GDA_SYSTEM_PERF_MSG_RESOURCE(
         ConfigConst.GATEWAY_DEVICE,
         ConfigConst.SYSTEM_PERF_MSG
+    ),
+    
+    // ========================================
+    // CLOUD SERVICE RESOURCES
+    // ========================================
+    
+    CLOUD_INCOMING_MSG_RESOURCE(
+        "CloudService",
+        "IncomingMsg"
     );
     
     // ========================================

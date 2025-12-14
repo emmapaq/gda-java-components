@@ -19,11 +19,11 @@ deviceLocationID = gatewaydevice001
 
 # Enable/disable connectivity clients
 enableMqttClient = True
-enableCoapServer = True
+enableCoapServer = False
 enableCoapClient = False
-enableCloudClient = False
+enableCloudClient = True
 enableSmtpClient = False
-enablePersistenceClient = False
+enablePersistenceClient = True
 
 # Enable/disable system managers
 enableSystemPerformance = True
@@ -117,36 +117,34 @@ certFile = ./cert/PiotCoapLocalCertFile.pem
 
 
 #####
-# Cloud Gateway Service Section
+# Cloud Gateway Service Section (Ubidots Personal Account)
 #####
 [Cloud.GatewayService]
 
-# Cloud provider settings
-host = localhost
+# Ubidots Personal Account Settings
+host = stem.ubidots.com
 port = 1883
-securePort = 8883
+securePort = 1883
 
 # Cloud authentication
 enableAuth = True
-userName = 
+userName = BBUS-Q5MDm4mKXdN963X23TcshSTnLgxThX
 userPassword = 
 
 # Cloud TLS/SSL
-enableCrypt = True
-certFile = ./cert/PiotCloudCert.pem
-
-# Cloud credentials
-credFile = ./cred/PiotCloudCred.props
+enableCrypt = False
 
 # Cloud MQTT settings
 defaultQoS = 0
 keepAlive = 60
-useAsyncClient = True
+useAsyncClient = False
 
-# Cloud URLs and topics
+# Ubidots device label
+deviceLabel = fermentation-chamber
+
+# Ubidots topic format
 baseUrl = 
-baseTopic = 
-
+baseTopic = /v1.6/devices/fermentation-chamber
 
 #####
 # SMTP Gateway Service Section

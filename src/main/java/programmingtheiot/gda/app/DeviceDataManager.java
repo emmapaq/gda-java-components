@@ -19,6 +19,7 @@ import programmingtheiot.data.SystemPerformanceData;
 
 import programmingtheiot.gda.connection.MqttClientConnector;
 import programmingtheiot.gda.connection.CoapServerGateway;
+import programmingtheiot.gda.connection.CloudClientConnector;
 
 /**
  * Main device data manager for the GDA.
@@ -42,10 +43,12 @@ public class DeviceDataManager implements IDataMessageListener
     // Communication clients
     private boolean enableMqttClient = false;
     private boolean enableCoapServer = false;
+    private boolean enableCloudClient = false;
     private boolean enablePersistenceClient = false;
     
     private MqttClientConnector mqttClient = null;
     private CoapServerGateway coapServer = null;
+    private CloudClientConnector cloudClient = null;
     private IActuatorDataListener actuatorDataListener = null;
     
     // Humidity threshold tracking
@@ -89,6 +92,11 @@ public class DeviceDataManager implements IDataMessageListener
             this.configUtil.getBoolean(
                 ConfigConst.GATEWAY_DEVICE, 
                 ConfigConst.ENABLE_COAP_SERVER_KEY);
+        
+        this.enableCloudClient = 
+            this.configUtil.getBoolean(
+                ConfigConst.GATEWAY_DEVICE, 
+                ConfigConst.ENABLE_CLOUD_CLIENT_KEY);
         
         this.enablePersistenceClient = 
             this.configUtil.getBoolean(
@@ -139,6 +147,14 @@ public class DeviceDataManager implements IDataMessageListener
             this.coapServer = new CoapServerGateway(this);
         }
         
+        // Initialize Cloud client (Ubidots)
+        if (this.enableCloudClient) {
+            _Logger.info("Cloud client enabled. Initializing CloudClientConnector...");
+            this.cloudClient = new CloudClientConnector();
+            // Cloud client may also need a data message listener if it receives commands
+            // this.cloudClient.setDataMessageListener(this);
+        }
+        
         _Logger.info("DeviceDataManager initialized.");
         _Logger.info("\tHandle Humidity Changes: " + this.handleHumidityChangeOnDevice);
         _Logger.info("\tHumidity Max Time Past Threshold: " + this.humidityMaxTimePastThreshold + " seconds");
@@ -177,6 +193,14 @@ public class DeviceDataManager implements IDataMessageListener
             }
         }
         
+        if (this.cloudClient != null) {
+            if (this.cloudClient.connectClient()) {
+                _Logger.info("Successfully connected cloud client to Ubidots.");
+            } else {
+                _Logger.severe("Failed to connect cloud client to Ubidots.");
+            }
+        }
+        
         _Logger.info("DeviceDataManager started.");
     }
     
@@ -195,6 +219,11 @@ public class DeviceDataManager implements IDataMessageListener
         if (this.coapServer != null) {
             this.coapServer.stopServer();
             _Logger.info("CoAP server stopped.");
+        }
+        
+        if (this.cloudClient != null) {
+            this.cloudClient.disconnectClient();
+            _Logger.info("Cloud client disconnected.");
         }
         
         _Logger.info("DeviceDataManager stopped.");
@@ -510,8 +539,14 @@ public class DeviceDataManager implements IDataMessageListener
     
     private void handleUpstreamTransmission(ResourceNameEnum resource, String jsonData, int qos)
     {
-        // NOTE: This will be implemented in Part 04 to send to cloud service
-        _Logger.info("TODO: Send JSON data to cloud service: " + resource.getResourceName());
+        // Send to cloud service (Ubidots)
+        if (this.cloudClient != null && this.cloudClient.isConnected()) {
+            if (this.cloudClient.publishMessage(resource, jsonData, qos)) {
+                _Logger.info("Published data to Ubidots cloud: " + resource.getResourceName());
+            } else {
+                _Logger.warning("Failed to publish data to Ubidots cloud: " + resource.getResourceName());
+            }
+        }
     }
     
     private OffsetDateTime getDateTimeFromData(BaseIotData data)
@@ -557,10 +592,9 @@ public class DeviceDataManager implements IDataMessageListener
             ActuatorData profileCmd = this.fermentationProfileMgr.generateProfileChangeCommand(profileName);
             
             if (profileCmd != null) {
-                // TODO: Send to CDA using your existing mechanism
-                // For now, just log it
+                // Send to CDA
+                sendActuatorCommandtoCda(ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, profileCmd);
                 _Logger.info("Fermentation profile changed to: " + profileName);
-                _Logger.info("TODO: Forward command to CDA");
                 return true;
             }
         }
