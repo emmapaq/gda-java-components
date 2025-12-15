@@ -170,6 +170,22 @@ public class ConfigConst {
     public static final int HUMIDIFIER_ACTUATOR_TYPE = 2;
     public static final int HVAC_ACTUATOR_TYPE = 1;
     
+    
+ // Yeast Bin Actuator
+    public static final String YEAST_BIN_ACTUATOR_NAME = "YeastBinActuator";
+    public static final int YEAST_BIN_ACTUATOR_TYPE = 100;  // Unique type ID
+
+    // Yeast Bin Commands
+    public static final String YEAST_BIN_OPEN_CMD = "OPEN";
+    public static final String YEAST_BIN_CLOSE_CMD = "CLOSE";
+
+    // Yeast Pitching Optimal Ranges (for Ale yeast)
+    public static final float YEAST_PITCH_TEMP_MIN = 68.0f;  // °F
+    public static final float YEAST_PITCH_TEMP_MAX = 72.0f;  // °F
+    public static final float YEAST_PITCH_HUMIDITY_MIN = 60.0f;  // %
+    public static final float YEAST_PITCH_HUMIDITY_MAX = 70.0f;  // %
+    
+    
     /**
      * Configuration constants for fermentation control system.
      * Add these to your existing ConfigConst.java file.

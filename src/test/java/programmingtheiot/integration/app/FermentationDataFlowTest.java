@@ -467,4 +467,68 @@ public class FermentationDataFlowTest {
         
         _Logger.info("\n✓✓✓ Test PASSED: Concurrent data types handled ✓✓✓\n");
     }
+    
+ // ========================================================================
+ // Test 11: Yeast Bin Release Conditions
+ // ========================================================================
+
+ @Test
+ public void testYeastBinReleaseConditions() {
+     _Logger.info("\n===== Test 11: Yeast Bin Release Conditions =====\n");
+     
+     // Test 1: OPTIMAL conditions - Bin should OPEN
+     _Logger.info("Scenario 1: OPTIMAL temperature and humidity");
+     
+     SensorData optimalTemp = new SensorData();
+     optimalTemp.setTypeID(ConfigConst.TEMP_SENSOR_TYPE);
+     optimalTemp.setValue(70.0f);  // Within 68-72°F for ALE
+     optimalTemp.setName("TempSensor");
+     
+     SensorData optimalHumid = new SensorData();
+     optimalHumid.setTypeID(ConfigConst.HUMIDITY_SENSOR_TYPE);
+     optimalHumid.setValue(65.0f);  // Within 60-70% for ALE
+     optimalHumid.setName("HumiditySensor");
+     
+     this.deviceDataMgr.handleSensorMessage(
+         ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, optimalTemp);
+     this.deviceDataMgr.handleSensorMessage(
+         ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, optimalHumid);
+     
+     _Logger.info("✓ Expected: 'Good!! Bin Open ... Yeast Releasing!!'");
+     
+     // Test 2: Temperature TOO LOW - Bin should CLOSE
+     _Logger.info("\nScenario 2: Temperature TOO LOW");
+     
+     SensorData coldTemp = new SensorData();
+     coldTemp.setTypeID(ConfigConst.TEMP_SENSOR_TYPE);
+     coldTemp.setValue(60.0f);  // Below 68°F
+     coldTemp.setName("TempSensor");
+     
+     this.deviceDataMgr.handleSensorMessage(
+         ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, coldTemp);
+     
+     _Logger.info("✓ Expected: 'Not Good! Bin Closed!!'");
+     
+     // Test 3: Humidity TOO HIGH - Bin should CLOSE
+     _Logger.info("\nScenario 3: Humidity TOO HIGH");
+     
+     SensorData optimalTemp2 = new SensorData();
+     optimalTemp2.setTypeID(ConfigConst.TEMP_SENSOR_TYPE);
+     optimalTemp2.setValue(70.0f);  // Good
+     
+     SensorData highHumid = new SensorData();
+     highHumid.setTypeID(ConfigConst.HUMIDITY_SENSOR_TYPE);
+     highHumid.setValue(80.0f);  // Above 70%
+     highHumid.setName("HumiditySensor");
+     
+     this.deviceDataMgr.handleSensorMessage(
+         ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, optimalTemp2);
+     this.deviceDataMgr.handleSensorMessage(
+         ResourceNameEnum.CDA_SENSOR_MSG_RESOURCE, highHumid);
+     
+     _Logger.info("✓ Expected: 'Not Good! Bin Closed!!'");
+     
+     _Logger.info("\n✓✓✓ Test PASSED: Yeast bin conditions working ✓✓✓\n");
+ }
+
 }

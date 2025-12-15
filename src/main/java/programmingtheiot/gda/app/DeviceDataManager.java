@@ -68,6 +68,10 @@ public class DeviceDataManager implements IDataMessageListener
     private float triggerHumidifierFloor = 30.0f;
     private float triggerHumidifierCeiling = 50.0f;
     
+    // Yeast pitching condition tracking
+    private SensorData latestTempSensorData = null;
+    private SensorData latestHumiditySensorDataForYeast = null;
+    
     // Constructor
     
     /**
@@ -337,6 +341,8 @@ public class DeviceDataManager implements IDataMessageListener
         return false;
     }
     
+    
+    
     @Override
     public boolean handleIncomingMessage(ResourceNameEnum resourceName, String msg)
     {
@@ -413,8 +419,27 @@ public class DeviceDataManager implements IDataMessageListener
     {
         _Logger.fine("Analyzing sensor data: " + data.getName());
         
+        // Track latest temperature data
+        if (data.getTypeID() == ConfigConst.TEMP_SENSOR_TYPE) {
+            this.latestTempSensorData = data;
+            
+            // Check yeast pitching conditions if we have both temp and humidity
+            if (this.latestHumiditySensorDataForYeast != null) {
+                handleYeastPitchingAnalysis(this.latestTempSensorData, this.latestHumiditySensorDataForYeast);
+            }
+        }
+        
         // Check sensor type and route to appropriate analysis
         if (data.getTypeID() == ConfigConst.HUMIDITY_SENSOR_TYPE) {
+            // Store for yeast pitching analysis
+            this.latestHumiditySensorDataForYeast = data;
+            
+            // Check yeast pitching conditions if we have both temp and humidity
+            if (this.latestTempSensorData != null) {
+                handleYeastPitchingAnalysis(this.latestTempSensorData, this.latestHumiditySensorDataForYeast);
+            }
+            
+            // Existing humidity threshold logic
             handleHumiditySensorAnalysis(resource, data);
         }
     }
@@ -601,5 +626,62 @@ public class DeviceDataManager implements IDataMessageListener
         
         _Logger.warning("Failed to change fermentation profile to: " + profileName);
         return false;
+    }
+    
+    /**
+     * Analyzes temperature and humidity to determine if yeast pitching conditions are optimal.
+     * Opens yeast bin if conditions are good, closes if not optimal.
+     */
+    private void handleYeastPitchingAnalysis(SensorData tempData, SensorData humidData)
+    {
+        if (tempData == null || humidData == null) {
+            _Logger.fine("Waiting for both temperature and humidity data for yeast pitching analysis.");
+            return;
+        }
+        
+        float currentTemp = tempData.getValue();
+        float currentHumidity = humidData.getValue();
+        
+        // Get current fermentation profile's optimal ranges
+        float tempMin = this.fermentationProfileMgr.getTargetTempMin();
+        float tempMax = this.fermentationProfileMgr.getTargetTempMax();
+        float humidMin = this.fermentationProfileMgr.getTargetHumidityMin();
+        float humidMax = this.fermentationProfileMgr.getTargetHumidityMax();
+        
+        boolean tempInRange = (currentTemp >= tempMin && currentTemp <= tempMax);
+        boolean humidInRange = (currentHumidity >= humidMin && currentHumidity <= humidMax);
+        
+        ActuatorData yeastBinCmd = new ActuatorData();
+        yeastBinCmd.setName(ConfigConst.YEAST_BIN_ACTUATOR_NAME);
+        yeastBinCmd.setTypeID(ConfigConst.YEAST_BIN_ACTUATOR_TYPE);
+        yeastBinCmd.setLocationID(tempData.getLocationID());
+        
+        if (tempInRange && humidInRange) {
+            // Conditions are OPTIMAL - Open yeast bin
+            yeastBinCmd.setCommand(ConfigConst.COMMAND_ON);
+            yeastBinCmd.setStateData("Good!! Bin Open ... Yeast Releasing!!");
+            yeastBinCmd.setValue(1.0f);
+            
+            _Logger.info("✓ YEAST PITCHING CONDITIONS OPTIMAL!");
+            _Logger.info("  Temperature: " + currentTemp + "°F (Range: " + tempMin + "-" + tempMax + "°F)");
+            _Logger.info("  Humidity: " + currentHumidity + "% (Range: " + humidMin + "-" + humidMax + "%)");
+            _Logger.info("  Status: " + yeastBinCmd.getStateData());
+            
+        } else {
+            // Conditions NOT optimal - Keep bin closed
+            yeastBinCmd.setCommand(ConfigConst.COMMAND_OFF);
+            yeastBinCmd.setStateData("Not Good! Bin Closed!!");
+            yeastBinCmd.setValue(0.0f);
+            
+            _Logger.warning("✗ YEAST PITCHING CONDITIONS NOT OPTIMAL!");
+            _Logger.warning("  Temperature: " + currentTemp + "°F " + 
+                           (tempInRange ? "✓" : "✗ OUT OF RANGE (" + tempMin + "-" + tempMax + "°F)"));
+            _Logger.warning("  Humidity: " + currentHumidity + "% " + 
+                           (humidInRange ? "✓" : "✗ OUT OF RANGE (" + humidMin + "-" + humidMax + "%)"));
+            _Logger.warning("  Status: " + yeastBinCmd.getStateData());
+        }
+        
+        // Send yeast bin command to CDA
+        sendActuatorCommandtoCda(ResourceNameEnum.CDA_ACTUATOR_CMD_RESOURCE, yeastBinCmd);
     }
 }

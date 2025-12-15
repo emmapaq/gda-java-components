@@ -21,6 +21,8 @@ public class FermentationProfileManager {
     private float currentHumidityMin;
     private float currentHumidityMax;
     
+    
+    
     public FermentationProfileManager() {
         // Initialize with ALE profile by default
         setProfile(ConfigConst.FERMENTATION_PROFILE_ALE);
@@ -109,28 +111,60 @@ public class FermentationProfileManager {
     }
     
     /**
-     * Get current temperature min for active profile.
+     * Get target temperature min for active profile.
      */
-    public float getCurrentTempMin() {
+    public float getTargetTempMin() {
         return this.currentTempMin;
     }
     
     /**
-     * Get current temperature max for active profile.
+     * Get target temperature max for active profile.
      */
-    public float getCurrentTempMax() {
+    public float getTargetTempMax() {
         return this.currentTempMax;
     }
     
     /**
-     * Get current humidity min for active profile.
+     * Get target humidity min for active profile.
      */
-    public float getCurrentHumidityMin() {
+    public float getTargetHumidityMin() {
         return this.currentHumidityMin;
     }
     
     /**
+     * Get target humidity max for active profile.
+     */
+    public float getTargetHumidityMax() {
+        return this.currentHumidityMax;
+    }
+    
+    /**
+     * Get current temperature min for active profile.
+     * Alias for getTargetTempMin() for backward compatibility.
+     */
+    public float getCurrentTempMin() {
+        return this.currentTempMin;
+    }
+
+    /**
+     * Get current temperature max for active profile.
+     * Alias for getTargetTempMax() for backward compatibility.
+     */
+    public float getCurrentTempMax() {
+        return this.currentTempMax;
+    }
+
+    /**
+     * Get current humidity min for active profile.
+     * Alias for getTargetHumidityMin() for backward compatibility.
+     */
+    public float getCurrentHumidityMin() {
+        return this.currentHumidityMin;
+    }
+
+    /**
      * Get current humidity max for active profile.
+     * Alias for getTargetHumidityMax() for backward compatibility.
      */
     public float getCurrentHumidityMax() {
         return this.currentHumidityMax;

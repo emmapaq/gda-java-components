@@ -400,56 +400,104 @@ private void initClientParameters()
         _Logger.log(Level.SEVERE, "Failed to create MQTT client for Ubidots.", e);
     }
 }
-    /**
-     * Convert JSON data to Ubidots-compatible format.
-     * Ubidots expects: {"variable_name": value, "variable_name": value}
-     */
-    private String convertToUbidotsFormat(String jsonData)
-    {
-        try {
-            // Parse incoming JSON
-            JsonObject incomingData = gson.fromJson(jsonData, JsonObject.class);
-            JsonObject ubidotsPayload = new JsonObject();
+  
+/**
+ * Convert JSON data to Ubidots-compatible format.
+ * Ubidots expects: {"variable_name": value, "variable_name": value}
+ */
+private String convertToUbidotsFormat(String jsonData)
+{
+    try {
+        // Parse incoming JSON
+        JsonObject incomingData = gson.fromJson(jsonData, JsonObject.class);
+        JsonObject ubidotsPayload = new JsonObject();
+        
+        // Extract relevant fields and create Ubidots payload
+        if (incomingData.has("name")) {
+            String sensorType = incomingData.get("name").getAsString().toLowerCase();
             
-            // Extract relevant fields and create Ubidots payload
-            if (incomingData.has("name")) {
-                String sensorType = incomingData.get("name").getAsString().toLowerCase();
+            if (incomingData.has("value")) {
+                float value = incomingData.get("value").getAsFloat();
                 
-                if (incomingData.has("value")) {
-                    float value = incomingData.get("value").getAsFloat();
-                    
-                    // Map sensor types to Ubidots variable names
-                    if (sensorType.contains("temp")) {
-                        ubidotsPayload.addProperty("temperature", value);
-                    } else if (sensorType.contains("humid")) {
-                        ubidotsPayload.addProperty("humidity", value);
-                    } else if (sensorType.contains("press")) {
-                        ubidotsPayload.addProperty("pressure", value);
-                    }
+                // Map sensor types to Ubidots variable names
+                if (sensorType.contains("temp")) {
+                    ubidotsPayload.addProperty("temperature", value);
+                } else if (sensorType.contains("humid")) {
+                    ubidotsPayload.addProperty("humidity", value);
+                } else if (sensorType.contains("press")) {
+                    ubidotsPayload.addProperty("pressure", value);
+                } else if (sensorType.contains("yeast")) {
+                    // Yeast bin status (0 = closed, 1 = open)
+                    ubidotsPayload.addProperty("yeast_bin_status", value);
                 }
             }
             
-            // Add system performance data
-            if (incomingData.has("cpuUtil")) {
-                ubidotsPayload.addProperty("cpu_utilization", 
-                    incomingData.get("cpuUtil").getAsFloat());
+            // Add stateData as text variable for yeast bin messages
+            if (sensorType.contains("yeast") && incomingData.has("stateData")) {
+                String statusMessage = incomingData.get("stateData").getAsString();
+                ubidotsPayload.addProperty("yeast_bin_message", statusMessage);
             }
-            if (incomingData.has("memUtil")) {
-                ubidotsPayload.addProperty("memory_utilization", 
-                    incomingData.get("memUtil").getAsFloat());
-            }
-            
-            // If no data was extracted, return empty object
-            if (ubidotsPayload.size() == 0) {
-                _Logger.warning("No valid data to convert to Ubidots format.");
-                ubidotsPayload.addProperty("status", "no_data");
-            }
-            
-            return gson.toJson(ubidotsPayload);
-            
-        } catch (Exception e) {
-            _Logger.log(Level.WARNING, "Failed to convert to Ubidots format. Returning original.", e);
-            return jsonData;
         }
+        
+        // Add system performance data
+        if (incomingData.has("cpuUtil")) {
+            ubidotsPayload.addProperty("cpu_utilization", 
+                incomingData.get("cpuUtil").getAsFloat());
+        }
+        if (incomingData.has("memUtil")) {
+            ubidotsPayload.addProperty("memory_utilization", 
+                incomingData.get("memUtil").getAsFloat());
+        }
+        
+        // Add actuator data (typeID helps identify actuator type)
+        if (incomingData.has("typeID")) {
+            int typeID = incomingData.get("typeID").getAsInt();
+            
+            // Yeast bin actuator
+            if (typeID == ConfigConst.YEAST_BIN_ACTUATOR_TYPE) {
+                if (incomingData.has("value")) {
+                    ubidotsPayload.addProperty("yeast_bin_status", 
+                        incomingData.get("value").getAsFloat());
+                }
+                if (incomingData.has("stateData")) {
+                    ubidotsPayload.addProperty("yeast_bin_message", 
+                        incomingData.get("stateData").getAsString());
+                }
+            }
+            
+            // HVAC actuator status
+            if (typeID == ConfigConst.HVAC_ACTUATOR_TYPE) {
+                if (incomingData.has("command")) {
+                    ubidotsPayload.addProperty("hvac_status", 
+                        incomingData.get("command").getAsInt());
+                }
+                if (incomingData.has("stateData")) {
+                    ubidotsPayload.addProperty("hvac_command", 
+                        incomingData.get("stateData").getAsString());
+                }
+            }
+            
+            // Humidifier actuator status
+            if (typeID == ConfigConst.HUMIDIFIER_ACTUATOR_TYPE) {
+                if (incomingData.has("command")) {
+                    ubidotsPayload.addProperty("humidifier_status", 
+                        incomingData.get("command").getAsInt());
+                }
+            }
+        }
+        
+        // If no data was extracted, return empty object
+        if (ubidotsPayload.size() == 0) {
+            _Logger.warning("No valid data to convert to Ubidots format.");
+            ubidotsPayload.addProperty("status", "no_data");
+        }
+        
+        return gson.toJson(ubidotsPayload);
+        
+    } catch (Exception e) {
+        _Logger.log(Level.WARNING, "Failed to convert to Ubidots format. Returning original.", e);
+        return jsonData;
     }
+}
+
 }
